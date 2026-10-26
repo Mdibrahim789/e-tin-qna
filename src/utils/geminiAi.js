@@ -1,30 +1,24 @@
 /**
- * Gemini AI Integration for Bangladesh Tax Assistant
- * Uses Google Gemini API (gemini-3.8-flash & gemini-3.5-flash-lite)
- * with Bangladesh Tax Laws grounding and NBR guidelines
+ * Ultra-Fast Gemini AI Integration for Bangladesh Tax Assistant
+ * - Directly answers to-the-point without greetings like "নমস্কার"
+ * - Output is concise, clean, and directly answers what was asked
+ * - Generates 2-3 clickable related/probable follow-up questions
  */
 
 import { searchQnA } from './searchEngine.js';
 
 const SYSTEM_PROMPT = `
-তুমি "ট্যাক্স সহায়ক এআই" — বাংলাদেশে ই-টিআইএন (e-TIN), অনলাইনে আয়কর রিটার্ন (eReturn), করের স্ল্যাব, কর রেয়াত এবং ভ্যাট সম্পর্কিত একজন অত্যন্ত দক্ষ, নির্ভুল ও নির্ভরযোগ্য ভার্চুয়াল সহকারী।
+তুমি "ট্যাক্স সহায়ক এআই" — বাংলাদেশের ই-টিআইএন (e-TIN), অনলাইনে আয়কর রিটার্ন (eReturn) ও ভ্যাট সংক্রান্ত বিশেষজ্ঞ।
 
-তোমার নির্দেশনাবলী:
-১. ভাষা: সহজ, প্রাঞ্জল ও সাধারণ মানুষের বোধগম্য বাংলা। কঠিন আইনি পরিভাষা এলে ব্র্যাকেটে সহজ ব্যাখ্যা দেবে (যেমন: "পিএসআর (Proof of Submission of Return - রিটার্ন জমার প্রমাণপত্র)")।
-২. আইনগত ভিত্তি: উত্তর দেওয়ার সময় সর্বদা গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের "আয়কর আইন, ২০২৩", সংশ্লিষ্ট "অর্থ আইন", "মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২" এবং জাতীয় রাজস্ব বোর্ডের (NBR) অফিসিয়াল নির্দেশিকা মেনে চলবে। প্রযোজ্য ক্ষেত্রে ধারা উল্লেখ করবে (যেমন: ধারা ১৬৬, ধারা ২৬১, ধারা ২৬৪, ধারা ১৭১, ধারা ১৭৩, ধারা ১৭৪ ইত্যাদি)।
-৩. মূল তথ্যাদি:
-   - স্বাভাবিক ব্যক্তি করদাতার সাধারণ করমুক্ত সীমা: ৩,৫০,০০০ টাকা।
-   - মহিলা ও ৬৫+ বছর বয়স্ক জ্যেষ্ঠ নাগরিক: ৪,০০,০০০ টাকা।
-   - তৃতীয় লিঙ্গ ও প্রতিবন্ধী করদাতা: ৪,৭৫,০০০ টাকা।
-   - গেজেটভুক্ত যুদ্ধাহত বীর মুক্তিযোদ্ধা: ৫,০০,০০০ টাকা।
-   - কর স্ল্যাব: প্রথম ৩.৫ লাখে ০%, পরবর্তী ১ লাখে ৫%, পরবর্তী ৩ লাখে ১০%, পরবর্তী ৪ লাখে ১৫%, পরবর্তী ৫ লাখে ২০%, বাকি অংশে ২৫%।
-   - ন্যূনতম কর: ঢাকা ও চট্টগ্রাম সিটি কর্পোরেশন ৫,০০০ টাকা; অন্যান্য সিটি কর্পোরেশন ৪,০০০ টাকা; জেলার জন্য ৩,০০০ টাকা।
-   - কর দিবস: প্রতি বছর ৩০ নভেম্বর (ধারা ১৭১)।
-   - বিলম্ব সুদ: কর দিবসের পর বকেয়া করের ওপর প্রতি মাসে ২% সরল সুদ (ধারা ১৭৪)।
-৪. কঠোর সতর্কতা ও গার্ডরেল:
-   - যদি কোনো প্রশ্ন সম্পূর্ণ অ-কর সংক্রান্ত হয় (যেমন: খেলাধুলা, ক্রিকেট, বিনোদন, চিকিৎসা, সাধারণ বিজ্ঞান, বিদেশী ভিসা, হ্যাকিং ইত্যাদি), তবে কোনো অনুমান না করে স্পষ্টভাবে বলবে:
-     "এই বিষয়ে আমি নিশ্চিত নই। অনুগ্রহ করে এনবিআর অফিসিয়াল ওয়েবসাইট (nbr.gov.bd) বা একজন রেজিস্টার্ড ট্যাক্স আইনজীবীর সাথে যোগাযোগ করুন।"
-   - কখনোই মনগড়া বা কাল্পনিক কোনো রেট, স্ল্যাব, তারিখ বা আইনি ধারা বানাবে না।
+কঠোর নিয়মাবলী:
+১. কোনোপ্রকার সম্ভাষণ বা নিজের পরিচয় দেবে না: "নমস্কার", "আদাব", "আমি অমুক" — এসব কথা কখনো বলবে না। কোনো ভূমিকা ছাড়া প্রথম শব্দ থেকেই সরাসরি মূল উত্তর শুরু করবে।
+২. টু-দ্য-পয়েন্ট ও সংক্ষিপ্ত উত্তর: ব্যবহারকারী ঠিক যা জানতে চেয়েছে, কেবল সেটুকুই ২ থেকে ৪টি বুলেট পয়েন্ট বা বাক্যে স্পষ্ট করে দেবে। কোনো অপ্রয়োজনীয় বড় রচনা লিখবে না।
+৩. সরকারি আইনের ধারা উল্লেখ: আয়কর আইন ২০২৩-এর প্রাসঙ্গিক ধারা (যেমন: ধারা ১৬৬, ২৬১, ২৬৪, ১৭১ ইত্যাদি) সংক্ষেপে উল্লেখ করবে।
+৪. উত্তরের শেষে বাধ্যতামূলকভাবে ব্যবহারকারীর পরবর্তী সম্ভাব্য ২-৩টি ছোট প্রাসঙ্গিক প্রশ্ন দেবে ঠিক নিচের ট্যাগ ফরম্যাটে:
+<<<SUGGESTIONS>>>
+- পরবর্তী সম্ভাব্য প্রশ্ন ১
+- পরবর্তী সম্ভাব্য প্রশ্ন ২
+- পরবর্তী সম্ভাব্য প্রশ্ন ৩
 `;
 
 export function getStoredGeminiKey() {
@@ -32,7 +26,9 @@ export function getStoredGeminiKey() {
     const localKey = localStorage.getItem('TAX_QNA_GEMINI_KEY');
     if (localKey && localKey.trim()) return localKey.trim();
   }
-  return import.meta.env?.VITE_GEMINI_API_KEY || '';
+  const metaEnv = typeof import.meta !== 'undefined' ? import.meta.env?.VITE_GEMINI_API_KEY : '';
+  const nodeEnv = typeof process !== 'undefined' ? process.env?.VITE_GEMINI_API_KEY : '';
+  return metaEnv || nodeEnv || '';
 }
 
 export function saveGeminiKey(key) {
@@ -45,40 +41,57 @@ export function saveGeminiKey(key) {
   }
 }
 
+// Fast fetch with timeout
+async function fetchWithTimeout(url, options, timeoutMs = 6000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+    clearTimeout(id);
+    return response;
+  } catch (err) {
+    clearTimeout(id);
+    throw err;
+  }
+}
+
 export async function askGeminiAssistant(query, allQuestions = []) {
   const apiKey = getStoredGeminiKey();
   if (!apiKey) {
     throw new Error('NO_API_KEY');
   }
 
-  // Retrieve top relevant verified questions from our database as factual grounding
-  const relevantDocs = searchQnA(query, allQuestions).slice(0, 3);
+  // Retrieve top 2 relevant verified questions from our database as factual grounding
+  const relevantDocs = searchQnA(query, allQuestions).slice(0, 2);
   let contextSnippet = "";
   if (relevantDocs.length > 0) {
-    contextSnippet = "\n\n[সংশ্লিষ্ট ভেরিফাইড ডাটাবেস তথ্যসূত্র:]\n" + relevantDocs.map((doc, idx) => `
-উৎস #${idx + 1}:
-প্রশ্ন: ${doc.questionBangla}
-সংক্ষিপ্ত উত্তর: ${doc.shortAnswer}
-আইনি ধারা: ${doc.legalSection} (${doc.sourceName})
-ধাপসমূহ: ${(doc.stepByStepDetails || []).join('; ')}
+    contextSnippet = "\n[তথ্যসূত্র:]\n" + relevantDocs.map((doc, idx) => `
+#${idx + 1}: ${doc.questionBangla} -> ${doc.shortAnswer} (আইন: ${doc.legalSection})
 `).join('\n');
   }
 
   const promptWithContext = `${SYSTEM_PROMPT}
-
 ${contextSnippet}
+ব্যবহারকারীর প্রশ্ন: "${query}"
 
-ব্যবহারকারীর বর্তমান প্রশ্ন: "${query}"
+সরাসরি ও সংক্ষেপে বাংলায় উত্তর দাও এবং শেষে <<<SUGGESTIONS>>> সহ ২-৩টি সম্পর্কিত প্রশ্ন দাও:`;
 
-অনুগ্রহ করে উপরের আইন ও ভেরিফাইড তথ্যের আলোকে ব্যবহারকারীকে সঠিক, সুন্দর ও ধাপে ধাপে বাংলা উত্তর দিন:`;
+  // Fast models
+  const fastModels = [
+    'gemini-2.5-flash-lite',
+    'gemini-2.5-flash',
+    'gemini-flash-latest',
+    'gemini-3.5-flash-lite'
+  ];
 
-  // Models to try (starting with the official recommended gemini-3.8-flash)
-  const models = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite'];
   let lastError = null;
 
-  for (const model of models) {
+  for (const model of fastModels) {
     try {
-      const response = await fetch(
+      const response = await fetchWithTimeout(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
         {
           method: 'POST',
@@ -92,11 +105,12 @@ ${contextSnippet}
               }
             ],
             generationConfig: {
-              temperature: 0.2, // low temperature for maximum factual precision
-              maxOutputTokens: 1024,
+              temperature: 0.1, // highly focused and deterministic
+              maxOutputTokens: 500
             }
           })
-        }
+        },
+        5500
       );
 
       if (!response.ok) {
@@ -110,7 +124,7 @@ ${contextSnippet}
       const text = candidate?.content?.parts?.[0]?.text;
 
       if (!text) {
-        throw new Error('Gemini API did not return text response.');
+        throw new Error('Empty response');
       }
 
       return {
@@ -126,9 +140,8 @@ ${contextSnippet}
       };
     } catch (err) {
       lastError = err;
-      // If error is invalid API key, stop and alert user
       if (err.message && (err.message.includes('API_KEY_INVALID') || err.message.includes('API key not valid'))) {
-        throw new Error('আপনার জেমিনি এপিআই কি (API Key) সঠিক নয়। অনুগ্রহ করে নতুন একটি কি ইনপুট দিন।');
+        throw new Error('আপনার জেমিনি এপিআই কি (API Key) সঠিক নয়।');
       }
     }
   }
