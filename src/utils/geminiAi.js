@@ -110,7 +110,7 @@ ${contextSnippet}
             }
           })
         },
-        5500
+        12000 // 12s timeout per model for reliable completion
       );
 
       if (!response.ok) {
