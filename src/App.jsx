@@ -8,6 +8,7 @@ import DeadlineCountdown from './components/DeadlineCountdown';
 import EligibilityChecker from './components/EligibilityChecker';
 import DocumentChecklist from './components/DocumentChecklist';
 import MythBusterSection from './components/MythBusterSection';
+import WaiverLetterGenerator from './components/WaiverLetterGenerator';
 import AiAssistantModal from './components/AiAssistantModal';
 import Footer from './components/Footer';
 
@@ -126,8 +127,42 @@ export default function App() {
               <DeadlineCountdown />
             </section>
 
+            {/* Special Emergency Advisory Banner for Backlog Taxpayers */}
+            <section className="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-teal-500/10 border-2 border-amber-300/80 rounded-3xl p-5 sm:p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="space-y-1.5 max-w-3xl">
+                <div className="flex items-center gap-2 text-amber-900 font-bold text-xs uppercase tracking-wider">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
+                  <span>জরুরি আইনি সমাধান • আয়কর আইন ২০২৩ ধারা ২৬৬</span>
+                </div>
+                <h3 className="text-base sm:text-lg font-black text-slate-900">
+                  TIN সার্টিফিকেট করে বিপদে আছেন ভাবছেন? বিগত ২ বছর বা তার বেশি সময় রিটার্ন দেননি?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  আতঙ্কিত হওয়ার কিছু নেই! কোনো আয় না থাকলে করের পরিমাণ ০ টাকা (জিরো রিটার্ন)। চলতি বছর অনলাইনে জমা দিয়ে, উপ-কর কমিশনার বরাবর মওকুফ আবেদনসহ পেপার রিটার্ন জমা দিলে কোনো জরিমানা ছাড়াই সমস্যার সমাধান হয়।
+                </p>
+              </div>
+              <button
+                onClick={() => setActiveTab('waiver')}
+                className="whitespace-nowrap bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-2xl shadow-sm transition-all flex items-center gap-2 self-stretch md:self-auto justify-center cursor-pointer"
+              >
+                <span>জরিমানা মওকুফ আবেদন তৈরি করুন</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </section>
+
             {/* Quick Action Cards Bar */}
-            <section className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+              <div 
+                onClick={() => setActiveTab('waiver')}
+                className="bg-white p-4 rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xs transition-all cursor-pointer flex items-center justify-between group"
+              >
+                <div className="space-y-1">
+                  <span className="text-xs font-bold text-amber-800 uppercase tracking-wide">ধারা ২৬৬ মওকুফ</span>
+                  <h2 className="text-sm font-bold text-slate-900 group-hover:text-amber-900">২ বছর রিটার্ন দেননি?</h2>
+                </div>
+                <ArrowRight className="w-5 h-5 text-amber-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all" />
+              </div>
+
               <div 
                 onClick={() => setActiveTab('eligibility')}
                 className="bg-white p-4 rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-xs transition-all cursor-pointer flex items-center justify-between group"
@@ -229,6 +264,17 @@ export default function App() {
             {/* Myth vs Reality Section */}
             <MythBusterSection />
           </div>
+        )}
+
+        {/* Tab: Penalty Waiver Letter Generator */}
+        {activeTab === 'waiver' && (
+          <WaiverLetterGenerator 
+            onGoToQna={(catId) => {
+              setActiveTab('home');
+              setSelectedCategory(catId);
+              window.scrollTo({ top: 400, behavior: 'smooth' });
+            }}
+          />
         )}
 
         {/* Tab 2: Eligibility Checker Tool */}

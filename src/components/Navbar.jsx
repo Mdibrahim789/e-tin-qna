@@ -8,7 +8,8 @@ import {
   BookOpen, 
   Menu, 
   X,
-  FileCheck2
+  FileCheck2,
+  FileText
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
@@ -16,6 +17,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
 
   const navItems = [
     { id: 'home', label: 'হোম ও প্রশ্নোত্তর', icon: HelpCircle },
+    { id: 'waiver', label: 'জরিমানা মওকুফ দরখাস্ত', icon: FileText },
     { id: 'eligibility', label: 'আমার কি রিটার্ন দিতে হবে?', icon: CheckSquare },
     { id: 'checklist', label: 'ডকুমেন্ট চেকলিস্ট', icon: FileCheck2 },
     { id: 'updates', label: 'এনবিআর আপডেট', icon: Bell },

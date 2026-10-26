@@ -22,7 +22,9 @@ const TAX_DOMAIN_TERMS = new Set([
   'নথি', 'ডকুমেন্ট', 'কাগজপত্র', 'checklist', 'বেতন', 'salary',
   'ফ্রিল্যান্সার', 'freelancer', 'রেমিট্যান্স', 'remittance',
   'অডিট', 'audit', 'আপিল', 'appeal', 'চালান', 'challan',
-  'ট্রেড লাইসেন্স', 'trade license'
+  'ট্রেড লাইসেন্স', 'trade license',
+  'মওকুফ', 'দরখাস্ত', 'আবেদন', 'বকেয়া', 'বকেয়া', 'waiver', 'application',
+  'dct', 'ডিসিটি', 'বাতিল', 'নিষ্ক্রিয়', 'নিষ্ক্রিয়করণ', 'বিপদ', 'বিপদে', 'backlog'
 ]);
 
 // Excluded foreign jurisdictions, future predictions or unrelated topics
