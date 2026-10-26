@@ -171,24 +171,24 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="ai-assistant-title"
-        className="bg-white w-full sm:max-w-xl h-[94dvh] sm:h-[min(700px,90dvh)] rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200"
+        className="bg-white w-full sm:max-w-xl h-[88dvh] sm:h-[min(700px,90dvh)] rounded-t-2xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200"
       >
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-emerald-800 to-emerald-700 text-white p-4 sm:p-4.5 flex items-center justify-between shrink-0 shadow-xs">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
-              <Bot className="w-5 h-5 text-emerald-200" />
+        <div className="bg-gradient-to-r from-emerald-800 to-emerald-700 text-white p-2.5 sm:p-4.5 flex items-center justify-between shrink-0 shadow-xs">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
+              <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-200" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h3 id="ai-assistant-title" className="font-bold text-base leading-tight">ট্যাক্স এআই সহকারী</h3>
-                <span className="text-[10px] font-bold bg-emerald-500/30 text-emerald-100 border border-emerald-400/30 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <h3 id="ai-assistant-title" className="font-bold text-sm sm:text-base leading-tight whitespace-nowrap">ট্যাক্স এআই সহকারী</h3>
+                <span className="text-[8px] sm:text-[10px] font-bold bg-emerald-500/30 text-emerald-100 border border-emerald-400/30 px-1.5 sm:px-2 py-0.5 rounded-full flex items-center gap-1 whitespace-nowrap">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span>
                   অনলাইন এআই সক্রিয়
                 </span>
               </div>
-              <p className="text-[11px] text-emerald-200">
+              <p className="hidden sm:block text-[11px] text-emerald-200">
                 টু-দ্য-পয়েন্ট ও প্রাসঙ্গিক আইনি পরামর্শ এবং সম্ভাব্য প্রশ্ন
               </p>
             </div>
@@ -197,7 +197,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
           <div className="flex items-center gap-1">
             <button
               onClick={clearChat}
-              className="p-1.5 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+              className="p-1 sm:p-1.5 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
               title="চ্যাট হিস্ট্রি মুছুন"
               aria-label="চ্যাট হিস্ট্রি মুছুন"
             >
@@ -205,7 +205,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
             </button>
             <button
               onClick={onClose}
-              className="p-1.5 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+              className="p-1 sm:p-1.5 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
               title="বন্ধ করুন"
               aria-label="এআই সহকারী বন্ধ করুন"
             >
@@ -215,7 +215,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
         </div>
 
         {/* Guardrail Disclaimer strip */}
-        <div className="bg-emerald-50/90 border-b border-emerald-200 px-3.5 py-1.5 text-[11px] text-emerald-950 flex items-center justify-between shrink-0">
+        <div className="bg-emerald-50/90 border-b border-emerald-200 px-2.5 sm:px-3.5 py-1 text-[9px] sm:text-[11px] text-emerald-950 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-1.5">
             <ShieldAlert className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
             <span>সরাসরি টু-দ্য-পয়েন্ট উত্তর ও পরবর্তী সম্ভাব্য প্রশ্নের লিংক নিচে দেখুন।</span>
@@ -223,23 +223,23 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
         </div>
 
         {/* Messages Body */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
+        <div className="flex-1 overflow-y-auto p-2.5 sm:p-4 space-y-2.5 sm:space-y-4 bg-slate-50">
           {messages.map((msg) => {
             const { mainText, suggestions } = parseMessageContent(msg.text);
 
             return (
               <div
                 key={msg.id}
-                className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex gap-1.5 sm:gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'ai' && (
-                  <div className="w-7 h-7 rounded-lg text-white flex items-center justify-center shrink-0 mt-0.5 bg-emerald-700">
-                    <Bot className="w-4 h-4" />
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg text-white flex items-center justify-center shrink-0 mt-0.5 bg-emerald-700">
+                    <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                 )}
 
                 <div
-                  className={`max-w-[85%] rounded-2xl p-3.5 text-xs sm:text-sm leading-relaxed ${
+                  className={`max-w-[88%] sm:max-w-[85%] rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 text-[11px] sm:text-sm leading-relaxed ${
                     msg.sender === 'user'
                       ? 'bg-emerald-700 text-white rounded-tr-xs'
                       : 'bg-white border border-slate-200 text-slate-800 shadow-2xs rounded-tl-xs space-y-2.5'
@@ -296,8 +296,8 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
                 </div>
 
                 {msg.sender === 'user' && (
-                  <div className="w-7 h-7 rounded-lg bg-slate-300 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
-                    <User className="w-4 h-4" />
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-slate-300 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                 )}
               </div>
@@ -325,13 +325,13 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
         </div>
 
         {/* Suggestion Prompts Bar */}
-        <div className="p-2.5 bg-slate-100 border-t border-slate-200 shrink-0 overflow-x-auto whitespace-nowrap space-x-1.5 no-scrollbar scroll-smooth">
+        <div className="p-1.5 sm:p-2.5 bg-slate-100 border-t border-slate-200 shrink-0 overflow-x-auto whitespace-nowrap space-x-1 no-scrollbar scroll-smooth">
           <span className="text-[10px] font-bold text-slate-500 uppercase mr-1">দ্রুত প্রশ্ন:</span>
           {testSampleQuestions.map((q, idx) => (
             <button
               key={idx}
               onClick={() => handleSendMessage(q)}
-              className="text-xs bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-300 px-3 py-1.5 rounded-full transition-colors active:scale-95 shrink-0 cursor-pointer"
+              className="text-[10px] sm:text-xs bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-300 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition-colors active:scale-95 shrink-0 cursor-pointer"
             >
               {q}
             </button>
@@ -340,7 +340,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
             <button
               key={'out-' + idx}
               onClick={() => handleSendMessage(q)}
-              className="text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 px-3 py-1.5 rounded-full transition-colors active:scale-95 shrink-0 cursor-pointer"
+              className="text-[10px] sm:text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition-colors active:scale-95 shrink-0 cursor-pointer"
               title="এআই গার্ডরেল টেস্ট"
             >
               [টেস্ট] {q}
@@ -354,7 +354,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
             e.preventDefault();
             handleSendMessage();
           }}
-          className="p-3 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0 safe-bottom"
+          className="p-2 sm:p-3 bg-white border-t border-slate-200 flex items-center gap-1.5 sm:gap-2 shrink-0 safe-bottom"
         >
           <input
             ref={inputRef}
@@ -363,12 +363,12 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}
             placeholder="আপনার প্রশ্ন লিখুন (যেমন: zero return, psr ki...)"
-            className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-base sm:text-sm focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-500/10"
+            className="flex-1 min-w-0 bg-slate-50 border border-slate-300 rounded-lg sm:rounded-xl px-3 sm:px-3.5 py-2 sm:py-2.5 text-sm focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-500/10"
           />
           <button
             type="submit"
             disabled={!inputQuery.trim()}
-            className="bg-emerald-700 hover:bg-emerald-800 disabled:bg-slate-300 text-white p-2.5 rounded-xl transition-all active:scale-95 shrink-0 cursor-pointer"
+            className="bg-emerald-700 hover:bg-emerald-800 disabled:bg-slate-300 text-white p-2 sm:p-2.5 rounded-lg sm:rounded-xl transition-all active:scale-95 shrink-0 cursor-pointer"
             aria-label="Send Message"
           >
             <Send className="w-4 h-4" />

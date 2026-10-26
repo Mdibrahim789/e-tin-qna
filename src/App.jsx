@@ -100,26 +100,26 @@ export default function App() {
       />
 
       {/* Main Page Content */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-10 pb-28 md:pb-12 space-y-8 sm:space-y-12 overflow-x-hidden">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-10 pb-20 md:pb-12 space-y-6 sm:space-y-12 overflow-x-hidden">
         {activeTab === 'home' && (
-          <div className="space-y-8 sm:space-y-12">
+          <div className="space-y-6 sm:space-y-12">
             {/* Hero Section */}
-            <section className="text-center space-y-3 sm:space-y-4 pt-1 sm:pt-4">
-              <div className="inline-flex items-center gap-2 bg-emerald-100/80 text-emerald-800 text-[11px] sm:text-sm font-semibold px-3 py-1.5 rounded-full border border-emerald-300/80 shadow-2xs">
+            <section className="text-center space-y-2 sm:space-y-4 sm:pt-4">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-emerald-100/80 text-emerald-800 text-[9px] sm:text-sm font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-emerald-300/80 shadow-2xs">
                 <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-700 shrink-0" />
                 <span>১০০% প্রাথমিক সরকারি উৎস ও আয়কর আইন ২০২৩ ভিত্তিক</span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.25] max-w-4xl mx-auto px-1">
+              <h1 className="text-[22px] sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.18] sm:leading-[1.25] max-w-4xl mx-auto px-1">
                 বাংলাদেশের <span className="text-emerald-700 underline decoration-emerald-300 decoration-wavy decoration-2">ই-টিআইএন, আয়কর রিটার্ন</span> ও ভ্যাট সহায়ক
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xs sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed px-1">
                 কোনো ট্যাক্স জ্ঞান না থাকলেও ১ মিনিটে বাংলায় খুঁজে নিন আপনার প্রশ্নের সুনির্দিষ্ট আইনানুগ উত্তর, করমুক্ত সীমা এবং ধাপে ধাপে নির্দেশিকা।
               </p>
 
               {/* Central Search Bar */}
-              <div className="pt-2 sm:pt-4">
+              <div className="pt-1 sm:pt-4">
                 <SearchBar 
                   searchQuery={searchQuery} 
                   setSearchQuery={setSearchQuery} 
