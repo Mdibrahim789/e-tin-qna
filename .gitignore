@@ -10,6 +10,11 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Environment variables (Never commit secret keys)
+.env
+.env.local
+.env.*.local
 *.local
 
 # Editor directories and files
@@ -22,3 +27,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+test_*.js

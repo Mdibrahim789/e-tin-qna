@@ -1,6 +1,7 @@
 /**
  * Gemini AI Integration for Bangladesh Tax Assistant
- * Uses Google Gemini API with Bangladesh Tax Laws grounding and NBR guidelines
+ * Uses Google Gemini API (gemini-3.8-flash & gemini-3.5-flash-lite)
+ * with Bangladesh Tax Laws grounding and NBR guidelines
  */
 
 import { searchQnA } from './searchEngine.js';
@@ -44,7 +45,7 @@ export function saveGeminiKey(key) {
   }
 }
 
-export async function askGeminiAssistant(query, allQuestions = [], history = []) {
+export async function askGeminiAssistant(query, allQuestions = []) {
   const apiKey = getStoredGeminiKey();
   if (!apiKey) {
     throw new Error('NO_API_KEY');
@@ -71,8 +72,8 @@ ${contextSnippet}
 
 অনুগ্রহ করে উপরের আইন ও ভেরিফাইড তথ্যের আলোকে ব্যবহারকারীকে সঠিক, সুন্দর ও ধাপে ধাপে বাংলা উত্তর দিন:`;
 
-  // Models to try (handles different API key versions)
-  const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash'];
+  // Models to try (starting with the official recommended gemini-3.8-flash)
+  const models = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite'];
   let lastError = null;
 
   for (const model of models) {
@@ -125,7 +126,7 @@ ${contextSnippet}
       };
     } catch (err) {
       lastError = err;
-      // If error is invalid API key, don't try other models
+      // If error is invalid API key, stop and alert user
       if (err.message && (err.message.includes('API_KEY_INVALID') || err.message.includes('API key not valid'))) {
         throw new Error('আপনার জেমিনি এপিআই কি (API Key) সঠিক নয়। অনুগ্রহ করে নতুন একটি কি ইনপুট দিন।');
       }
