@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
   FolderCheck, 
-  CheckCircle, 
   Printer, 
   Copy, 
   Check, 

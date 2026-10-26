@@ -4,8 +4,7 @@ import {
   FileText, 
   CheckSquare, 
   FileCheck2, 
-  Bot,
-  Sparkles
+  Bot
 } from 'lucide-react';
 
 export default function MobileBottomNav({ activeTab, setActiveTab, onOpenAiModal }) {
@@ -21,7 +20,9 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenAiModal
     >
       {/* 1. Home & QnA */}
       <button
+        type="button"
         onClick={() => handleTabClick('home')}
+        aria-current={activeTab === 'home' ? 'page' : undefined}
         className={`flex flex-col items-center justify-center flex-1 py-1 rounded-xl transition-all ${
           activeTab === 'home' 
             ? 'text-emerald-800 font-bold' 
@@ -36,7 +37,9 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenAiModal
 
       {/* 2. Waiver Letter Generator */}
       <button
+        type="button"
         onClick={() => handleTabClick('waiver')}
+        aria-current={activeTab === 'waiver' ? 'page' : undefined}
         className={`flex flex-col items-center justify-center flex-1 py-1 rounded-xl transition-all ${
           activeTab === 'waiver' 
             ? 'text-emerald-800 font-bold' 
@@ -51,6 +54,7 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenAiModal
 
       {/* 3. Central AI Assistant Highlight Button */}
       <button
+        type="button"
         onClick={onOpenAiModal}
         className="flex flex-col items-center justify-center flex-1 py-1 -mt-3 group cursor-pointer"
         aria-label="Open AI Assistant"
@@ -63,7 +67,9 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenAiModal
 
       {/* 4. Eligibility Checker */}
       <button
+        type="button"
         onClick={() => handleTabClick('eligibility')}
+        aria-current={activeTab === 'eligibility' ? 'page' : undefined}
         className={`flex flex-col items-center justify-center flex-1 py-1 rounded-xl transition-all ${
           activeTab === 'eligibility' 
             ? 'text-emerald-800 font-bold' 
@@ -78,7 +84,9 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenAiModal
 
       {/* 5. Document Checklist */}
       <button
+        type="button"
         onClick={() => handleTabClick('checklist')}
+        aria-current={activeTab === 'checklist' ? 'page' : undefined}
         className={`flex flex-col items-center justify-center flex-1 py-1 rounded-xl transition-all ${
           activeTab === 'checklist' 
             ? 'text-emerald-800 font-bold' 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -12,10 +12,22 @@ import {
   Link2
 } from 'lucide-react';
 
-export default function QnaCard({ qna, onSelectCategory }) {
+export default function QnaCard({ qna }) {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+
+  useEffect(() => {
+    const openFromHash = () => {
+      if (window.location.hash === `#${qna.id}`) {
+        setExpanded(true);
+        requestAnimationFrame(() => document.getElementById(qna.id)?.scrollIntoView({ block: 'center' }));
+      }
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, [qna.id]);
 
   const handleCopy = (e) => {
     e.stopPropagation();
@@ -45,6 +57,16 @@ export default function QnaCard({ qna, onSelectCategory }) {
       {/* Header & Short Answer Area */}
       <div 
         onClick={() => setExpanded(!expanded)}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setExpanded((value) => !value);
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-expanded={expanded}
+        aria-controls={`${qna.id}-details`}
         className="p-4 sm:p-6 cursor-pointer select-none space-y-3"
       >
         {/* Top Badges */}
@@ -107,7 +129,7 @@ export default function QnaCard({ qna, onSelectCategory }) {
 
       {/* Expandable Step-by-Step & Checklist Section */}
       {expanded && (
-        <div className="px-4 pb-5 sm:px-6 sm:pb-6 pt-1 border-t border-slate-100 space-y-4 bg-slate-50/40 animate-in fade-in-50 duration-200">
+        <div id={`${qna.id}-details`} className="px-4 pb-5 sm:px-6 sm:pb-6 pt-1 border-t border-slate-100 space-y-4 bg-slate-50/40 animate-in fade-in-50 duration-200">
           {/* Step-by-step details */}
           {qna.stepByStepDetails && qna.stepByStepDetails.length > 0 && (
             <div className="space-y-2">

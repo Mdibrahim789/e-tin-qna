@@ -4,7 +4,6 @@ import {
   Send, 
   X, 
   Sparkles, 
-  ExternalLink, 
   ShieldAlert, 
   BookMarked,
   RotateCcw,
@@ -14,7 +13,7 @@ import {
 import { askGroundedAssistant } from '../utils/groundedAi.js';
 import { askGeminiAssistant } from '../utils/geminiAi.js';
 
-export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSelectQna }) {
+export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
   const [messages, setMessages] = useState([
     {
       id: 'welcome',
@@ -26,6 +25,10 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
   const [inputQuery, setInputQuery] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
+  const messageIdRef = useRef(0);
+
+  const nextMessageId = (sender) => `${sender}-${++messageIdRef.current}`;
 
   const testSampleQuestions = [
     "e-TIN কি?",
@@ -47,8 +50,23 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
   useEffect(() => {
     if (isOpen) {
       scrollToBottom();
+      inputRef.current?.focus();
     }
   }, [messages, isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, onClose]);
 
   const handleSendMessage = async (queryText) => {
     const q = (queryText || inputQuery).trim();
@@ -56,7 +74,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
 
     // Add user message
     const userMsg = {
-      id: Date.now() + '-user',
+      id: nextMessageId('user'),
       sender: 'user',
       text: q
     };
@@ -70,7 +88,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
       try {
         const aiResult = await askGeminiAssistant(q, allQuestions);
         const aiMsg = {
-          id: Date.now() + '-ai',
+          id: nextMessageId('ai'),
           sender: 'ai',
           result: aiResult,
           text: aiResult.text,
@@ -87,7 +105,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
       setTimeout(() => {
         const result = askGroundedAssistant(q, allQuestions);
         const aiMsg = {
-          id: Date.now() + '-ai',
+          id: nextMessageId('ai'),
           sender: 'ai',
           result: result,
           text: result.status === 'matched' ? result.shortAnswer : result.text
@@ -96,12 +114,12 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
         setIsTyping(false);
       }, 300);
 
-    } catch (err) {
+    } catch {
       setIsTyping(false);
       setMessages((prev) => [
         ...prev,
         {
-          id: Date.now() + '-ai',
+          id: nextMessageId('ai'),
           sender: 'ai',
           text: "দুঃখিত, উত্তর প্রসেস করতে সাময়িক সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
         }
@@ -143,8 +161,18 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white w-full sm:max-w-xl h-[94dvh] sm:h-[700px] rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200">
+    <div
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ai-assistant-title"
+        className="bg-white w-full sm:max-w-xl h-[94dvh] sm:h-[min(700px,90dvh)] rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200"
+      >
         
         {/* Header */}
         <div className="bg-gradient-to-r from-emerald-800 to-emerald-700 text-white p-4 sm:p-4.5 flex items-center justify-between shrink-0 shadow-xs">
@@ -154,7 +182,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-bold text-base leading-tight">ট্যাক্স এআই সহকারী</h3>
+                <h3 id="ai-assistant-title" className="font-bold text-base leading-tight">ট্যাক্স এআই সহকারী</h3>
                 <span className="text-[10px] font-bold bg-emerald-500/30 text-emerald-100 border border-emerald-400/30 px-2 py-0.5 rounded-full flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span>
                   অনলাইন এআই সক্রিয়
@@ -171,6 +199,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
               onClick={clearChat}
               className="p-1.5 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
               title="চ্যাট হিস্ট্রি মুছুন"
+              aria-label="চ্যাট হিস্ট্রি মুছুন"
             >
               <RotateCcw className="w-4 h-4" />
             </button>
@@ -178,6 +207,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
               onClick={onClose}
               className="p-1.5 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
               title="বন্ধ করুন"
+              aria-label="এআই সহকারী বন্ধ করুন"
             >
               <X className="w-5 h-5" />
             </button>
@@ -327,6 +357,8 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
           className="p-3 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0 safe-bottom"
         >
           <input
+            ref={inputRef}
+            aria-label="ট্যাক্স সম্পর্কিত প্রশ্ন"
             type="text"
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}

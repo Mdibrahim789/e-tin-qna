@@ -1,5 +1,7 @@
 import React from 'react';
-import { Scale, ShieldCheck, ExternalLink, PhoneCall, Heart } from 'lucide-react';
+import { Scale, ShieldCheck, ExternalLink, PhoneCall } from 'lucide-react';
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Footer({ onNavigate }) {
   return (
@@ -145,7 +147,7 @@ export default function Footer({ onNavigate }) {
 
         {/* Bottom bar */}
         <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
-          <p>© {new Date().getFullYear()} ট্যাক্স সহায়ক বাংলাদেশ। গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের আয়কর আইন ২০২৩ ও বিধিমালা অনুসরণে প্রস্তুতকৃত।</p>
+          <p>© {CURRENT_YEAR} ট্যাক্স সহায়ক বাংলাদেশ। গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের আয়কর আইন ২০২৩ ও বিধিমালা অনুসরণে প্রস্তুতকৃত।</p>
           <div className="flex items-center gap-1 text-slate-400">
             <span>নাগরিক সেবায় স্বচ্ছতার সাথে তৈরি</span>
           </div>

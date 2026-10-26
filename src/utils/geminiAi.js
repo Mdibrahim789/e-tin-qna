@@ -25,16 +25,6 @@ const SYSTEM_PROMPT = `
 - পরবর্তী সম্ভাব্য প্রশ্ন ৩
 `;
 
-// Pre-configured built-in key so regular users never need to input or configure anything
-const _B64_KEY = 'QVEuQWI4Uk42Sm1SUDFtaXlMLTBhMnBWUjhjdzRlNWlEUm9ZQ0Q5Nklfdm5VcU8zOHh6YWc=';
-function getFallbackKey() {
-  try {
-    if (typeof atob !== 'undefined') return atob(_B64_KEY);
-    if (typeof Buffer !== 'undefined') return Buffer.from(_B64_KEY, 'base64').toString('utf-8');
-  } catch (e) {}
-  return '';
-}
-
 export function getStoredGeminiKey() {
   if (typeof window !== 'undefined') {
     const localKey = localStorage.getItem('TAX_QNA_GEMINI_KEY');
@@ -42,7 +32,7 @@ export function getStoredGeminiKey() {
   }
   const metaEnv = typeof import.meta !== 'undefined' ? import.meta.env?.VITE_GEMINI_API_KEY : '';
   const nodeEnv = typeof process !== 'undefined' ? process.env?.VITE_GEMINI_API_KEY : '';
-  return metaEnv || nodeEnv || getFallbackKey();
+  return metaEnv || nodeEnv || '';
 }
 
 // Fast fetch with timeout

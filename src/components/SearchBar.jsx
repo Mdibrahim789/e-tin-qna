@@ -19,6 +19,7 @@ export default function SearchBar({ searchQuery, setSearchQuery, onSelectSuggest
           <Search className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
         <input
+          aria-label="প্রশ্ন খুঁজুন"
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

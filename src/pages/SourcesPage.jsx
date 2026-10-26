@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, ExternalLink, ShieldCheck, Scale, Search, CheckCircle } from 'lucide-react';
+import { BookOpen, ExternalLink, ShieldCheck, Search } from 'lucide-react';
 import sourcesData from '../data/sources.json';
 import qnaData from '../data/qna.json';
 

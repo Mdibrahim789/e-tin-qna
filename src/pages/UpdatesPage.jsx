@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bell, ExternalLink, Calendar, ShieldCheck, Tag } from 'lucide-react';
+import { Bell, ExternalLink, Calendar, Tag } from 'lucide-react';
 import updatesData from '../data/updates.json';
 
 export default function UpdatesPage() {

@@ -1,36 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, AlertTriangle, ExternalLink } from 'lucide-react';
+import { Clock } from 'lucide-react';
+
+function calculateTimeLeft() {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  let targetTaxDay = new Date(currentYear, 10, 30, 23, 59, 59);
+  if (now > targetTaxDay) targetTaxDay = new Date(currentYear + 1, 10, 30, 23, 59, 59);
+  const difference = Math.max(0, targetTaxDay.getTime() - now.getTime());
+  return {
+    days: Math.floor(difference / 86400000),
+    hours: Math.floor((difference / 3600000) % 24),
+    minutes: Math.floor((difference / 60000) % 60),
+    seconds: Math.floor((difference / 1000) % 60)
+  };
+}
 
 export default function DeadlineCountdown() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
-    // Current or upcoming tax day: 30 November
-    const now = new Date();
-    const currentYear = now.getFullYear();
-    let targetTaxDay = new Date(`${currentYear}-11-30T23:59:59`);
-
-    if (now > targetTaxDay) {
-      targetTaxDay = new Date(`${currentYear + 1}-11-30T23:59:59`);
-    }
-
-    const interval = setInterval(() => {
-      const difference = targetTaxDay.getTime() - new Date().getTime();
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-      }
-    }, 1000);
+    const interval = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
 
     return () => clearInterval(interval);
   }, []);

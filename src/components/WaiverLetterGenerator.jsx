@@ -5,15 +5,13 @@ import {
   Check, 
   Printer, 
   AlertCircle, 
-  Download, 
   ShieldCheck, 
   CheckCircle2, 
-  HelpCircle,
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
 
-export default function WaiverLetterGenerator({ onGoToQna }) {
+export default function WaiverLetterGenerator() {
   // Form states
   const [formData, setFormData] = useState({
     applicantName: 'মো: আব্দুল্লাহ',
@@ -32,6 +30,7 @@ export default function WaiverLetterGenerator({ onGoToQna }) {
 
   const [copied, setCopied] = useState(false);
   const [mobileTab, setMobileTab] = useState('input'); // 'input' or 'preview'
+  const [todayBangla] = useState(() => new Date().toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' }));
 
   const statusDescriptions = {
     student: 'একজন ছাত্র/ছাত্রী এবং আমার কোনো ধরনের আয়ের উৎস বা করযোগ্য আয় নেই',
@@ -417,7 +416,7 @@ ${formData.currentYearFiled ? `২. চলতি (${formData.currentYearName}) �
             {/* Application Paper Rendering */}
             <div className="font-serif text-slate-900 leading-relaxed text-sm sm:text-base space-y-4 select-text bg-amber-50/20 p-4 sm:p-6 rounded-2xl border border-amber-200/50 print:bg-white print:border-none print:p-0">
               <div className="text-right text-xs text-slate-500 font-sans">
-                {new Date().toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' })}
+                {todayBangla}
               </div>
 
               <div className="space-y-0.5">

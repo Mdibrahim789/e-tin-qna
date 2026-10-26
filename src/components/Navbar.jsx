@@ -59,7 +59,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden xl:flex items-center gap-1">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
@@ -67,7 +67,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-[13px] font-medium transition-colors ${
                     isActive 
                       ? 'bg-emerald-50 text-emerald-800 font-semibold' 
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -93,8 +93,10 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-600 hover:text-slate-900 md:hidden rounded-lg hover:bg-slate-100"
+              className="p-2 text-slate-600 hover:text-slate-900 xl:hidden rounded-lg hover:bg-slate-100"
               aria-label="Toggle Navigation Menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -104,7 +106,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-6 space-y-1 shadow-lg animate-in slide-in-from-top-2">
+        <div id="mobile-navigation" className="xl:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-6 space-y-1 shadow-lg animate-in slide-in-from-top-2 max-h-[calc(100dvh-4rem)] overflow-y-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;

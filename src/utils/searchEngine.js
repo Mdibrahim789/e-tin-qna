@@ -55,7 +55,6 @@ export function searchQnAWithScores(query, items) {
     const titleEnglish = (item.questionEnglish || '').toLowerCase();
     const shortAns = (item.shortAnswer || '').toLowerCase();
     const section = (item.legalSection || '').toLowerCase();
-    const source = (item.sourceName || '').toLowerCase();
     const keywords = (item.banglishKeywords || []).map(k => k.toLowerCase());
 
     // 1. Exact match on question (full query)

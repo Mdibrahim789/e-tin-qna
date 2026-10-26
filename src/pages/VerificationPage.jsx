@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ShieldCheck, CheckCircle2, AlertCircle, FileSearch, Bot, Sparkles, Check } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Bot, Sparkles, Check } from 'lucide-react';
 import { askGroundedAssistant } from '../utils/groundedAi';
 import qnaData from '../data/qna.json';
 
-export default function VerificationPage({ onOpenAiModal }) {
+export default function VerificationPage() {
   const [runningTests, setRunningTests] = useState(false);
   const [testResults, setTestResults] = useState(null);
 

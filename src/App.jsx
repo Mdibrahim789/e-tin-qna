@@ -1,22 +1,13 @@
-import React, { useState, useMemo } from 'react';
+import React, { lazy, Suspense, useState, useMemo } from 'react';
 import Navbar from './components/Navbar';
 import DisclaimerBanner from './components/DisclaimerBanner';
 import SearchBar from './components/SearchBar';
 import CategoryChips from './components/CategoryChips';
 import QnaCard from './components/QnaCard';
 import DeadlineCountdown from './components/DeadlineCountdown';
-import EligibilityChecker from './components/EligibilityChecker';
-import DocumentChecklist from './components/DocumentChecklist';
 import MythBusterSection from './components/MythBusterSection';
-import WaiverLetterGenerator from './components/WaiverLetterGenerator';
 import MobileBottomNav from './components/MobileBottomNav';
-import AiAssistantModal from './components/AiAssistantModal';
 import Footer from './components/Footer';
-
-// Pages
-import UpdatesPage from './pages/UpdatesPage';
-import SourcesPage from './pages/SourcesPage';
-import VerificationPage from './pages/VerificationPage';
 
 // Data & Utils
 import qnaData from './data/qna.json';
@@ -25,21 +16,38 @@ import {
   Sparkles, 
   Bot, 
   HelpCircle, 
-  FileText, 
   ShieldCheck, 
   ArrowRight,
-  TrendingUp,
   Layers
 } from 'lucide-react';
+
+const WaiverLetterGenerator = lazy(() => import('./components/WaiverLetterGenerator'));
+const EligibilityChecker = lazy(() => import('./components/EligibilityChecker'));
+const DocumentChecklist = lazy(() => import('./components/DocumentChecklist'));
+const AiAssistantModal = lazy(() => import('./components/AiAssistantModal'));
+const UpdatesPage = lazy(() => import('./pages/UpdatesPage'));
+const SourcesPage = lazy(() => import('./pages/SourcesPage'));
+const VerificationPage = lazy(() => import('./pages/VerificationPage'));
+
+const categories = qnaData.categories || [];
+const allQuestions = qnaData.questions || [];
+
+function PageLoader() {
+  return (
+    <div className="min-h-48 grid place-items-center" role="status" aria-live="polite">
+      <div className="flex items-center gap-2 text-sm font-semibold text-emerald-800">
+        <span className="h-5 w-5 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-700" />
+        পৃষ্ঠা প্রস্তুত হচ্ছে…
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
-
-  const categories = qnaData.categories || [];
-  const allQuestions = qnaData.questions || [];
 
   // Filter questions based on search query and selected category
   const filteredQuestions = useMemo(() => {
@@ -54,7 +62,7 @@ export default function App() {
     }
 
     return list;
-  }, [allQuestions, selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery]);
 
   // Compute category counts
   const categoryCounts = useMemo(() => {
@@ -65,7 +73,7 @@ export default function App() {
       }
     });
     return counts;
-  }, [allQuestions, categories]);
+  }, []);
 
   const handleSelectQnaFromAi = (qnaItem) => {
     setActiveTab('home');
@@ -268,6 +276,7 @@ export default function App() {
         )}
 
         {/* Tab: Penalty Waiver Letter Generator */}
+        <Suspense fallback={<PageLoader />}>
         {activeTab === 'waiver' && (
           <WaiverLetterGenerator 
             onGoToQna={(catId) => {
@@ -306,8 +315,9 @@ export default function App() {
 
         {/* Tab 6: Quality & Verification Checklist */}
         {activeTab === 'verification' && (
-          <VerificationPage onOpenAiModal={() => setIsAiModalOpen(true)} />
+          <VerificationPage />
         )}
+        </Suspense>
       </main>
 
       {/* Floating AI Assistant Trigger Button (Desktop Only) */}
@@ -333,12 +343,16 @@ export default function App() {
       />
 
       {/* Grounded AI Assistant Modal */}
-      <AiAssistantModal 
-        isOpen={isAiModalOpen}
-        onClose={() => setIsAiModalOpen(false)}
-        allQuestions={allQuestions}
-        onSelectQna={handleSelectQnaFromAi}
-      />
+      {isAiModalOpen && (
+        <Suspense fallback={null}>
+          <AiAssistantModal
+            isOpen={isAiModalOpen}
+            onClose={() => setIsAiModalOpen(false)}
+            allQuestions={allQuestions}
+            onSelectQna={handleSelectQnaFromAi}
+          />
+        </Suspense>
+      )}
 
       {/* Comprehensive Footer with Full Legal Disclaimer */}
       <Footer onNavigate={(tabId) => setActiveTab(tabId)} />

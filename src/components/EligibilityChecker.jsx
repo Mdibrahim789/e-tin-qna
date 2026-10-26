@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { 
   CheckCircle2, 
-  XCircle, 
   AlertCircle, 
-  HelpCircle, 
   ShieldCheck, 
   ArrowRight, 
   RotateCcw,
-  Sparkles,
   Info
 } from 'lucide-react';
 

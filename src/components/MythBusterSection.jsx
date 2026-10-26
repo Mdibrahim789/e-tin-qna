@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { HelpCircle, CheckCircle, XCircle, ShieldCheck, ExternalLink } from 'lucide-react';
+import React from 'react';
+import { HelpCircle, CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import mythsData from '../data/myths.json';
 
 export default function MythBusterSection() {
-  const [selectedMyth, setSelectedMyth] = useState(null);
   const myths = mythsData.myths || [];
 
   return (
