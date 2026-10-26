@@ -8,12 +8,14 @@ import {
   Calendar, 
   BookMarked,
   Copy,
-  Check
+  Check,
+  Link2
 } from 'lucide-react';
 
 export default function QnaCard({ qna, onSelectCategory }) {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   const handleCopy = (e) => {
     e.stopPropagation();
@@ -21,6 +23,14 @@ export default function QnaCard({ qna, onSelectCategory }) {
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCopyLink = (e) => {
+    e.stopPropagation();
+    const link = `${window.location.origin}${window.location.pathname}#${qna.id}`;
+    navigator.clipboard.writeText(link);
+    setLinkCopied(true);
+    setTimeout(() => setLinkCopied(false), 2000);
   };
 
   return (
@@ -63,6 +73,13 @@ export default function QnaCard({ qna, onSelectCategory }) {
               title="উত্তর কপি করুন"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+            </button>
+            <button
+              onClick={handleCopyLink}
+              className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors"
+              title="এই প্রশ্নের লিংক কপি করুন"
+            >
+              {linkCopied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Link2 className="w-3.5 h-3.5" />}
             </button>
           </div>
         </div>
