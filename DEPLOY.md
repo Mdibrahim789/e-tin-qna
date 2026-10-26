@@ -1,4 +1,4 @@
-# Deploy — Cloudflare Pages
+# Deploy: Cloudflare Pages
 
 ## Settings
 - Framework preset: Vite

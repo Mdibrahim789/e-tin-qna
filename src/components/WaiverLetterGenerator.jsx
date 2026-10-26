@@ -107,7 +107,7 @@ ${formData.currentYearFiled ? `২. চলতি (${formData.currentYearName}) �
       <div className="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-emerald-800/40 space-y-4">
         <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-full border border-emerald-400/30">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>আয়কর আইন, ২০২৩ — ধারা ২৬৬ (জরিমানা মওকুফ ও শিথিলকরণ)</span>
+          <span>আয়কর আইন, ২০২৩: ধারা ২৬৬ (জরিমানা মওকুফ ও শিথিলকরণ)</span>
         </div>
 
         <h1 className="text-2xl sm:text-4xl font-black tracking-tight leading-snug">
