@@ -1,14 +1,50 @@
 {
   "categories": [
-    { "id": "all", "name": "সব প্রশ্নোত্তর", "icon": "LayoutGrid" },
-    { "id": "etin", "name": "ই-টিআইএন (e-TIN)", "icon": "CreditCard" },
-    { "id": "return", "name": "আয়কর রিটার্ন ও eReturn", "icon": "FileText" },
-    { "id": "zero-return", "name": "জিরো রিটার্ন", "icon": "FileCheck" },
-    { "id": "deadline-fine", "name": "সময়সীমা ও জরিমানা", "icon": "AlertTriangle" },
-    { "id": "vat-bin", "name": "ভ্যাট ও বিআইএন", "icon": "Receipt" },
-    { "id": "documents", "name": "প্রয়োজনীয় কাগজপত্র", "icon": "FolderCheck" },
-    { "id": "persona", "name": "পেশাভিত্তিক গাইড", "icon": "Users" },
-    { "id": "myths", "name": "ভুল ধারণা বনাম সত্যি", "icon": "HelpCircle" }
+    {
+      "id": "all",
+      "name": "সব প্রশ্নোত্তর",
+      "icon": "LayoutGrid"
+    },
+    {
+      "id": "etin",
+      "name": "ই-টিআইএন (e-TIN)",
+      "icon": "CreditCard"
+    },
+    {
+      "id": "return",
+      "name": "আয়কর রিটার্ন ও eReturn",
+      "icon": "FileText"
+    },
+    {
+      "id": "zero-return",
+      "name": "জিরো রিটার্ন",
+      "icon": "FileCheck"
+    },
+    {
+      "id": "deadline-fine",
+      "name": "সময়সীমা ও জরিমানা",
+      "icon": "AlertTriangle"
+    },
+    {
+      "id": "vat-bin",
+      "name": "ভ্যাট ও বিআইএন",
+      "icon": "Receipt"
+    },
+    {
+      "id": "documents",
+      "name": "প্রয়োজনীয় কাগজপত্র",
+      "icon": "FolderCheck"
+    },
+    {
+      "id": "persona",
+      "name": "পেশাভিত্তিক গাইড",
+      "icon": "Users"
+    },
+    {
+      "id": "myths",
+      "name": "ভুল ধারণা বনাম সত্যি",
+      "icon": "HelpCircle"
+    }
   ],
   "questions": [
     {
@@ -16,7 +52,12 @@
       "category": "etin",
       "questionBangla": "ই-টিআইএন (e-TIN) কী এবং কেন এটি প্রয়োজন?",
       "questionEnglish": "What is e-TIN and why is it needed?",
-      "banglishKeywords": ["etin ki", "e-tin keno lage", "tin certificate ki", "tin number keno dorkar"],
+      "banglishKeywords": [
+        "etin ki",
+        "e-tin keno lage",
+        "tin certificate ki",
+        "tin number keno dorkar"
+      ],
       "shortAnswer": "ই-টিআইএন হলো এনবিআর কর্তৃক প্রদত্ত ১২ ডিজিটের ইলেকট্রনিক ট্যাক্সপেয়ার আইডেন্টিফিকেশন নম্বর। বাংলাদেশে ব্যাংক লোন, ট্রেড লাইসেন্স ও ক্রেডিট কার্ডসহ ৪৩টির বেশি সেবা পেতে এটি আইনগতভাবে আবশ্যক।",
       "stepByStepDetails": [
         "জাতীয় রাজস্ব বোর্ড (NBR) প্রতিটি করদাতাকে শনাক্ত করার জন্য এই ১২ সংখ্যার ইউনিক ডিজিটাল নম্বর প্রদান করে।",
@@ -39,7 +80,11 @@
       "category": "etin",
       "questionBangla": "কাদের জন্য ই-টিআইএন নেওয়া আইনত বাধ্যতামূলক?",
       "questionEnglish": "Who is legally required to obtain an e-TIN?",
-      "banglishKeywords": ["kader tin nite hobe", "ke tin khulbe", "tin mandatory for whom"],
+      "banglishKeywords": [
+        "kader tin nite hobe",
+        "ke tin khulbe",
+        "tin mandatory for whom"
+      ],
       "shortAnswer": "যাদের বার্ষিক আয় করমুক্ত সীমা অতিক্রম করে, অথবা যারা ট্রেড লাইসেন্স গ্রহণ, ক্রেডিট কার্ড আবেদন, গাড়ি রেজিস্ট্রেশন বা ৫ লাখ টাকার বেশি সঞ্চয়পত্র কিনতে চান তাদের সবার জন্য ই-টিআইএন বাধ্যতামূলক।",
       "stepByStepDetails": [
         "স্বাভাবিক ব্যক্তি করদাতা যাদের বার্ষিক আয় পুরুষ ৩.৫ লাখ এবং নারী ৪ লাখ টাকার ঊর্ধ্বে।",
@@ -62,7 +107,12 @@
       "category": "etin",
       "questionBangla": "অনলাইনে নতুন ই-টিআইএন খোলার সম্পূর্ণ ধাপ (Step-by-step Guide)",
       "questionEnglish": "How to register and open a new e-TIN online step-by-step?",
-      "banglishKeywords": ["tin kivabe khulbo", "online tin open", "how to open etin", "tin step by step"],
+      "banglishKeywords": [
+        "tin kivabe khulbo",
+        "online tin open",
+        "how to open etin",
+        "tin step by step"
+      ],
       "shortAnswer": "etaxnbr.gov.bd বা secure.incometax.gov.bd পোর্টালে গিয়ে রেজিস্টার বাটনে ক্লিক করে এনআইডি নম্বর ও মোবাইল ওটিপি দিলে মাত্র ২ মিনিটে বিনামূল্যে ই-টিআইএন সার্টিফিকেট পাওয়া যায়।",
       "stepByStepDetails": [
         "ধাপ ১: ব্রাউজার থেকে সরকারি পোর্টাল secure.incometax.gov.bd বা etaxnbr.gov.bd-এ প্রবেশ করুন।",
@@ -87,7 +137,11 @@
       "category": "etin",
       "questionBangla": "ই-টিআইএন খুলতে কী কী ডকুমেন্ট ও তথ্য লাগে?",
       "questionEnglish": "What documents and information are needed to register for an e-TIN?",
-      "banglishKeywords": ["tin khulte ki lage", "etin documents required", "etin information needed"],
+      "banglishKeywords": [
+        "tin khulte ki lage",
+        "etin documents required",
+        "etin information needed"
+      ],
       "shortAnswer": "সাধারণ ব্যক্তির ক্ষেত্রে কেবল জাতীয় পরিচয়পত্র (NID), জন্মতারিখ এবং ওটিপি গ্রহণের জন্য একটি সচল মোবাইল নম্বরই যথেষ্ট। কোনো ছবি বা কাগজের কপি আপলোড করতে হয় না।",
       "stepByStepDetails": [
         "ব্যক্তি করদাতা: ১৭ বা ১০ ডিজিটের স্মার্ট এনআইডি নম্বর ও জন্মতারিখ।",
@@ -110,7 +164,12 @@
       "category": "etin",
       "questionBangla": "হারিয়ে যাওয়া বা পুরনো টিআইএন সার্টিফিকেট কীভাবে ডাউনলোড করবেন?",
       "questionEnglish": "How to reprint or download an existing e-TIN certificate?",
-      "banglishKeywords": ["tin download", "tin certificate reprint", "tin certificate print", "tin harie gele ki korbo"],
+      "banglishKeywords": [
+        "tin download",
+        "tin certificate reprint",
+        "tin certificate print",
+        "tin harie gele ki korbo"
+      ],
       "shortAnswer": "secure.incometax.gov.bd পোর্টালে আপনার ইউজার আইডি ও পাসওয়ার্ড দিয়ে লগইন করে 'View / Print TIN Certificate' অপশন থেকে যেকোনো সময় বিনামূল্যে পিডিএফ ডাউনলোড বা প্রিন্ট করতে পারবেন।",
       "stepByStepDetails": [
         "ধাপ ১: সরকারি টিআইএন পোর্টালে (secure.incometax.gov.bd) যান।",
@@ -134,7 +193,12 @@
       "category": "etin",
       "questionBangla": "ই-টিআইএন কি বন্ধ বা বাতিল করা যায়? এর আইনগত প্রক্রিয়া কী?",
       "questionEnglish": "Can an e-TIN be cancelled or deactivated? What is the legal procedure?",
-      "banglishKeywords": ["tin bondho kora", "tin cancel kora", "tin inactivate kivabe korbo", "file close"],
+      "banglishKeywords": [
+        "tin bondho kora",
+        "tin cancel kora",
+        "tin inactivate kivabe korbo",
+        "file close"
+      ],
       "shortAnswer": "হ্যাঁ, আয়কর আইন ২০২৩-এর ধারা ২৬১(৭) অনুযায়ী নির্দিষ্ট আইনি শর্ত পূরণ হলে করদাতা উপ-কর কমিশনারের (DCT) নিকট আবেদন করে টিআইএন বাতিল বা নিষ্ক্রিয় করতে পারেন।",
       "stepByStepDetails": [
         "যেসব ক্ষেত্রে বাতিল করা যায়: যার করযোগ্য আয় নেই এবং ভবিষ্যতে অর্জনের সম্ভাবনা নেই, যিনি ব্যবসা বা পেশা সম্পূর্ণ বন্ধ করেছেন, যিনি স্থায়ীভাবে দেশত্যাগ করেছেন, অথবা যার ভুলবশত একাধিক টিআইএন খোলা হয়েছিল।",
@@ -157,7 +221,11 @@
       "category": "etin",
       "questionBangla": "এক ব্যক্তি কি একাধিক টিআইএন খুলতে পারেন? করলে কী শাস্তি?",
       "questionEnglish": "Can a person have multiple TINs? What is the penalty for having more than one TIN?",
-      "banglishKeywords": ["duti tin khula", "multiple tin penalty", "duita tin thakle ki hobe"],
+      "banglishKeywords": [
+        "duti tin khula",
+        "multiple tin penalty",
+        "duita tin thakle ki hobe"
+      ],
       "shortAnswer": "না। এক ব্যক্তির নামে একাধিক টিআইএন থাকা সম্পূর্ণ বেআইনি। এটি প্রমাণিত হলে আয়কর আইন ২০২৩-এর ধারা ৩১৩ অনুযায়ী ২০,০০০ টাকা পর্যন্ত অর্থদণ্ড হতে পারে।",
       "stepByStepDetails": [
         "আইনগতভাবে প্রতিটি নাগরিকের জন্য একটি মাত্র ১২ ডিজিটের ইউনিক ই-টিআইএন বরাদ্দ থাকবে।",
@@ -179,7 +247,11 @@
       "category": "etin",
       "questionBangla": "জমি বা ফ্ল্যাট কিনতে বা বিক্রি করতে কি টিআইএন বাধ্যতামূলক?",
       "questionEnglish": "Is e-TIN mandatory for buying or selling land/flats?",
-      "banglishKeywords": ["jomi kinte tin lage", "flat registry tin", "land registration tin mandatory"],
+      "banglishKeywords": [
+        "jomi kinte tin lage",
+        "flat registry tin",
+        "land registration tin mandatory"
+      ],
       "shortAnswer": "হ্যাঁ, যেকোনো পৌরসভা বা সিটি কর্পোরেশন এলাকায় জমি, ফ্ল্যাট বা যেকোনো স্থাবর সম্পত্তি রেজিস্ট্রেশনের ক্ষেত্রে দলিল গ্রহীতা ও দাতা উভয়ের জন্যই ই-টিআইএন ও রিটার্ন দাখিলের প্রমাণ বাধ্যতামূলক।",
       "stepByStepDetails": [
         "আয়কর আইন ২০২৩-এর ধারা ২৬৪ অনুযায়ী সাব-রেজিস্ট্রার অফিসে দলিল নিবন্ধনের সময় দলিলের সাথে পিএসআর (PSR) উপস্থাপন করতে হয়।",
@@ -201,7 +273,11 @@
       "category": "etin",
       "questionBangla": "জাতীয় পরিচয়পত্র (NID) না থাকলে কি পাসপোর্ট দিয়ে টিআইএন খোলা যায়?",
       "questionEnglish": "Can I open an e-TIN with a Passport if I do not have an NID?",
-      "banglishKeywords": ["passport die tin khula", "nid chara tin", "probashi tin passport"],
+      "banglishKeywords": [
+        "passport die tin khula",
+        "nid chara tin",
+        "probashi tin passport"
+      ],
       "shortAnswer": "হ্যাঁ, যেসব প্রবাসী বাংলাদেশী বা অপ্রাপ্তবয়স্ক নাগরিকের এনআইডি কার্ড নেই, তারা বৈধ বাংলাদেশী পাসপোর্ট নম্বর ব্যবহার করে অনলাইনে ই-টিআইএন খুলতে পারেন।",
       "stepByStepDetails": [
         "টিআইএন পোর্টালে রেজিস্ট্রেশনের সময় 'Individual with Passport' ক্যাটাগরি বেছে নিতে হবে।",
@@ -223,7 +299,12 @@
       "category": "etin",
       "questionBangla": "ই-টিআইএন সার্টিফিকেট ভুল তথ্য (নাম বা ঠিকানা) সংশোধন করবেন কীভাবে?",
       "questionEnglish": "How to correct wrong name or address on an e-TIN certificate?",
-      "banglishKeywords": ["tin songshodhon", "tin name correct", "tin address change", "tin edit"],
+      "banglishKeywords": [
+        "tin songshodhon",
+        "tin name correct",
+        "tin address change",
+        "tin edit"
+      ],
       "shortAnswer": "টিআইএন সার্টিফিকেট এনআইডির ডাটার সাথে সরাসরি যুক্ত। নির্বাচন কমিশনে এনআইডি সংশোধন করার পর টিআইএন পোর্টালে লগইন করে 'Sync with NID' দিলেই নাম বা জন্মতারিখ স্বয়ংক্রিয়ভাবে ঠিক হয়ে যায়।",
       "stepByStepDetails": [
         "যদি নাম বা জন্মতারিখে ভুল থাকে: আগে নির্বাচন কমিশনের NID উইং থেকে আপনার এনআইডি সংশোধন করুন। এরপর secure.incometax.gov.bd-এ ঢুকে রিফ্রেশ বা সিঙ্ক বাটনে চাপুন।",
@@ -245,7 +326,11 @@
       "category": "return",
       "questionBangla": "আয়কর রিটার্ন কী এবং কার কার জন্য রিটার্ন দাখিল বাধ্যতামূলক?",
       "questionEnglish": "What is an Income Tax Return and for whom is it mandatory?",
-      "banglishKeywords": ["income tax return ki", "kar return dite hobe", "who must file tax return"],
+      "banglishKeywords": [
+        "income tax return ki",
+        "kar return dite hobe",
+        "who must file tax return"
+      ],
       "shortAnswer": "আয়কর রিটার্ন হলো কোনো অর্থবছরে করদাতার আয়, ব্যয়, সঞ্চয় ও সম্পদের বার্ষিক বিবরণী। ধারা ১৬৬ অনুযায়ী করমুক্ত আয়ের বেশি আয় থাকলে বা নির্দিষ্ট ৪৩টি সেবার সুবিধাভোগী হলে রিটার্ন দাখিল বাধ্যতামূলক।",
       "stepByStepDetails": [
         "স্বাভাবিক ব্যক্তি পুরুষ করদাতার আয় ৩.৫ লাখ টাকা এবং নারী করদাতার আয় ৪ লাখ টাকার বেশি হলে।",
@@ -268,7 +353,11 @@
       "category": "return",
       "questionBangla": "অনলাইনে ই-রিটার্ন (etaxnbr.gov.bd) জমা দেওয়ার সম্পূর্ণ প্রক্রিয়া",
       "questionEnglish": "How to file income tax return online using eReturn system?",
-      "banglishKeywords": ["online return kivabe dibo", "ereturn kivabe submit korbo", "etaxnbr return step by step"],
+      "banglishKeywords": [
+        "online return kivabe dibo",
+        "ereturn kivabe submit korbo",
+        "etaxnbr return step by step"
+      ],
       "shortAnswer": "etaxnbr.gov.bd-এ বায়োমেট্রিক সিম ও এনআইডি দিয়ে রেজিস্ট্রেশন করুন, আয়ের উৎস ও সম্পদ পূরণ করুন, কর ক্যালকুলেট করুন এবং সাবমিট বাটনে ক্লিক করে সাথে সাথে প্রাপ্তিস্বীকার পত্র ডাউনলোড করুন।",
       "stepByStepDetails": [
         "ধাপ ১: etaxnbr.gov.bd পোর্টালে যান এবং 'eReturn Registration' বাটনে ক্লিক করে আপনার টিআইএন ও নিজ নামে বায়োমেট্রিক করা মোবাইল নম্বর দিয়ে সাইন আপ করুন।",
@@ -294,7 +383,11 @@
       "category": "return",
       "questionBangla": "স্বাভাবিক ব্যক্তি করদাতার করমুক্ত আয়ের সাধারণ সীমা (Tax-Free Threshold) কত?",
       "questionEnglish": "What are the tax-free income thresholds for individual taxpayers?",
-      "banglishKeywords": ["kormukto sima koto", "tax free limit bangladesh", "income tax threshold 2024 2025"],
+      "banglishKeywords": [
+        "kormukto sima koto",
+        "tax free limit bangladesh",
+        "income tax threshold 2024 2025"
+      ],
       "shortAnswer": "সাধারণ করদাতাদের জন্য করমুক্ত সীমা ৩,৫০,০০০ টাকা। নারী ও ৬৫+ বছর বয়সীদের জন্য ৪,০০,০০০ টাকা, তৃতীয় লিঙ্গ ও প্রতিবন্ধীদের জন্য ৪,৭৫,০০০ টাকা এবং গেজেটভুক্ত যুদ্ধাহত মুক্তিযোদ্ধাদের জন্য ৫,০০,০০০ টাকা।",
       "stepByStepDetails": [
         "সাধারণ পুরুষ করদাতা: বার্ষিক ৩,৫০,০০০ টাকা পর্যন্ত কোনো কর নেই।",
@@ -318,7 +411,11 @@
       "category": "return",
       "questionBangla": "আয়করের স্ল্যাব বা করের হার কীভাবে হিসাব করা হয়?",
       "questionEnglish": "How are the income tax slabs and rates calculated?",
-      "banglishKeywords": ["tax slab kivabe hisab hoy", "income tax slab rates", "tax calculation formula"],
+      "banglishKeywords": [
+        "tax slab kivabe hisab hoy",
+        "income tax slab rates",
+        "tax calculation formula"
+      ],
       "shortAnswer": "করমুক্ত সীমা পার হওয়ার পর পরবর্তী ১ লাখে ৫%, পরবর্তী ৩ লাখে ১০%, পরবর্তী ৪ লাখে ১৫%, পরবর্তী ৫ লাখে ২০% এবং অবশিষ্ট সকল আয়ের ওপর ২৫% হারে কর ধার্য হয়।",
       "stepByStepDetails": [
         "ধাপ ১: প্রথম ৩,৫০,০০০ টাকা পর্যন্ত — ০% (কোনো কর নেই)",
@@ -343,7 +440,11 @@
       "category": "return",
       "questionBangla": "ন্যূনতম কর (Minimum Tax) কত এবং বিভিন্ন এলাকায় এর পরিমাণ কেমন?",
       "questionEnglish": "What is the minimum tax amount for different areas in Bangladesh?",
-      "banglishKeywords": ["minimum tax koto", "nyunotomo kor koto taka", "dhaka chittagong minimum tax"],
+      "banglishKeywords": [
+        "minimum tax koto",
+        "nyunotomo kor koto taka",
+        "dhaka chittagong minimum tax"
+      ],
       "shortAnswer": "করযোগ্য আয় থাকলে ঢাকা ও চট্টগ্রাম সিটি কর্পোরেশনে ন্যূনতম কর ৫,০০০ টাকা, অন্যান্য সিটি কর্পোরেশনে ৪,০০০ টাকা এবং সিটি কর্পোরেশনের বাইরে জেলা বা গ্রামীণ এলাকায় ৩,০০০ টাকা।",
       "stepByStepDetails": [
         "আয় যদি করমুক্ত সীমা অতিক্রম করে, তবে হিসেবকৃত কর যাই হোক না কেন, ন্যূনতম এই অংক পরিশোধ করতে হবে।",
@@ -367,7 +468,11 @@
       "category": "return",
       "questionBangla": "রিটার্ন দাখিলের প্রমাণপত্র (PSR) কী এবং কেন এটি প্রয়োজন?",
       "questionEnglish": "What is Proof of Submission of Return (PSR) and why is it required?",
-      "banglishKeywords": ["psr ki", "proof of submission of return keno lage", "psr kobe dorkar"],
+      "banglishKeywords": [
+        "psr ki",
+        "proof of submission of return keno lage",
+        "psr kobe dorkar"
+      ],
       "shortAnswer": "পিএসআর হলো রিটার্ন দাখিলের পর এনবিআর প্রদত্ত অফিশিয়াল প্রাপ্তিস্বীকার পত্র। আয়কর আইনের ধারা ২৬৪ অনুযায়ী ব্যাংক ঋণ, ক্রেডিট কার্ড ও ট্রেড লাইসেন্সসহ ৪৩টি সরকারি-বেসরকারি সেবা পেতে এটি বাধ্যতামূলক।",
       "stepByStepDetails": [
         "আগে শুধু টিআইএন দেখালেই সেবা পাওয়া যেত, কিন্তু ২০২৩ সাল থেকে রিটার্ন জমা দিয়ে তার প্রমাণ (PSR) দেখাতে হয়।",
@@ -389,7 +494,11 @@
       "category": "return",
       "questionBangla": "কর রেয়াত বা বিনিয়োগ সুবিধা (Tax Rebate) পাওয়ার নিয়ম কী?",
       "questionEnglish": "What are the rules and eligible sectors for claiming tax rebates on investments?",
-      "banglishKeywords": ["tax rebate ki", "biniyog subidha kivabe pabo", "tax rebate eligible sectors"],
+      "banglishKeywords": [
+        "tax rebate ki",
+        "biniyog subidha kivabe pabo",
+        "tax rebate eligible sectors"
+      ],
       "shortAnswer": "অনুমোদিত খাতে বিনিয়োগ করলে (যেমন: ডিপিএস বার্ষিক সর্বোচ্চ ১.২ লাখ টাকা, জীবন বীমা প্রিমিয়াম, সরকারি ট্রেজারি বন্ড ইত্যাদি) মোট বিনিয়োগের ১৫% বা করযোগ্য আয়ের ৩% বা ১০ লাখ টাকার মধ্যে যেটি কম, সেই পরিমাণ কর মওকুফ হয়।",
       "stepByStepDetails": [
         "অনুমোদিত বিনিয়োগের খাত: ব্যাংকে মাসিক ডিপিএস (বছরে সর্বোচ্চ ১,২০,০০০ টাকা পর্যন্ত গণ্য), জীবন বীমার প্রিমিয়াম, সরকারি সঞ্চয়পত্র ও ট্রেজারি বন্ড, শেয়ার বাজারে তালিকাভুক্ত কোম্পানিতে বিনিয়োগ, অনুমোদিত প্রভিডেন্ট ফান্ডে অনুদান।",
@@ -412,7 +521,12 @@
       "category": "return",
       "questionBangla": "অনলাইনে কর পরিশোধের নিয়ম ও পদ্ধতি (Payment Channels)",
       "questionEnglish": "How to pay income tax online using bKash, Nagad, cards or e-Challan?",
-      "banglishKeywords": ["tax payment method", "bkash die tax dewa", "nagad tax payment", "online a-challan tax"],
+      "banglishKeywords": [
+        "tax payment method",
+        "bkash die tax dewa",
+        "nagad tax payment",
+        "online a-challan tax"
+      ],
       "shortAnswer": "eReturn পোর্টালের পেমেন্ট গেটওয়েতে গিয়ে বিকাশ, নগদ, রকেট, ডেবিট/ক্রেডিট কার্ড অথবা সরকারি এ-চালানের (A-Challan) মাধ্যমে রিয়েল-টাইমে কর পরিশোধ করা যায়। কোনো ম্যানুয়াল চালান সাবমিট করতে হয় না।",
       "stepByStepDetails": [
         "ধাপ ১: etaxnbr.gov.bd পোর্টালে রিটার্ন ফর্মের হিসাব শেষে 'Pay Now' বাটনে ক্লিক করুন।",
@@ -435,7 +549,11 @@
       "category": "return",
       "questionBangla": "রিটার্নে সম্পদ ও দায়ের বিবরণী (IT-10B) কাদের দেখানো বাধ্যতামূলক?",
       "questionEnglish": "Who is mandatorily required to submit the statement of assets and liabilities (IT-10B)?",
-      "banglishKeywords": ["it-10b sompod biboroni", "asset liability statement kake dite hobe", "sompodo kobe dekhate hoy"],
+      "banglishKeywords": [
+        "it-10b sompod biboroni",
+        "asset liability statement kake dite hobe",
+        "sompodo kobe dekhate hoy"
+      ],
       "shortAnswer": "যদি করদাতার মোট পরিসম্পদ বা সম্পদের পরিমাণ ৫০ লাখ টাকার বেশি হয়, অথবা মোটরগাড়ির মালিকানা থাকে, অথবা সিটি কর্পোরেশনে ফ্ল্যাট/বাড়ি থাকে, তবে সম্পদ ও দায়ের বিবরণী (আইটি-১০বি) দাখিল বাধ্যতামূলক।",
       "stepByStepDetails": [
         "যাদের মোট নিট সম্পদ ৫০ লাখ টাকার ঊর্ধ্বে।",
@@ -459,7 +577,11 @@
       "category": "return",
       "questionBangla": "এক পাতার সহজ রিটার্ন কাদের জন্য প্রযোজ্য এবং কীভাবে জমা দিতে হয়?",
       "questionEnglish": "Who can use the single-page simplified return form and how to file it?",
-      "banglishKeywords": ["ek patar return", "single page return bangladesh", "shohaj return form"],
+      "banglishKeywords": [
+        "ek patar return",
+        "single page return bangladesh",
+        "shohaj return form"
+      ],
       "shortAnswer": "যাদের বার্ষিক করযোগ্য আয় ৫ লাখ টাকার নিচে, মোট সম্পদ ৫০ লাখ টাকার নিচে এবং কোনো মোটরগাড়ি বা সিটি কর্পোরেশনে গৃহসম্পত্তি নেই, তারা অত্যন্ত সহজ সংক্ষিপ্ত ফরম ব্যবহার করতে পারেন।",
       "stepByStepDetails": [
         "এই ফর্মে জটিল কোনো ব্যয়ের হিসাব বা তফসিলে বিস্তারিত তথ্য দিতে হয় না।",
@@ -482,7 +604,11 @@
       "category": "zero-return",
       "questionBangla": "জিরো রিটার্ন (Zero Return) কী এবং এটি কখন দেওয়া হয়?",
       "questionEnglish": "What is a Zero Return and when should it be filed?",
-      "banglishKeywords": ["zero return ki", "shunno return ki", "zero tax return kobe dite hoy"],
+      "banglishKeywords": [
+        "zero return ki",
+        "shunno return ki",
+        "zero tax return kobe dite hoy"
+      ],
       "shortAnswer": "করদাতার সারা বছরের মোট করযোগ্য আয় যদি করমুক্ত সীমা (পুরুষ ৩.৫ লাখ, নারী ৪ লাখ) অতিক্রম না করে, তবে করের পরিমাণ শূন্য হয়। এই শূন্য করের দাখিলকৃত বিবরণীকেই সাধারণ ভাষায় 'জিরো রিটার্ন' বলে।",
       "stepByStepDetails": [
         "আইনে 'জিরো রিটার্ন' নামে আলাদা কোনো ফরম নেই; সাধারণ রিটার্ন ফরমেই হিসাবের পর প্রদেয় কর '০' টাকা আসলে তাকে জিরো রিটার্ন বলা হয়।",
@@ -505,7 +631,11 @@
       "category": "zero-return",
       "questionBangla": "অনলাইনে জিরো রিটার্ন কীভাবে নিজে নিজে বিনামূল্যে জমা দিবেন?",
       "questionEnglish": "How to file a Zero Return online by yourself for free?",
-      "banglishKeywords": ["zero return kivabe dibo", "online zero return step by step", "shunno return online"],
+      "banglishKeywords": [
+        "zero return kivabe dibo",
+        "online zero return step by step",
+        "shunno return online"
+      ],
       "shortAnswer": "etaxnbr.gov.bd পোর্টালে লগইন করে আয় অংশে করমুক্ত সীমার কম অংক (যেমন: ২,০০,০০০ টাকা) বসিয়ে 'Calculate' দিলে ট্যাক্স ০ টাকা দেখাবে। এরপর সাবমিট করলেই তাৎক্ষণিক প্রাপ্তিস্বীকার পত্র মিলবে।",
       "stepByStepDetails": [
         "ধাপ ১: etaxnbr.gov.bd-এ আপনার টিআইএন এবং পাসওয়ার্ড দিয়ে সাইন ইন করুন।",
@@ -530,7 +660,11 @@
       "category": "zero-return",
       "questionBangla": "জিরো রিটার্ন দিলে কি কোনো ফি বা ন্যূনতম কর দিতে হয়?",
       "questionEnglish": "Does filing a Zero Return require paying any fee or minimum tax?",
-      "banglishKeywords": ["zero return fee koto", "shunno return taka lage kina", "zero return minimum tax"],
+      "banglishKeywords": [
+        "zero return fee koto",
+        "shunno return taka lage kina",
+        "zero return minimum tax"
+      ],
       "shortAnswer": "না! জিরো রিটার্ন দাখিলে কোনো সরকারি ফি বা ন্যূনতম কর (Minimum Tax) দিতে হয় না। অনলাইন পোর্টালে এটি সম্পূর্ণ বিনামূল্যে জমা দেওয়া যায়।",
       "stepByStepDetails": [
         "ন্যূনতম করের বিধান (৩০০০-৫০০০ টাকা) তখনই প্রযোজ্য হয় যখন করদাতার আয় করমুক্ত সীমা অতিক্রম করে।",
@@ -552,7 +686,11 @@
       "category": "zero-return",
       "questionBangla": "পরপর কয়েক বছর জিরো রিটার্ন দিলে কি কোনো তদন্ত বা অডিটের ঝুঁকি থাকে?",
       "questionEnglish": "Is there any risk of audit or inquiry if someone files a Zero Return consecutively?",
-      "banglishKeywords": ["por por zero return dile ki hoy", "consecutive zero return audit", "zero return jhamela"],
+      "banglishKeywords": [
+        "por por zero return dile ki hoy",
+        "consecutive zero return audit",
+        "zero return jhamela"
+      ],
       "shortAnswer": "যদি আপনার প্রদর্শিত তথ্যে কোনো অসঙ্গতি বা লুকানো সম্পদ না থাকে, তবে পরপর একাধিক বছর জিরো রিটার্ন দেওয়ায় কোনো আইনগত ঝুঁকি বা শাস্তির সম্ভাবনা নেই।",
       "stepByStepDetails": [
         "একজন ছাত্র, গৃহিণী বা বেকার নাগরিকের আয় বছরের পর বছর শূন্য বা করমুক্ত সীমার নিচে থাকা অত্যন্ত স্বাভাবিক।",
@@ -574,7 +712,11 @@
       "category": "deadline-fine",
       "questionBangla": "আয়কর রিটার্ন জমা দেওয়ার শেষ তারিখ (কর দিবস / Tax Day) কবে?",
       "questionEnglish": "What is the deadline (Tax Day) for filing individual income tax returns in Bangladesh?",
-      "banglishKeywords": ["return er sesh tarikh kobe", "tax day kobe", "income tax deadline bangladesh"],
+      "banglishKeywords": [
+        "return er sesh tarikh kobe",
+        "tax day kobe",
+        "income tax deadline bangladesh"
+      ],
       "shortAnswer": "আয়কর আইন ২০২৩-এর ধারা ১৭১ অনুযায়ী প্রতি বছরের ৩০ নভেম্বর হলো স্বাভাবিক ব্যক্তি করদাতাদের রিটার্ন দাখিলের সংবিধিবদ্ধ শেষ দিন (কর দিবস)। তবে এনবিআর জনস্বার্থে প্রজ্ঞাপনের মাধ্যমে এই সময় বাড়াতে পারে।",
       "stepByStepDetails": [
         "কর দিবস প্রতি বছর ৩০ নভেম্বর অনুষ্ঠিত হয়।",
@@ -596,7 +738,11 @@
       "category": "deadline-fine",
       "questionBangla": "সময়মতো রিটার্ন দাখিল না করলে কী ধরনের জরিমানা বা অতিরিক্ত সুদ হয়?",
       "questionEnglish": "What penalties and interest are imposed for late filing of income tax return?",
-      "banglishKeywords": ["return na dile ki fine hoy", "late return penalty", "tax fine interest section 174 266"],
+      "banglishKeywords": [
+        "return na dile ki fine hoy",
+        "late return penalty",
+        "tax fine interest section 174 266"
+      ],
       "shortAnswer": "কর দিবসের পর রিটার্ন দিলে বিনিয়োগ কর রেয়াত বাতিল হয়ে যায়, ধারা ১৭৪ অনুযায়ী বকেয়া করের ওপর প্রতি মাসে ২% হারে বিলম্ব সুদ দিতে হয় এবং ধারা ২৬৬ অনুযায়ী জরিমানার বিধান রয়েছে।",
       "stepByStepDetails": [
         "ধারা ১৭৪: অপরিশোধিত করের ওপর প্রতি মাসে ২% সরল সুদ ধার্য হবে (সর্বোচ্চ ২৪ মাস পর্যন্ত)।",
@@ -619,7 +765,11 @@
       "category": "deadline-fine",
       "questionBangla": "রিটার্ন দাখিলের সময় বৃদ্ধির আবেদন কীভাবে করতে হয়?",
       "questionEnglish": "How to apply for an extension of time to file an income tax return?",
-      "banglishKeywords": ["somoy bridhir abedon", "tax extension application", "time extension for return"],
+      "banglishKeywords": [
+        "somoy bridhir abedon",
+        "tax extension application",
+        "time extension for return"
+      ],
       "shortAnswer": "কর দিবস শেষ হওয়ার পূর্বে উপযুক্ত কারণ দেখিয়ে কর সার্কেলের উপ-কর কমিশনার (DCT) বরাবর লিখিতভাবে বা অনলাইনে সময় বৃদ্ধির আবেদন করা যায়। কমিশনার সর্বোচ্চ ২ মাস এবং অনুমোদন সাপেক্ষে আরও ২ মাস পর্যন্ত সময় দিতে পারেন।",
       "stepByStepDetails": [
         "আবেদনে যৌক্তিক কারণ উল্লেখ থাকতে হবে (যেমন: গুরুতর অসুস্থতা, বিদেশে অবস্থান বা প্রয়োজনীয় দলিল সংগ্রহে বিলম্ব)।",
@@ -640,7 +790,11 @@
       "category": "deadline-fine",
       "questionBangla": "রিটার্নে ভুল বা মিথ্যা তথ্য দিলে কী ধরনের আইনি সাজা বা জরিমানা হতে পারে?",
       "questionEnglish": "What are the legal penalties for submitting false statements or documents in a return?",
-      "banglishKeywords": ["vul tothyo dile ki hoy", "mithya tothyo tax penalty", "false return punishment section 311"],
+      "banglishKeywords": [
+        "vul tothyo dile ki hoy",
+        "mithya tothyo tax penalty",
+        "false return punishment section 311"
+      ],
       "shortAnswer": "ইচ্ছাকৃতভাবে মিথ্যা তথ্য দিলে বা তথ্য গোপন করলে ধারা ৩১১ অনুযায়ী সর্বোচ্চ ৫ বছরের কারাদণ্ড অথবা অর্থদণ্ড বা উভয় দণ্ডে দণ্ডিত হতে পারেন। অতিরিক্ত করের ওপর ৫০% থেকে ১০০% জরিমানা হতে পারে।",
       "stepByStepDetails": [
         "অঘোষিত আয়ের ক্ষেত্রে সাধারণ করের পাশাপাশি অতিরিক্ত পেনাল্টি আরোপ করা হয়।",
@@ -662,7 +816,11 @@
       "category": "deadline-fine",
       "questionBangla": "কর দিবস পার হয়ে গেলে কি অনলাইনে eReturn দাখিল করা যায়?",
       "questionEnglish": "Can I file an eReturn online after Tax Day has passed?",
-      "banglishKeywords": ["tax day pore online return dewa jay", "late ereturn submit", "deadline cross ereturn"],
+      "banglishKeywords": [
+        "tax day pore online return dewa jay",
+        "late ereturn submit",
+        "deadline cross ereturn"
+      ],
       "shortAnswer": "হ্যাঁ, কর দিবস পার হয়ে গেলেও etaxnbr.gov.bd পোর্টালে সারাবছরই রিটার্ন দাখিল করা যায়। তবে সিস্টেম স্বয়ংক্রিয়ভাবে ধারা ১৭৪ অনুযায়ী বিলম্ব সুদ হিসাব করে সংযুক্ত করে।",
       "stepByStepDetails": [
         "বিলম্বিত রিটার্নে সিস্টেম স্বয়ংক্রিয়ভাবে মাসভিত্তিক সুদ যোগ করে দেবে।",
@@ -684,7 +842,11 @@
       "category": "vat-bin",
       "questionBangla": "ভ্যাট (VAT) কী এবং এটি আয়করের থেকে কীভাবে আলাদা?",
       "questionEnglish": "What is VAT and how is it different from Income Tax?",
-      "banglishKeywords": ["vat ki", "vat ar income tax er parthokko", "vat vs tax"],
+      "banglishKeywords": [
+        "vat ki",
+        "vat ar income tax er parthokko",
+        "vat vs tax"
+      ],
       "shortAnswer": "আয়কর হলো ব্যক্তির বা প্রতিষ্ঠানের উপার্জিত আয়ের ওপর প্রত্যক্ষ কর (Direct Tax), আর ভ্যাট (মূল্য সংযোজন কর) হলো পণ্য বা সেবা ক্রয়ের ওপর আরোপিত পরোক্ষ কর (Indirect Tax)।",
       "stepByStepDetails": [
         "আয়কর দিতে হয় সারা বছর উপার্জনের পর বছরান্তে।",
@@ -706,7 +868,11 @@
       "category": "vat-bin",
       "questionBangla": "বিআইএন (BIN) কী এবং কাদের জন্য বিআইএন নেওয়া বাধ্যতামূলক?",
       "questionEnglish": "What is BIN and who is mandatorily required to have a BIN?",
-      "banglishKeywords": ["bin ki", "bin kobe lage", "business identification number bangladesh"],
+      "banglishKeywords": [
+        "bin ki",
+        "bin kobe lage",
+        "business identification number bangladesh"
+      ],
       "shortAnswer": "বিআইএন হলো ১৩ ডিজিটের বিজনেস আইডেন্টিফিকেশন নম্বর বা ভ্যাট রেজিস্ট্রেশন নম্বর। যেকোনো বাণিজ্যিক পণ্য উৎপাদনকারী, আমদানিকারক, রপ্তানিকারক ও নির্দিষ্ট সেবা প্রদানকারী প্রতিষ্ঠানের জন্য বিআইএন বাধ্যতামূলক।",
       "stepByStepDetails": [
         "ভ্যাট আইন ২০১২-এর ধারা ৪ ও ৬ অনুযায়ী বাণিজ্যিক কার্যক্রম পরিচালনাকারী প্রতিটি ব্যবসা প্রতিষ্ঠানকে বিআইএন নিতে হয়।",
@@ -729,7 +895,11 @@
       "category": "vat-bin",
       "questionBangla": "ই-টিআইএন (e-TIN) এবং বিআইএন (BIN)-এর মধ্যে মূল পার্থক্য কী?",
       "questionEnglish": "What is the key difference between e-TIN and BIN?",
-      "banglishKeywords": ["tin ar bin er parthokko", "tin vs bin difference", "etin and bin"],
+      "banglishKeywords": [
+        "tin ar bin er parthokko",
+        "tin vs bin difference",
+        "etin and bin"
+      ],
       "shortAnswer": "ই-টিআইএন হলো ১২ ডিজিটের আয়কর নম্বর যা ব্যক্তি বা কোম্পানি উভয়ের আয়করের জন্য ব্যবহৃত হয়। অন্যদিকে বিআইএন হলো ১৩ ডিজিটের ভ্যাট নম্বর যা কেবল ব্যবসায়িক প্রতিষ্ঠানের পণ্য/সেবার ভ্যাট লেনদেনে ব্যবহৃত হয়।",
       "stepByStepDetails": [
         "একজন সাধারণ চাকরিজীবী বা ব্যক্তির কেবল ই-টিআইএন থাকলেই যথেষ্ট, কোনো বিআইএন লাগে না।",
@@ -751,7 +921,11 @@
       "category": "vat-bin",
       "questionBangla": "মাসিক ভ্যাট রিটার্ন (মূসক-৯.১) কী এবং কখন দাখিল করতে হয়?",
       "questionEnglish": "What is the monthly VAT return (Mushak-9.1) and when is it due?",
-      "banglishKeywords": ["mushak 9.1 ki", "vat return kobe dite hoy", "monthly vat return bangladesh"],
+      "banglishKeywords": [
+        "mushak 9.1 ki",
+        "vat return kobe dite hoy",
+        "monthly vat return bangladesh"
+      ],
       "shortAnswer": "বিআইএনধারী প্রতিষ্ঠানকে প্রতি কর মেয়াদের (মাসের) বিক্রয় ও ভ্যাটের হিসাব জানিয়ে পরবর্তী মাসের ১৫ তারিখের মধ্যে মূসক-৯.১ ফরম দাখিল করতে হয়।",
       "stepByStepDetails": [
         "ভ্যাট আইন ২০১২-এর ধারা ৬৪ অনুযায়ী প্রতি মাসের শেষ দিনে কর মেয়াদ সমাপ্ত হয় এবং পরবর্তী মাসের ১৫ দিনের মধ্যে রিটার্ন দাখিল বাধ্যতামূলক।",
@@ -774,7 +948,11 @@
       "category": "vat-bin",
       "questionBangla": "ব্যবসা শুরু বা বিক্রি না হলেও কি প্রতি মাসে জিরো ভ্যাট রিটার্ন দিতে হয়?",
       "questionEnglish": "Do I have to file a zero VAT return every month even if there are no sales?",
-      "banglishKeywords": ["bikri na hole vat return", "zero vat return lagbe kina", "inactive bin vat return"],
+      "banglishKeywords": [
+        "bikri na hole vat return",
+        "zero vat return lagbe kina",
+        "inactive bin vat return"
+      ],
       "shortAnswer": "হ্যাঁ! বিআইএন চালু থাকলে কোনো বিক্রি বা বাণিজ্যিক কার্যক্রম না থাকলেও প্রতি মাসের ১৫ তারিখের মধ্যে অনলাইনে শূন্য বা 'জিরো ভ্যাট রিটার্ন' দাখিল করা বাধ্যতামূলক।",
       "stepByStepDetails": [
         "অনেক ব্যবসায়ী মনে করেন বিক্রি না থাকলে ভ্যাট রিটার্ন দেওয়া লাগে না, যা ভুল ধারণা।",
@@ -796,7 +974,11 @@
       "category": "vat-bin",
       "questionBangla": "ভ্যাট চালান (মূসক-৬.৩) কী এবং সাধারণ ভোক্তার এটি কেন নেওয়া উচিত?",
       "questionEnglish": "What is Mushak-6.3 VAT invoice and why should consumers collect it?",
-      "banglishKeywords": ["mushak 6.3 ki", "vat chalan keno nebo", "vat invoice 6.3"],
+      "banglishKeywords": [
+        "mushak 6.3 ki",
+        "vat chalan keno nebo",
+        "vat invoice 6.3"
+      ],
       "shortAnswer": "মূসক-৬.৩ হলো ভ্যাট নিবন্ধিত বিক্রেতা কর্তৃক ইস্যুকৃত আইনগত চালানপত্র। ক্রেতা যে ভ্যাট দিচ্ছেন তা সরকারি কোষাগারে জমা নিশ্চিত করতে এই চালান সংগ্রহ করা নাগরিক দায়িত্ব।",
       "stepByStepDetails": [
         "দোকানদার যদি সাধারণ রসিদে ভ্যাট কেটে রাখে কিন্তু মূসক-৬.৩ বা ইএফডি (EFD) রসিদ না দেয়, তবে সেই ভ্যাট সরকারের কাছে নাও পৌঁছাতে পারে।",
@@ -817,7 +999,11 @@
       "category": "persona",
       "questionBangla": "শিক্ষার্থী: পার্টটাইম চাকরি বা ফ্রিল্যান্সিং করলে কি শিক্ষার্থীদের রিটার্ন দিতে হবে?",
       "questionEnglish": "Students: Do students need to file tax returns for part-time jobs or freelancing?",
-      "banglishKeywords": ["student tax return", "chatroder ki return dite hobe", "student freelancing income tax"],
+      "banglishKeywords": [
+        "student tax return",
+        "chatroder ki return dite hobe",
+        "student freelancing income tax"
+      ],
       "shortAnswer": "যদি শিক্ষার্থীর নিজস্ব ই-টিআইএন থাকে, অথবা বার্ষিক আয় করমুক্ত সীমা (৩.৫ লাখ টাকা) অতিক্রম করে, তবে অবশ্যই আয়কর রিটার্ন জমা দিতে হবে। আয় কম থাকলে জিরো রিটার্ন দাখিল করতে হবে।",
       "stepByStepDetails": [
         "অনেক শিক্ষার্থী বাইক কেনা বা ব্যাংক একাউন্ট খোলার সময় টিআইএন খুলে থাকেন। টিআইএন থাকলে প্রতি বছর রিটার্ন দেওয়া বাধ্যতামূলক।",
@@ -839,7 +1025,12 @@
       "category": "persona",
       "questionBangla": "ফ্রিল্যান্সার ও আইটি উদ্যোক্তা: রেমিট্যান্সের আয় কি করমুক্ত এবং রিটার্নে কীভাবে দেখাতে হয়?",
       "questionEnglish": "Freelancers & IT Entrepreneurs: Is foreign remittance tax-free and how to show it in return?",
-      "banglishKeywords": ["freelancer tax return", "remittance tax bangladesh", "freelancing tax free", "it remittance exemption"],
+      "banglishKeywords": [
+        "freelancer tax return",
+        "remittance tax bangladesh",
+        "freelancing tax free",
+        "it remittance exemption"
+      ],
       "shortAnswer": "অনুমোদিত ব্যাংকিং চ্যানেলে রেমিট্যান্স হিসেবে আসা সফটওয়্যার ও আইটি এনাবল্ড সার্ভিসের (ITES) আয় নির্দিষ্ট নীতিমালা সাপেক্ষে কর অব্যাহতিপ্রাপ্ত। তবে ব্যাংক থেকে প্রত্যয়ন ও ফরম-সি নিয়ে রিটার্নে প্রদর্শন করা বাধ্যতামূলক।",
       "stepByStepDetails": [
         "আয় করমুক্ত হলেও রিটার্ন দাখিল করা থেকে অব্যাহতি দেওয়া হয়নি। পুরো বৈদেশিক আয় রিটার্নের 'Tax Exempted Income' অংশে প্রদর্শন করতে হবে।",
@@ -862,7 +1053,11 @@
       "category": "persona",
       "questionBangla": "বেসরকারি ও সরকারি চাকরিজীবী: বেতন থেকে কর কীভাবে কাটা হয় এবং রিটার্নে কী দেখাতে হয়?",
       "questionEnglish": "Salaried Employees: How is TDS deducted and what documents to submit with return?",
-      "banglishKeywords": ["chakrijibi tax return", "salary tax calculation", "salary certificate tax return"],
+      "banglishKeywords": [
+        "chakrijibi tax return",
+        "salary tax calculation",
+        "salary certificate tax return"
+      ],
       "shortAnswer": "নিয়োগকারী প্রতিষ্ঠান প্রতি মাসে বেতন থেকে উৎসে কর (TDS) কেটে সরকারি কোষাগারে জমা দেয়। বছর শেষে অফিস থেকে বেতন ও কর কর্তন সনদ (Salary & Tax Certificate) সংগ্রহ করে রিটার্নে সমন্বয় করতে হয়।",
       "stepByStepDetails": [
         "মূল বেতন ও উৎসব ভাতা সম্পূর্ণ করযোগ্য।",
@@ -885,7 +1080,11 @@
       "category": "persona",
       "questionBangla": "ব্যবসায়ী (স্বত্বাধিকারী): ট্রেড লাইসেন্স থাকলে কি প্রতি বছর রিটার্ন জমা বাধ্যতামূলক?",
       "questionEnglish": "Business Owners: Is annual tax return mandatory if having a Trade License?",
-      "banglishKeywords": ["byabshayee tax return", "trade license return mandatory", "proprietorship business tax"],
+      "banglishKeywords": [
+        "byabshayee tax return",
+        "trade license return mandatory",
+        "proprietorship business tax"
+      ],
       "shortAnswer": "হ্যাঁ। আয়কর আইন ২০২৩-এর ধারা ২৬৪ অনুযায়ী যেকোনো সিটি কর্পোরেশন বা পৌরসভা এলাকায় ট্রেড লাইসেন্স গ্রহণ বা নবায়নের জন্য রিটার্ন দাখিলের প্রমাণপত্র (PSR) প্রদর্শন বাধ্যতামূলক।",
       "stepByStepDetails": [
         "ব্যবসার লাভ হোক বা ক্ষতি হোক, প্রতি বছর রিটার্ন দাখিল করতে হবে।",
@@ -908,7 +1107,11 @@
       "category": "persona",
       "questionBangla": "প্রবাসী বাংলাদেশী (NRB): বিদেশে উপার্জিত আয়ের ওপর কি বাংলাদেশে কর দিতে হয়?",
       "questionEnglish": "Non-Resident Bangladeshis (NRB): Is foreign income taxable in Bangladesh?",
-      "banglishKeywords": ["probashi tax return", "nrb tax bangladesh", "foreign income tax in bangladesh"],
+      "banglishKeywords": [
+        "probashi tax return",
+        "nrb tax bangladesh",
+        "foreign income tax in bangladesh"
+      ],
       "shortAnswer": "না। বৈধ প্রবাসী বাংলাদেশীদের বিদেশে উপার্জিত আয়ের ওপর বাংলাদেশে কোনো আয়কর নেই। তবে বাংলাদেশে যদি তাদের কোনো সম্পদ, ব্যবসা, ফ্ল্যাট ভাড়া বা ব্যাংক আমানত থাকে, তবে সেই বাংলাদেশী আয়ের ওপর রিটার্ন দিতে হবে।",
       "stepByStepDetails": [
         "বাংলাদেশে পাঠানো বৈধ রেমিট্যান্স সম্পূর্ণ করমুক্ত।",
@@ -931,7 +1134,11 @@
       "category": "persona",
       "questionBangla": "গৃহিণী: নিজের নামে সঞ্চয়পত্র বা জমি থাকলে কি রিটার্ন দাখিল করতে হবে?",
       "questionEnglish": "Homemakers: Is tax return required if having National Savings Certificates or land in name?",
-      "banglishKeywords": ["grihini tax return", "homemaker savings certificate tax", "mohila tax return"],
+      "banglishKeywords": [
+        "grihini tax return",
+        "homemaker savings certificate tax",
+        "mohila tax return"
+      ],
       "shortAnswer": "হ্যাঁ। গৃহিণীর নামে যদি ৫ লাখ টাকার বেশি সঞ্চয়পত্র থাকে অথবা কোনো পৌরসভা/সিটি কর্পোরেশনে জমি বা ফ্ল্যাট থাকে, তবে আইনানুযায়ী ই-টিআইএন নেওয়া ও রিটার্ন দাখিল বাধ্যতামূলক।",
       "stepByStepDetails": [
         "গৃহিণীদের জন্য করমুক্ত আয়ের সাধারণ সীমা বার্ষিক ৪,০০,০০০ টাকা।",
@@ -953,7 +1160,11 @@
       "category": "persona",
       "questionBangla": "অবসরপ্রাপ্ত কর্মকর্তা: পেনশনের টাকা ও গ্র্যাচুইটির ওপর কি কর অব্যাহতি পাওয়া যায়?",
       "questionEnglish": "Retired Persons: Are pension and gratuity funds tax-exempted?",
-      "banglishKeywords": ["oboshorkalin pension tax", "pension tax free bangladesh", "gratuity tax exemption"],
+      "banglishKeywords": [
+        "oboshorkalin pension tax",
+        "pension tax free bangladesh",
+        "gratuity tax exemption"
+      ],
       "shortAnswer": "হ্যাঁ, সরকারি ও অনুমোদিত বেসরকারি খাতের পেনশনের অর্থ সম্পূর্ণ আয়করমুক্ত। তবে পেনশনের টাকা দিয়ে সঞ্চয়পত্র বা ব্যাংক এফডিআর করলে তার মুনাফার ওপর আইনানুযায়ী প্রযোজ্য উৎসে কর ও রিটার্ন বিধি বহাল থাকবে।",
       "stepByStepDetails": [
         "অবসরকালীন এককালীন আনুতোষিক (গ্র্যাচুইটি) একটি নির্দিষ্ট বৃহৎ সীমা পর্যন্ত সম্পূর্ণ কর অব্যাহতিপ্রাপ্ত।",
@@ -975,7 +1186,11 @@
       "category": "persona",
       "questionBangla": "ইউটিউবার ও ডিজিটাল কনটেন্ট ক্রিয়েটর: গুগল অ্যাডসেন্স ও স্পনসরশিপের আয় প্রদর্শনের সঠিক নিয়ম",
       "questionEnglish": "YouTubers & Creators: How to declare Google AdSense and sponsorship income?",
-      "banglishKeywords": ["youtuber tax return", "google adsense tax bangladesh", "content creator tax return"],
+      "banglishKeywords": [
+        "youtuber tax return",
+        "google adsense tax bangladesh",
+        "content creator tax return"
+      ],
       "shortAnswer": "গুগল আয়ারল্যান্ড থেকে ব্যাংক তারবার্তার (SWIFT) মাধ্যমে আসা অ্যাডসেন্স আয় রেমিট্যান্সের নথিপত্রসহ রিটার্নে দেখাতে হয়। দেশীয় স্পনসরশিপ বা ব্র্যান্ডিংয়ের আয় সাধারণ করযোগ্য পেশাগত আয় হিসেবে অন্তর্ভুক্ত হবে।",
       "stepByStepDetails": [
         "ইউটিউব চ্যানেলের ক্যামেরা, কম্পিউটার ও ইন্টারনেট বিল ব্যবসায়িক ব্যয় (Expense) হিসেবে দাবি করে আয়ের সাথে সমন্বয় করা যায়।",
@@ -997,7 +1212,11 @@
       "category": "persona",
       "questionBangla": "রাইড শেয়ারিং / অ্যাপ-ভিত্তিক চালক: বাইক বা গাড়ির জন্য কি ট্যাক্স রিটার্ন লাগে?",
       "questionEnglish": "Ride Sharing Drivers: Is tax return required for operating commercial bike or car?",
-      "banglishKeywords": ["ride share driver tax", "bike car fitness tax return", "uber pathao driver tax"],
+      "banglishKeywords": [
+        "ride share driver tax",
+        "bike car fitness tax return",
+        "uber pathao driver tax"
+      ],
       "shortAnswer": "হ্যাঁ, যেকোনো বাণিজ্যিক মোটরকার বা বাণিজ্যিক যানের ফিটনেস নবায়ন ও রোড পারমিট নেওয়ার সময় বিআরটিএ-তে রিটার্ন দাখিলের প্রমাণপত্র (PSR) প্রদর্শন বাধ্যতামূলক।",
       "stepByStepDetails": [
         "ব্যক্তিগত মোটরসাইকেলের জন্য সরাসরি পিএসআর বাধ্যতামূলক না হলেও রাইড শেয়ারিং কোম্পানির এনলিস্টমেন্টে অনেক সময় টিআইএন চাওয়া হয়।",
@@ -1018,7 +1237,11 @@
       "category": "persona",
       "questionBangla": "জমি বা ফ্ল্যাট বিক্রেতা: মূলধনী লাভ (Capital Gain) ও উৎসে করের সমন্বয় কীভাবে করবেন?",
       "questionEnglish": "Property Sellers: How to declare Capital Gains and adjust AIT deducted at sub-registry office?",
-      "banglishKeywords": ["jomi bikri capital gain tax", "flat sale tax return", "sub registry tax 53ff"],
+      "banglishKeywords": [
+        "jomi bikri capital gain tax",
+        "flat sale tax return",
+        "sub registry tax 53ff"
+      ],
       "shortAnswer": "জমি বা ফ্ল্যাট বিক্রির সময় সাব-রেজিস্ট্রি অফিসে যে উৎসে কর দেওয়া হয়, তা বছরান্তে রিটার্নের ক্যাপিটাল গেইনস অংশে প্রদর্শন করে সমন্বয় করতে হয়। প্রকৃত লাভ নির্ধারিত সীমার বেশি হলে অতিরিক্ত কর প্রযোজ্য হতে পারে।",
       "stepByStepDetails": [
         "জমি ক্রয়ের মূল্যের সাথে বিক্রির মূল্যের যে পার্থক্য, তা হলো মূলধনী মুনাফা বা ক্যাপিটাল গেইন।",
@@ -1039,7 +1262,11 @@
       "category": "documents",
       "questionBangla": "চাকরিজীবীদের রিটার্ন জমা দিতে কী কী কাগজপত্র সংগ্রহ করতে হয়?",
       "questionEnglish": "What documents do salaried employees need to collect for filing return?",
-      "banglishKeywords": ["chakrir return documents", "salary return papers needed", "salaried employee checklist"],
+      "banglishKeywords": [
+        "chakrir return documents",
+        "salary return papers needed",
+        "salaried employee checklist"
+      ],
       "shortAnswer": "চাকরিজীবীদের জন্য আবশ্যক নথি হলো: অফিস থেকে প্রদত্ত বার্ষিক বেতন ও কর কর্তন সনদ, ১ জুলাই থেকে ৩০ জুন পর্যন্ত স্যালারি ব্যাংক একাউন্ট স্টেটমেন্ট এবং প্রযোজ্য ক্ষেত্রে ডিপিএস বা জীবন বীমার বিনিয়োগ রশিদ।",
       "stepByStepDetails": [
         "১. বেতন ও কর কর্তন প্রত্যয়নপত্র (Salary & Tax Deduction Certificate)।",
@@ -1064,7 +1291,11 @@
       "category": "documents",
       "questionBangla": "ব্যাংক স্টেটমেন্ট ও ইন্টারেস্ট সার্টিফিকেট কেন রিটার্নে আবশ্যক?",
       "questionEnglish": "Why are bank statements and interest certificates essential for returns?",
-      "banglishKeywords": ["bank statement keno lage", "interest certificate tax return", "bank ait certificate"],
+      "banglishKeywords": [
+        "bank statement keno lage",
+        "interest certificate tax return",
+        "bank ait certificate"
+      ],
       "shortAnswer": "ব্যাংক থেকে বছর শেষে যে মুনাফা বা সুদ দেওয়া হয়, তার ওপর ব্যাংক সরকার নির্ধারিত ১০% বা ১৫% উৎসে কর কাটে। এই কাটা কর দাবি করতে এবং ৩০ জুনের সমাপনী ব্যালেন্স মিলাতে ব্যাংক স্টেটমেন্ট অপরিহার্য।",
       "stepByStepDetails": [
         "ব্যাংক স্টেটমেন্ট থেকে ৩০ জুনের ক্লোজিং ব্যালেন্স রিটার্নের সম্পদ বিবরণীতে দেখাতে হয়।",
@@ -1085,7 +1316,10 @@
       "category": "documents",
       "questionBangla": "সঞ্চয়পত্রের মুনাফা ও উৎসে করের সমন্বয়ে কী কী প্রমাণপত্র লাগে?",
       "questionEnglish": "What documents are required to declare and adjust AIT on National Savings Certificates?",
-      "banglishKeywords": ["shonchoypotro tax paper", "savings certificate ait deduction certificate"],
+      "banglishKeywords": [
+        "shonchoypotro tax paper",
+        "savings certificate ait deduction certificate"
+      ],
       "shortAnswer": "সঞ্চয়পত্র ব্যুরো, পোস্ট অফিস বা ব্যাংক থেকে করবর্ষ শেষে প্রদত্ত 'মুনাফা ও কর কর্তন প্রত্যয়নপত্র' সংগ্রহ করতে হবে, যেখানে অর্জিত মোট সুদ ও কর্তিত করের পরিমাণ সুনির্দিষ্টভাবে লেখা থাকে।",
       "stepByStepDetails": [
         "সঞ্চয়পত্র ভাঙালে বা মেয়াদ শেষে মুনাফা তোলার সময় ৫% বা ১০% কর কাটা থাকে।",
@@ -1106,8 +1340,12 @@
       "category": "return",
       "questionBangla": "চলতি করবর্ষে অনলাইনে eReturn দাখিল কাদের জন্য বাধ্যতামূলক করা হয়েছে?",
       "questionEnglish": "Who is mandatorily required to file eReturn online in the current tax year?",
-      "banglishKeywords": ["online return kar baddhotamulok", "mandatory online ereturn circular", "nbr special order ereturn"],
-      "shortAnswer": "জাতীয় রাজস্ব বোর্ডের বিশেষ আদেশ অনুযায়ী ঢাকা উত্তর, ঢাকা দক্ষিণ, নারায়ণগঞ্জ ও গাজীপুর সিটি কর্পোরেশন এলাকার সকল সরকারি কর্মকর্তা-কর্মচারী, তফসিলি ব্যাংক, মোবাইল অপারেটর ও বহুজাতিক কোম্পানির কর্মীদের জন্য অনলাইনে eReturn বাধ্যতামূলক।",
+      "banglishKeywords": [
+        "online return kar baddhotamulok",
+        "mandatory online ereturn circular",
+        "nbr special order ereturn"
+      ],
+      "shortAnswer": "এটি ২০২৪ সালের নিয়ম ছিল। ২০২৬-২৭ করবর্ষ থেকে নিয়ম বদলেছে: এখন সব সাধারণ ব্যক্তি করদাতার জন্য অনলাইন eReturn বাধ্যতামূলক, শুধু ৫টি ব্যতিক্রম ছাড়া। নতুন নিয়মের জন্য up-2026-01 প্রশ্নটি দেখুন।",
       "stepByStepDetails": [
         "কাগজে বা অফলাইনে পেপার রিটার্ন জমা দিলে সংশ্লিষ্ট প্রতিষ্ঠান ও দপ্তর এই কর্মীদের রিটার্ন গ্রহণযোগ্য হিসেবে গণ্য করতে পারবে না।",
         "অন্যান্য অঞ্চলের সাধারণ ব্যক্তি করদাতারা চাইলে অনলাইনে বা সনাতন পদ্ধতিতে জমা দিতে পারেন, তবে অনলাইন ফাইলিং উৎসাহিত করা হচ্ছে।"
@@ -1120,14 +1358,18 @@
       "sourceUrl": "https://nbr.gov.bd",
       "legalSection": "এনবিআর বিশেষ আদেশ",
       "lastVerifiedDate": "২০২৪-১০-০১",
-      "verificationStatus": "Verified - NBR Official"
+      "verificationStatus": "Superseded for 2026-27 — see up-2026-01"
     },
     {
       "id": "up-q02",
       "category": "return",
       "questionBangla": "ই-রিটার্ন সিস্টেমে রেজিস্ট্রেশনের সময় মোবাইল নম্বর ম্যাচ না করলে কী করবেন?",
       "questionEnglish": "What to do if mobile number does not match during eReturn registration?",
-      "banglishKeywords": ["ereturn mobile number not match", "biometric sim ereturn problem", "tin ereturn registration error"],
+      "banglishKeywords": [
+        "ereturn mobile number not match",
+        "biometric sim ereturn problem",
+        "tin ereturn registration error"
+      ],
       "shortAnswer": "ই-রিটার্ন পোর্টালে রেজিস্ট্রেশনের জন্য ব্যবহৃত মোবাইল সিমটি অবশ্যই করদাতার নিজস্ব এনআইডি দিয়ে বায়োমেট্রিক নিবন্ধিত হতে হবে। সিমটি অন্যের এনআইডিতে থাকলে নিজের নামে নতুন সিম বা মালিকানা পরিবর্তন করে নিতে হবে।",
       "stepByStepDetails": [
         "আপনার মোবাইল সিম কার এনআইডিতে রেজিস্ট্রেশন করা তা জানতে মোবাইলের ডায়ালপ্যাডে `*16001#` ডায়াল করে এনআইডির শেষ ৪ ডিজিট দিয়ে যাচাই করুন।",
@@ -1148,7 +1390,11 @@
       "category": "myths",
       "questionBangla": "ভুল ধারণা: 'ই-টিআইএন খুললেই প্রতি বছর বাধ্যতামূলক করের টাকা দিতে হবে' — এটি কি সত্যি?",
       "questionEnglish": "Myth: 'Opening an e-TIN means having to pay tax money every year' — is this true?",
-      "banglishKeywords": ["tin khullei tax dite hobe", "tin tax myth", "zero return fact"],
+      "banglishKeywords": [
+        "tin khullei tax dite hobe",
+        "tin tax myth",
+        "zero return fact"
+      ],
       "shortAnswer": "না, এটি সম্পূর্ণ ভুল ধারণা। টিআইএন থাকা মানেই করের টাকা দেওয়া নয়। আপনার বার্ষিক করযোগ্য আয় যদি করমুক্ত সীমা (পুরুষ ৩.৫ লাখ, নারী ৪ লাখ) অতিক্রম না করে, তবে কোনো কর দিতে হবে না; শুধু 'জিরো রিটার্ন' দিতে হবে।",
       "stepByStepDetails": [
         "কর নির্ধারণ হয় আপনার আয়ের ওপর, আপনার টিআইএন কাগজের ওপর নয়।",
@@ -1169,7 +1415,10 @@
       "category": "myths",
       "questionBangla": "ভুল ধারণা: 'ব্যাংক অ্যাকাউন্টে টাকা লেনদেন করলেই ট্যাক্স অফিসের নোটিশ আসবে' — এটি কি সত্যি?",
       "questionEnglish": "Myth: 'Bank transactions will immediately trigger tax office notices' — is this true?",
-      "banglishKeywords": ["bank a taka thakle tax", "bank transaction tax notice myth"],
+      "banglishKeywords": [
+        "bank a taka thakle tax",
+        "bank transaction tax notice myth"
+      ],
       "shortAnswer": "না। ব্যাংক লেনদেনের পরিমাণের ওপর সরাসরি কোনো ট্যাক্স ধার্য হয় না। কর ধার্য হয় অর্জিত প্রকৃত আয়ের ওপর। লেনদেনের বৈধ উৎস এবং পূর্বে জমাকৃত রিটার্নে হিসাব ঠিক থাকলে কোনো ভয়ের কারণ নেই।",
       "stepByStepDetails": [
         "ব্যবসার বিক্রি বা পরিবার থেকে প্রাপ্ত উপহার ব্যাংকে লেনদেন হতে পারে।",
@@ -1190,7 +1439,11 @@
       "category": "myths",
       "questionBangla": "ভুল ধারণা: 'একবার ট্যাক্স ফাইল খুললে আর কখনোই বন্ধ করা যায় না' — বাস্তবতা কী?",
       "questionEnglish": "Myth: 'Once opened, a tax file can never be closed' — what is reality?",
-      "banglishKeywords": ["file close hoy na myth", "tin cancellation reality", "tax file bondho kora"],
+      "banglishKeywords": [
+        "file close hoy na myth",
+        "tin cancellation reality",
+        "tax file bondho kora"
+      ],
       "shortAnswer": "এটি সম্পূর্ণ ভুল ধারণা। আয়কর আইন ২০২৩-এর ধারা ২৬১(৭) অনুযায়ী নির্দিষ্ট আইনি শর্ত সাপেক্ষে উপ-কর কমিশনারের নিকট আবেদন করে ট্যাক্স ফাইল ও টিআইএন নিষ্ক্রিয় (Inactivate) করা সম্পূর্ণ সম্ভব।",
       "stepByStepDetails": [
         "ব্যবসা বন্ধ হলে, করদাতা স্থায়ীভাবে বিদেশে চলে গেলে, অথবা করদাতার আয় স্থায়ীভাবে করমুক্ত সীমার নিচে নেমে গেলে ফাইল বন্ধের আইনি আবেদন করা যায়।",
@@ -1211,7 +1464,11 @@
       "category": "myths",
       "questionBangla": "ভুল ধারণা: 'আইনজীবী ছাড়া নিজে অনলাইনে রিটার্ন দেওয়া অসম্ভব বা ঝুঁকিপূর্ণ' — সত্যি কী?",
       "questionEnglish": "Myth: 'Filing tax return without a lawyer is impossible or risky' — what is true?",
-      "banglishKeywords": ["ukil chara return dewa jay na", "lawyer tax return myth", "ereturn self filing"],
+      "banglishKeywords": [
+        "ukil chara return dewa jay na",
+        "lawyer tax return myth",
+        "ereturn self filing"
+      ],
       "shortAnswer": "বাস্তবতা হলো এনবিআরের বর্তমান eReturn পোর্টাল সাধারণ মানুষের জন্য তৈরি অত্যন্ত সহজ একটি স্বয়ংক্রিয় প্ল্যাটফর্ম। সাধারণ চাকরিজীবী বা জিরো রিটার্ন প্রদানকারীরা মাত্র ১০-১৫ মিনিটে নিজেই কোনো ভুল ছাড়া এটি জমা দিতে পারেন।",
       "stepByStepDetails": [
         "সিস্টেম নিজে থেকেই স্ল্যাব অনুযায়ী কর হিসাব করে দেয় এবং প্রদেয় কর দেখায়।",
@@ -1232,7 +1489,10 @@
       "category": "myths",
       "questionBangla": "ভুল ধারণা: 'নারী করদাতাদের করপদ্ধতি পুরুষদের চেয়ে সম্পূর্ণ আলাদা' — বাস্তবতা কী?",
       "questionEnglish": "Myth: 'Tax process for women is completely different from men' — what is reality?",
-      "banglishKeywords": ["nari tax alada myth", "women tax rules bangladesh"],
+      "banglishKeywords": [
+        "nari tax alada myth",
+        "women tax rules bangladesh"
+      ],
       "shortAnswer": "না, করপদ্ধতি, ফরম এবং হিসাব সবই এক। পার্থক্য শুধু একটি জায়গায়: নারী করদাতাদের করমুক্ত আয়ের সাধারণ সীমা পুরুষদের চেয়ে ৫০,০০০ টাকা বেশি (নারীদের জন্য ৪,০০,০০০ টাকা, পুরুষদের জন্য ৩,৫০,০০০ টাকা)।",
       "stepByStepDetails": [
         "রিটার্ন দাখিলের নিয়ম, অনলাইনে জমা, স্ল্যাব রেট এবং বিনিয়োগ রেয়াত সুবিধা পুরুষ ও নারী উভয়ের জন্য সম্পূর্ণ অভিন্ন।",
@@ -1253,7 +1513,11 @@
       "category": "return",
       "questionBangla": "বাংলাদেশের সংবিধানের অনুচ্ছেদ ৮৩ অনুযায়ী কর আরোপের আইনি ভিত্তি কী?",
       "questionEnglish": "What is the legal basis of taxation under Article 83 of Bangladesh Constitution?",
-      "banglishKeywords": ["shongbidhan onucched 83", "constitution article 83 tax law", "tax imposition authority"],
+      "banglishKeywords": [
+        "shongbidhan onucched 83",
+        "constitution article 83 tax law",
+        "tax imposition authority"
+      ],
       "shortAnswer": "সংবিধানের অনুচ্ছেদ ৮৩ অনুযায়ী, জাতীয় সংসদের কোনো আইনের কর্তৃত্ব ব্যতীত বাংলাদেশে কোনো কর আরোপ বা সংগ্রহ করা যাবে না। এটি করের সাংবিধানিক বৈধতার মূল ভিত্তি।",
       "stepByStepDetails": [
         "কোনো সরকারি সংস্থা বা ব্যক্তি আইনসভার আইন ছাড়া নিজের ইচ্ছায় কোনো কর আরোপ করতে পারে না।",
@@ -1274,7 +1538,11 @@
       "category": "return",
       "questionBangla": "ট্যাক্স রিফান্ড (Tax Refund) কী এবং বেশি কাটা কর কীভাবে ফেরত পাওয়া যায়?",
       "questionEnglish": "What is a Tax Refund and how to claim back excess tax deducted at source?",
-      "banglishKeywords": ["tax refund ki", "beshi tax katle kivabe ferot pabo", "advance tax refund claim"],
+      "banglishKeywords": [
+        "tax refund ki",
+        "beshi tax katle kivabe ferot pabo",
+        "advance tax refund claim"
+      ],
       "shortAnswer": "যদি সারা বছর ব্যাংক বা নিয়োগকর্তা কর্তৃক অগ্রিম কাটা কর (AIT/TDS) আপনার মোট প্রদেয় করের চেয়ে বেশি হয়, তবে অতিরিক্ত করের অর্থ আপনি ফেরত দাবি করতে পারেন বা পরবর্তী বছরের করের সাথে সমন্বয় করতে পারেন।",
       "stepByStepDetails": [
         "রিটার্ন ফর্মে প্রদেয় কর এবং অগ্রিম প্রদত্ত করের পার্থক্য স্বয়ংক্রিয়ভাবে 'Refund' হিসেবে প্রদর্শিত হবে।",
@@ -1295,7 +1563,11 @@
       "category": "return",
       "questionBangla": "সংশোধিত রিটার্ন (Revised Return) কী এবং কখন দাখিল করা যায়?",
       "questionEnglish": "What is a Revised Return and under what conditions can it be filed?",
-      "banglishKeywords": ["revised return ki", "shongshodhito return kobe dewa jay", "mistake in return revision"],
+      "banglishKeywords": [
+        "revised return ki",
+        "shongshodhito return kobe dewa jay",
+        "mistake in return revision"
+      ],
       "shortAnswer": "রিটার্ন দাখিলের পর যদি কোনো অনিচ্ছাকৃত ভুল বা আয়ের অসম্পূর্ণ তথ্য ধরা পড়ে, তবে ধারা ১৮০ অনুযায়ী কর কমিশনারের অনুমোদন সাপেক্ষে নির্দিষ্ট মেয়াদের মধ্যে সংশোধিত রিটার্ন দাখিল করা যায়।",
       "stepByStepDetails": [
         "মূল রিটার্ন দাখিলের ১৮০ দিনের মধ্যে অথবা সংশ্লিষ্ট করবর্ষ শেষ হওয়ার পূর্বে সংশোধিত রিটার্ন দেওয়া যায়।",
@@ -1316,7 +1588,11 @@
       "category": "return",
       "questionBangla": "ট্যাক্স সার্টিফিকেট (Tax Clearance Certificate) কীভাবে অনলাইন থেকে ডাউনলোড করবেন?",
       "questionEnglish": "How to download the Tax Certificate online after filing return?",
-      "banglishKeywords": ["tax certificate download", "tax clearance certificate online", "prottoyon potro download"],
+      "banglishKeywords": [
+        "tax certificate download",
+        "tax clearance certificate online",
+        "prottoyon potro download"
+      ],
       "shortAnswer": "অনলাইনে eReturn দাখিল সম্পন্ন হওয়ার সাথে সাথে সিস্টেম থেকে কিউআর কোড সম্বলিত 'Tax Certificate' বা কর প্রত্যয়ন পত্র সরাসরি পিডিএফ ফরম্যাটে ডাউনলোড করা যায়।",
       "stepByStepDetails": [
         "ধাপ ১: etaxnbr.gov.bd পোর্টালে লগইন করুন।",
@@ -1338,7 +1614,11 @@
       "category": "return",
       "questionBangla": "পারিবারিক খরচের বিবরণী (IT-10BB) কাদের পূরণ করতে হয়?",
       "questionEnglish": "Who is required to fill out the Statement of Family & Personal Expenses (IT-10BB)?",
-      "banglishKeywords": ["it-10bb family expense", "poribarer khoroch tax return", "lifestyle expense tax return"],
+      "banglishKeywords": [
+        "it-10bb family expense",
+        "poribarer khoroch tax return",
+        "lifestyle expense tax return"
+      ],
       "shortAnswer": "যদি করদাতার বার্ষিক আয় ৫ লাখ টাকার বেশি হয় অথবা করদাতার মোট নিট সম্পদ ৫০ লাখ টাকার বেশি হয়, তবে পারিবারিক ও জীবনযাত্রার বার্ষিক খরচের বিবরণী (IT-10BB) পূরণ করা বাধ্যতামূলক।",
       "stepByStepDetails": [
         "এতে খাদ্য ও পোশাকের খরচ, বাড়িভাড়া, গ্যাস-বিদ্যুৎ বিল, সন্তানদের শিক্ষার ব্যয় ও যাতায়াত খরচের সারা বছরের মোট হিসাব উল্লেখ করতে হয়।",
@@ -1359,7 +1639,11 @@
       "category": "return",
       "questionBangla": "কৃষি আয়ের ওপর কি কর দিতে হয় এবং রিটার্নে কীভাবে দেখাতে হয়?",
       "questionEnglish": "Is agricultural income taxable and how to declare it in the return?",
-      "banglishKeywords": ["krishi aay tax", "agricultural income tax bangladesh", "krishi kor exemption"],
+      "banglishKeywords": [
+        "krishi aay tax",
+        "agricultural income tax bangladesh",
+        "krishi kor exemption"
+      ],
       "shortAnswer": "কৃষি থেকে অর্জিত সাধারণ আয়ের ক্ষেত্রে প্রথম ২,০০,০০০ টাকা পর্যন্ত বিশেষ কর অব্যাহতি রয়েছে (যদি করদাতার কেবল কৃষি আয় থাকে)। এরপর সাধারণ স্ল্যাব অনুযায়ী কর ধার্য হয় এবং তা রিটার্নে প্রদর্শন করতে হয়।",
       "stepByStepDetails": [
         "ফসলের উৎপাদন খরচ হিসেবে মোট বিক্রয়ের নির্দিষ্ট শতাংশ আইন অনুযায়ী অনুমোদনযোগ্য ব্যয় হিসেবে বাদ দেওয়া যায়।",
@@ -1380,7 +1664,11 @@
       "category": "deadline-fine",
       "questionBangla": "আয়কর অডিট (Audit) কী এবং কোনো করদাতার ফাইল অডিটে পড়লে কী করতে হয়?",
       "questionEnglish": "What is a Tax Audit and what should a taxpayer do if selected for audit?",
-      "banglishKeywords": ["tax audit ki", "file audit e porle ki korbo", "audit notice section 182"],
+      "banglishKeywords": [
+        "tax audit ki",
+        "file audit e porle ki korbo",
+        "audit notice section 182"
+      ],
       "shortAnswer": "এনবিআরের সেন্ট্রাল সিস্টেম দৈবচয়নের (Random Selection) ভিত্তিতে অথবা অস্বাভাবিক গরমিলের কারণে নির্দিষ্ট কিছু ফাইল বিশদ যাচাইয়ের জন্য অডিটে পাঠায়। নোটিশ পেলে নির্ধারিত কাগজপত্রের স্বপক্ষে প্রমাণপত্র কর অফিসে জমা দিতে হয়।",
       "stepByStepDetails": [
         "অডিটে ফাইল পড়া মানেই অপরাধী নয়; এটি একটি রুটিন আইনগত প্রক্রিয়া।",
@@ -1401,7 +1689,10 @@
       "category": "deadline-fine",
       "questionBangla": "রিটার্ন দাখিল না করলে গ্যাস, বিদ্যুৎ বা বাণিজ্যিক সংযোগ বিচ্ছিন্ন হতে পারে কি?",
       "questionEnglish": "Can utility connections (gas, electricity) be disconnected for not filing return?",
-      "banglishKeywords": ["return na dile gas biddut line kanta", "utility connection psr cancellation"],
+      "banglishKeywords": [
+        "return na dile gas biddut line kanta",
+        "utility connection psr cancellation"
+      ],
       "shortAnswer": "হ্যাঁ! ধারা ২৬৪ অনুযায়ী বাণিজ্যিক বা শিল্প শ্রেণির গ্যাস ও বিদ্যুৎ সংযোগ বহাল রাখতে প্রতি বছর রিটার্ন দাখিলের প্রমাণপত্র (PSR) দাখিল করতে হয়। তা না হলে সেবাদানকারী প্রতিষ্ঠান সংযোগ বিচ্ছিন্ন করতে আইনত বাধ্য।",
       "stepByStepDetails": [
         "নতুন বাণিজ্যিক গ্যাস ও বিদ্যুৎ সংযোগের ক্ষেত্রে পিএসআর বাধ্যতামূলক।",
@@ -1422,7 +1713,11 @@
       "category": "deadline-fine",
       "questionBangla": "কর নির্ধারণী আদেশের বিরুদ্ধে আপিল (Appeal) করার নিয়ম ও সময়সীমা কী?",
       "questionEnglish": "What is the procedure and deadline to appeal against a tax assessment order?",
-      "banglishKeywords": ["tax appeal kivabe korbo", "appeal deadline section 293", "tax commissioner appeal"],
+      "banglishKeywords": [
+        "tax appeal kivabe korbo",
+        "appeal deadline section 293",
+        "tax commissioner appeal"
+      ],
       "shortAnswer": "উপ-কর কমিশনারের কোনো আদেশ বা কর নির্ধারণে সংক্ষুব্ধ হলে আদেশ প্রাপ্তির ৪৫ দিনের মধ্যে কর কমিশনার (আপিল)-এর নিকট নির্ধারিত ফি প্রদান করে আপিল দাখিল করা যায়।",
       "stepByStepDetails": [
         "আপিল দাখিলের পূর্বে অবিতর্কিত করের পুরোটাই পরিশোধ করতে হয়।",
@@ -1444,7 +1739,11 @@
       "category": "vat-bin",
       "questionBangla": "উৎসে ভ্যাট কর্তন (VDS - VAT Deducted at Source) কী এবং কারা এটি কর্তন করে?",
       "questionEnglish": "What is VAT Deducted at Source (VDS) and who is responsible for withholding it?",
-      "banglishKeywords": ["vds ki", "utshe vat korton", "vat deduction at source rules"],
+      "banglishKeywords": [
+        "vds ki",
+        "utshe vat korton",
+        "vat deduction at source rules"
+      ],
       "shortAnswer": "আইন অনুযায়ী নির্দিষ্ট ৪৩টি পণ্য ও সেবার বিল পরিশোধের সময় সরকারি দপ্তর, স্বায়ত্তশাসিত প্রতিষ্ঠান, ব্যাংক, বীমা ও বৃহৎ কোম্পানিগুলো সরবরাহকারীর বিল থেকে প্রযোজ্য হারে ভ্যাট কেটে রেখে সরকারি চালানে জমা দেয়। একে ভিডিএস (VDS) বলে।",
       "stepByStepDetails": [
         "যে প্রতিষ্ঠান ভ্যাট কাটবে, তারা সরবরাহকারীকে একটি মূসক-৬.৬ সনদপত্র প্রদান করবে।",
@@ -1465,7 +1764,11 @@
       "category": "vat-bin",
       "questionBangla": "অনলাইনে নতুন বিআইএন (BIN) রেজিস্ট্রেশন করার ধাপগুলো কী কী?",
       "questionEnglish": "What are the steps to register a new BIN online at vat.gov.bd?",
-      "banglishKeywords": ["bin kivabe khulbo", "online vat registration bin step by step", "vat bin process"],
+      "banglishKeywords": [
+        "bin kivabe khulbo",
+        "online vat registration bin step by step",
+        "vat bin process"
+      ],
       "shortAnswer": "vat.gov.bd পোর্টালে গিয়ে 'Sign Up' করে ইউজার আইডি তৈরি করুন। এরপর 'Form 2.1 (ভ্যাট নিবন্ধন আবেদনপত্র)' পূরণ করে ট্রেড লাইসেন্স ও এনআইডি তথ্য সাবমিট করলে ২৪ থেকে ৪৮ ঘণ্টার মধ্যে অনলাইন বিআইএন সনদ ইস্যু হয়।",
       "stepByStepDetails": [
         "ধাপ ১: vat.gov.bd ওয়েবসাইটে যান এবং 'Sign Up' বাটনে ক্লিক করে প্রাথমিক অ্যাকাউন্ট নিশ্চিত করুন।",
@@ -1490,7 +1793,11 @@
       "category": "myths",
       "questionBangla": "ভুল ধারণা: 'ট্যাক্স রিটার্নে সম্পদ বেশি দেখালে বা দেখালে সরকার অতিরিক্ত কর নেবে' — সত্যি কী?",
       "questionEnglish": "Myth: 'Showing more assets in tax return will make the government take away money' — is it true?",
-      "banglishKeywords": ["sompod beshi dekhale tax", "asset declaration myth", "showing property in tax return"],
+      "banglishKeywords": [
+        "sompod beshi dekhale tax",
+        "asset declaration myth",
+        "showing property in tax return"
+      ],
       "shortAnswer": "সম্পদের পরিমাণের ওপর সাধারণ আয়ের কর ধার্য হয় না; কর ধার্য হয় বার্ষিক নিট আয়ের ওপর। বরং বৈধ আয়ের টাকা দিয়ে অর্জিত সম্পদ রিটার্নে যথাযথভাবে প্রদর্শন করলে তা আইনি সুরক্ষা পায় এবং ভবিষ্যতে বিনিয়োগ সহজ হয়।",
       "stepByStepDetails": [
         "সম্পদ বেশি হলে কেবল ৪ কোটি টাকার বেশি নিট সম্পদের ক্ষেত্রে সারচার্জ (Surcharge) প্রযোজ্য হতে পারে, সাধারণ মানুষের জন্য নয়।",
@@ -1511,7 +1818,11 @@
       "category": "myths",
       "questionBangla": "ভুল ধারণা: 'জমি হেবা বা দানসূত্রে পেলে তাতেও কি সরকারকে বিশাল ট্যাক্স দিতে হয়?' — আসল নিয়ম কী?",
       "questionEnglish": "Myth: 'Receiving gifted/inherited land requires paying huge income tax' — what is the real rule?",
-      "banglishKeywords": ["heba jomi tax", "gifted property income tax", "dan kora sompotti tax"],
+      "banglishKeywords": [
+        "heba jomi tax",
+        "gifted property income tax",
+        "dan kora sompotti tax"
+      ],
       "shortAnswer": "না! পিতা-মাতা, সন্তান, ভাই-বোন বা স্বামী-স্ত্রীর মতো রক্তের নিকটাত্মীয়ের নিকট থেকে হেবা বা বৈধ দান হিসেবে প্রাপ্ত সম্পত্তি সম্পূর্ণ আয়করমুক্ত। রিটার্নে শুধু এটি বৈধ দান হিসেবে উল্লেখ করতে হয়।",
       "stepByStepDetails": [
         "আয়কর আইনের ধারা ৫৬ অনুযায়ী রক্তের সম্পর্কের উপহার বা হেবা মূলধনী প্রাপ্তি হিসেবে গণ্য এবং কোনো নিয়মিত আয়কর দিতে হয় না।",
@@ -1526,6 +1837,185 @@
       "legalSection": "ধারা ৫৬",
       "lastVerifiedDate": "২০২৪-১০-০১",
       "verificationStatus": "Verified - NBR Official"
+    },
+    {
+      "id": "up-2026-01",
+      "category": "return",
+      "questionBangla": "২০২৬-২৭ করবর্ষে অনলাইনে eReturn দাখিল কাদের জন্য বাধ্যতামূলক?",
+      "questionEnglish": "Who must file eReturn online for tax year 2026-27?",
+      "banglishKeywords": [
+        "2026-27 ereturn mandatory",
+        "online return badhyotamulok",
+        "ereturn kobe chalu",
+        "paper return ke dite parbe"
+      ],
+      "shortAnswer": "২০২৬-২৭ করবর্ষের জন্য ২২ জুলাই ২০২৬ থেকে eReturn চালু হয়েছে এবং সব সাধারণ ব্যক্তি করদাতার জন্য অনলাইন দাখিল বাধ্যতামূলক। শুধু ৫টি শ্রেণি কাগজে রিটার্ন দিতে পারবেন।",
+      "stepByStepDetails": [
+        "এনবিআরের বিশেষ আদেশ নং ১/২০২৬ (আয়কর আইন, ২০২৩-এর ধারা ৩২৮(৪) অনুযায়ী) অনুসারে সব সাধারণ ব্যক্তি করদাতাকে www.etaxnbr.gov.bd পোর্টালে অনলাইনে রিটার্ন দিতে হবে।",
+        "ব্যতিক্রম ৫টি: ৬৫ বছর বা তার বেশি বয়সী করদাতা; শারীরিক প্রতিবন্ধী বা বিশেষ চাহিদাসম্পন্ন করদাতা (সনদসহ); বিদেশে বসবাসরত বাংলাদেশি করদাতা; মৃত করদাতার পক্ষে আইনি প্রতিনিধি; বাংলাদেশে কর্মরত বিদেশি নাগরিক।",
+        "এই ৫ শ্রেণি চাইলে স্বেচ্ছায় অনলাইনেও দাখিল করতে পারবেন।",
+        "eReturn রেজিস্ট্রেশন বা কারিগরি সমস্যার কারণে অনলাইনে দাখিল করতে না পারলে সংশ্লিষ্ট অতিরিক্ত/যুগ্ম কর কমিশনারের অনুমতি নিয়ে কাগজে রিটার্ন দেওয়া যায়।",
+        "২০২৫-২৬ করবর্ষে প্রায় ৪৭ লাখ ব্যক্তি করদাতা অনলাইনে রিটার্ন দিয়েছেন বলে এনবিআর জানিয়েছে।"
+      ],
+      "checklist": [
+        "TIN নম্বর",
+        "নিজ নামে বায়োমেট্রিক মোবাইল নম্বর",
+        "etaxnbr.gov.bd-তে রেজিস্ট্রেশন",
+        "ব্যতিক্রমের ক্ষেত্রে সনদ/প্রমাণ"
+      ],
+      "sourceName": "এনবিআর বিশেষ আদেশ নং ১/২০২৬ ও এনবিআর প্রেস বিজ্ঞপ্তি (BSS প্রতিবেদন)",
+      "sourceUrl": "https://www.bssnews.net/business/407877",
+      "legalSection": "আয়কর আইন, ২০২৩ ধারা ৩২৮(৪); বিশেষ আদেশ ১/২০২৬",
+      "lastVerifiedDate": "২০২৬-১০-২৬",
+      "verificationStatus": "NBR press release / special order — reported"
+    },
+    {
+      "id": "up-2026-02",
+      "category": "deadline-fine",
+      "questionBangla": "২০২৬-২৭ করবর্ষে আগেভাগে রিটার্ন দিলে কী ছাড়, আর দেরি করলে কী অতিরিক্ত কর দিতে হবে?",
+      "questionEnglish": "What is the early-filing rebate and late-filing additional tax for 2026-27?",
+      "banglishKeywords": [
+        "early rebate 5%",
+        "july september rebate 25000",
+        "late filing fine 2026",
+        "october december no rebate"
+      ],
+      "shortAnswer": "২০২৬-২৭ করবর্ষে জুলাই-সেপ্টেম্বরে রিটার্ন দিলে নিট প্রদেয় করের ৫% ছাড় (সর্বোচ্চ ২৫,০০০ টাকা)। অক্টোবর-ডিসেম্বরে কোনো ছাড় বা অতিরিক্ত কর নেই। জানুয়ারি-মার্চে ২% বা ৩,০০০ টাকা (যেটি বেশি), এপ্রিল-জুনে ৫% বা ৫,০০০ টাকা (যেটি বেশি) অতিরিক্ত কর দিতে হবে।",
+      "stepByStepDetails": [
+        "১ জুলাই থেকে ৩০ সেপ্টেম্বরের মধ্যে দাখিল: নিট প্রদেয় করের ৫% রেয়াত, সর্বোচ্চ ২৫,০০০ টাকা পর্যন্ত।",
+        "১ অক্টোবর থেকে ৩১ ডিসেম্বরের মধ্যে দাখিল: কোনো রেয়াত নেই, কোনো অতিরিক্ত করও নেই।",
+        "১ জানুয়ারি থেকে ৩১ মার্চের মধ্যে দাখিল: প্রদেয় করের ২% অথবা ৩,০০০ টাকা, যেটি বেশি, অতিরিক্ত কর।",
+        "১ এপ্রিল থেকে ৩০ জুনের মধ্যে দাখিল: প্রদেয় করের ৫% অথবা ৫,০০০ টাকা, যেটি বেশি, অতিরিক্ত কর।",
+        "নোট: ২০২৬ সালের ২৬ অক্টোবর হিসেবে জুলাই-সেপ্টেম্বরের রেয়াতের সময়সীমা পার হয়ে গেছে; এখন অক্টোবর-ডিসেম্বর সময়সীমা চলছে। আপনার ক্ষেত্রে এনবিআরের সর্বশেষ নির্দেশনা মিলিয়ে নিন।"
+      ],
+      "checklist": [
+        "দাখিলের তারিখ",
+        "নিট প্রদেয় করের হিসাব",
+        "অ্যাকনলেজমেন্ট স্লিপ"
+      ],
+      "sourceName": "এনবিআর ২০২৬-২৭ নির্দেশনা (TBS ও bdnews24 প্রতিবেদন)",
+      "sourceUrl": "https://www.tbsnews.net/bangladesh/tk25000-tax-rebate-returns-filed-september-1504686",
+      "legalSection": "আয়কর আইন, ২০২৩ — ২০২৬-২৭ প্রণোদনা কাঠামো",
+      "lastVerifiedDate": "২০২৬-১০-২৬",
+      "verificationStatus": "NBR framework — reported, verify current NBR notice"
+    },
+    {
+      "id": "up-2026-03",
+      "category": "return",
+      "questionBangla": "কোন কোন সেবায় এখন শুধু টিআইএন সার্টিফিকেট দিলেই হবে, পুরো রিটার্নের প্রমাণ লাগবে না?",
+      "questionEnglish": "For which services is only a TIN certificate needed, not full return proof?",
+      "banglishKeywords": [
+        "tin certificate only service",
+        "psr lagbe na",
+        "credit card tin only",
+        "ecommerce licence tin"
+      ],
+      "shortAnswer": "২০২৫-২৬ বাজেট প্রস্তাবে ১২টি সেবায় পুরো রিটার্ন দাখিলের প্রমাণের বদলে শুধু টিআইএন সার্টিফিকেট যথেষ্ট করা হয়েছে, যেমন ক্রেডিট কার্ড, ই-কমার্স লাইসেন্স ও ট্রেড লাইসেন্স। তবে নির্দিষ্ট সেবার ক্ষেত্রে বর্তমান তালিকা এনবিআর থেকে মিলিয়ে নেওয়া জরুরি।",
+      "stepByStepDetails": [
+        "আগে ৪৫টি সেবায় রিটার্ন দাখিলের প্রমাণ (PSR) বাধ্যতামূলক ছিল।",
+        "বাজেট প্রস্তাবে ১২টি সেবায় শুধু টিআইএন সার্টিফিকেট যথেষ্ট করা হয়, যার মধ্যে আছে: সিটি কর্পোরেশন/পৌরসভায় নতুন ট্রেড লাইসেন্স, ক্রেডিট কার্ডের আবেদন/নবায়ন, পেশাজীবী সংস্থার সদস্যপদ, ৫ লাখ টাকার বেশি পোস্ট অফিস সঞ্চয় হিসাব, ই-কমার্স ব্যবসার লাইসেন্স, তিন চাকার যানবাহনের রেজিস্ট্রেশন/ফিটনেস নবায়ন।",
+        "এই ছাড় সত্ত্বেও রিটার্ন দাখিলের দায়িত্ব শেষ হয় না — টিআইএন থাকলে রিটার্ন দিতেই হবে।",
+        "কোনো সেবা নেওয়ার আগে সংশ্লিষ্ট প্রতিষ্ঠান বা এনবিআরের বর্তমান নির্দেশনা থেকে সেই সেবাটি এই তালিকায় আছে কিনা যাচাই করুন।"
+      ],
+      "checklist": [
+        "টিআইএন সার্টিফিকেট",
+        "সেবা প্রদানকারী প্রতিষ্ঠানের বর্তমান নির্দেশনা"
+      ],
+      "sourceName": "২০২৫-২৬ বাজেট প্রস্তাব (bdnews24 প্রতিবেদন)",
+      "sourceUrl": "https://bdnews24.com/economy/41c6ca4c05b7",
+      "legalSection": "বাজেট প্রস্তাব ২০২৫-২৬ — PSR তালিকা সংশোধন",
+      "lastVerifiedDate": "২০২৬-১০-২৬",
+      "verificationStatus": "Budget proposal — verify current NBR list before use"
+    },
+    {
+      "id": "ret-16",
+      "category": "return",
+      "questionBangla": "eReturn-এর পাসওয়ার্ড ভুলে গেলে বা OTP না আসলে কী করবেন?",
+      "questionEnglish": "What to do if you forget your eReturn password or do not receive OTP?",
+      "banglishKeywords": [
+        "ereturn password bhule gechi",
+        "otp asche na",
+        "forget password etaxnbr",
+        "sim hariye geche ereturn"
+      ],
+      "shortAnswer": "etaxnbr.gov.bd-তে Forget Password অপশন থেকে রেজিস্টার্ড মোবাইলে OTP নিয়ে নতুন পাসওয়ার্ড সেট করুন। মোবাইল নম্বর/সিম হারিয়ে গেলে বা OTP না আসলে এনবিআর কল সেন্টারে যোগাযোগ করুন।",
+      "stepByStepDetails": [
+        "www.etaxnbr.gov.bd-তে যান এবং লগইন পেজে Forget Password অপশনটি বেছে নিন।",
+        "আপনার টিআইএন নম্বর (এটিই eReturn ইউজারনেম) ও রেজিস্টার্ড মোবাইল নম্বর দিন।",
+        "মোবাইলে আসা OTP দিয়ে যাচাই করে নতুন পাসওয়ার্ড সেট করুন। OTP কাউকে দেবেন না।",
+        "মোবাইল নম্বরটি নিজ নামে বায়োমেট্রিক রেজিস্টার্ড হতে হবে; নম্বর ম্যাচ না করলে রেজিস্ট্রেশন আটকে যেতে পারে।",
+        "সিম হারিয়ে গেলে, নম্বর বদলে গেলে বা বারবার OTP না আসলে এনবিআর কল সেন্টার ০৯৬৪৩৭১৭১৭১-এ (কার্যদিবসে, অফিস সময়ে) যোগাযোগ করুন অথবা নিজ কর সার্কেলে যান।"
+      ],
+      "checklist": [
+        "টিআইএন নম্বর",
+        "রেজিস্টার্ড মোবাইল ফোন",
+        "OTP",
+        "সিম হারিয়ে গেলে কল সেন্টারের নম্বর"
+      ],
+      "sourceName": "eTaxNBR পোর্টাল নির্দেশনা ও এনবিআর কল সেন্টার (TBS প্রতিবেদন)",
+      "sourceUrl": "https://www.etaxnbr.gov.bd",
+      "legalSection": "eReturn পোর্টাল গাইড",
+      "lastVerifiedDate": "২০২৬-১০-২৬",
+      "verificationStatus": "Portal guide — verify on etaxnbr.gov.bd"
+    },
+    {
+      "id": "etin-11",
+      "category": "etin",
+      "questionBangla": "মৃত ব্যক্তির টিআইএন ফাইল বা রিটার্নের দায়িত্ব কার?",
+      "questionEnglish": "Who is responsible for a deceased person's TIN file and return?",
+      "banglishKeywords": [
+        "mrito bektir return",
+        "deceased tin file bondho",
+        "legal representative tax",
+        "uttoradhikari return"
+      ],
+      "shortAnswer": "মৃত করদাতার ক্ষেত্রে তার আইনি প্রতিনিধি (legal representative) কর সংক্রান্ত দায়িত্ব পালন করেন এবং প্রয়োজনে তার পক্ষে রিটার্ন দাখিল করেন। ফাইল বন্ধ করার জন্য সংশ্লিষ্ট কর সার্কেলে যোগাযোগ করতে হয়।",
+      "stepByStepDetails": [
+        "আয়কর আইন, ২০২৩-এর ধারা ১৯৪ অনুযায়ী মৃত ব্যক্তির করের দায় তার আইনি প্রতিনিধির ওপর বর্তায়।",
+        "প্রতিনিধি অনলাইন বাধ্যতামূলক দাখিলের ব্যতিক্রম শ্রেণিতে পড়েন — তিনি কাগজেও রিটার্ন দিতে পারেন।",
+        "ফাইল বন্ধ/নিষ্পত্তির জন্য মৃত্যু সনদ, প্রতিনিধিত্বের প্রমাণসহ সংশ্লিষ্ট কর সার্কেলে আবেদন করতে হয়; কী কী কাগজ লাগবে তা সার্কেল থেকে লিখিতভাবে জেনে নিন।",
+        "কোনো তৃতীয় ব্যক্তি মৃত ব্যক্তির নামে নতুন টিআইএন খুলতে বা তার OTP/NID ব্যবহার করতে পারে না।"
+      ],
+      "checklist": [
+        "মৃত্যু সনদ",
+        "আইনি প্রতিনিধিত্বের প্রমাণ",
+        "মৃত করদাতার টিআইএন নম্বর",
+        "কর সার্কেলের নির্দেশনা"
+      ],
+      "sourceName": "আয়কর আইন, ২০২৩ (ধারা ১৯৪)",
+      "sourceUrl": "https://nbr.gov.bd/laws/acts/income-tax-acts",
+      "legalSection": "ধারা ১৯৪",
+      "lastVerifiedDate": "২০২৬-১০-২৬",
+      "verificationStatus": "Act section — verify closure documents with tax circle"
+    },
+    {
+      "id": "vat-09",
+      "category": "vat-bin",
+      "questionBangla": "ভ্যাট রিটার্ন (মূসক-৯.১) দেরিতে দিলে বা না দিলে কী হয়?",
+      "questionEnglish": "What happens if VAT return Mushak-9.1 is filed late or not filed?",
+      "banglishKeywords": [
+        "vat return late fine",
+        "mushak 9.1 deri",
+        "bin return na dile"
+      ],
+      "shortAnswer": "নিবন্ধিত ব্যবসা প্রতিষ্ঠানকে প্রতি মাসে মূসক-৯.১ রিটার্ন দিতে হয়, বিক্রি না হলেও জিরো রিটার্ন দিতে হয়। দেরি বা না দিলে ভ্যাট আইন অনুযায়ী জরিমানা ও সুদ হতে পারে, তাই নির্ধারিত সময়ের মধ্যে দাখিল করুন এবং এনবিআর/ভ্যাট কমিশনারেট থেকে বর্তমান জরিমানার হার মিলিয়ে নিন।",
+      "stepByStepDetails": [
+        "মূসক-৯.১ হলো মাসিক ভ্যাট রিটার্ন; সাধারণত পরবর্তী মাসের নির্ধারিত তারিখের মধ্যে দাখিল করতে হয়।",
+        "কোনো মাসে বিক্রি না হলেও জিরো রিটার্ন দাখিল করতে হয়, নইলে ধারাবাহিকতা ভাঙে।",
+        "দেরিতে দাখিলে আইন অনুযায়ী জরিমানা/সুদ প্রযোজ্য হতে পারে — সঠিক হার ও সময়সীমা আপনার ভ্যাট সার্কেল/কমিশনারেটের সর্বশেষ নির্দেশনা থেকে যাচাই করুন।",
+        "ভ্যাট সংক্রান্ত জটিল ক্ষেত্রে (VDS, রিফান্ড, অডিট) ভ্যাট পরামর্শকের সাহায্য নিন।"
+      ],
+      "checklist": [
+        "বিআইএন নম্বর",
+        "মাসের বিক্রি/ক্রয়ের হিসাব",
+        "মূসক-৬.৩ চালান",
+        "পূর্ববর্তী মাসের রিটার্নের কপি"
+      ],
+      "sourceName": "মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২",
+      "sourceUrl": "https://nbr.gov.bd",
+      "legalSection": "ভ্যাট আইন, ২০১২ — মূসক-৯.১",
+      "lastVerifiedDate": "২০২৬-১০-২৬",
+      "verificationStatus": "General rule — verify current fine rate with VAT circle"
     }
   ]
 }
