@@ -144,7 +144,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white w-full sm:max-w-xl h-[90vh] sm:h-[700px] rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200">
+      <div className="bg-white w-full sm:max-w-xl h-[94dvh] sm:h-[700px] rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-200">
         
         {/* Header */}
         <div className="bg-gradient-to-r from-emerald-800 to-emerald-700 text-white p-4 sm:p-4.5 flex items-center justify-between shrink-0 shadow-xs">
@@ -295,13 +295,13 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
         </div>
 
         {/* Suggestion Prompts Bar */}
-        <div className="p-2.5 bg-slate-100 border-t border-slate-200 shrink-0 overflow-x-auto whitespace-nowrap space-x-1.5 scrollbar-none">
+        <div className="p-2.5 bg-slate-100 border-t border-slate-200 shrink-0 overflow-x-auto whitespace-nowrap space-x-1.5 no-scrollbar scroll-smooth">
           <span className="text-[10px] font-bold text-slate-500 uppercase mr-1">দ্রুত প্রশ্ন:</span>
           {testSampleQuestions.map((q, idx) => (
             <button
               key={idx}
               onClick={() => handleSendMessage(q)}
-              className="text-xs bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-300 px-2.5 py-1 rounded-full transition-colors"
+              className="text-xs bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-300 px-3 py-1.5 rounded-full transition-colors active:scale-95 shrink-0 cursor-pointer"
             >
               {q}
             </button>
@@ -310,7 +310,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
             <button
               key={'out-' + idx}
               onClick={() => handleSendMessage(q)}
-              className="text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 px-2.5 py-1 rounded-full transition-colors"
+              className="text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 px-3 py-1.5 rounded-full transition-colors active:scale-95 shrink-0 cursor-pointer"
               title="এআই গার্ডরেল টেস্ট"
             >
               [টেস্ট] {q}
@@ -324,14 +324,14 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
             e.preventDefault();
             handleSendMessage();
           }}
-          className="p-3 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0"
+          className="p-3 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0 safe-bottom"
         >
           <input
             type="text"
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}
-            placeholder="আপনার প্রশ্ন লিখুন (যেমন: zero return, psr ki, fine koto...)"
-            className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-500/10"
+            placeholder="আপনার প্রশ্ন লিখুন (যেমন: zero return, psr ki...)"
+            className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-base sm:text-sm focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-500/10"
           />
           <button
             type="submit"

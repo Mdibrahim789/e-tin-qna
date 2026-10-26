@@ -9,6 +9,7 @@ import EligibilityChecker from './components/EligibilityChecker';
 import DocumentChecklist from './components/DocumentChecklist';
 import MythBusterSection from './components/MythBusterSection';
 import WaiverLetterGenerator from './components/WaiverLetterGenerator';
+import MobileBottomNav from './components/MobileBottomNav';
 import AiAssistantModal from './components/AiAssistantModal';
 import Footer from './components/Footer';
 
@@ -91,17 +92,17 @@ export default function App() {
       />
 
       {/* Main Page Content */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-12">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-10 pb-28 md:pb-12 space-y-8 sm:space-y-12 overflow-x-hidden">
         {activeTab === 'home' && (
-          <div className="space-y-10 sm:space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* Hero Section */}
-            <section className="text-center space-y-4 pt-2 sm:pt-4">
-              <div className="inline-flex items-center gap-2 bg-emerald-100/80 text-emerald-800 text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-full border border-emerald-300/80 shadow-2xs">
-                <ShieldCheck className="w-4 h-4 text-emerald-700" />
+            <section className="text-center space-y-3 sm:space-y-4 pt-1 sm:pt-4">
+              <div className="inline-flex items-center gap-2 bg-emerald-100/80 text-emerald-800 text-[11px] sm:text-sm font-semibold px-3 py-1.5 rounded-full border border-emerald-300/80 shadow-2xs">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-700 shrink-0" />
                 <span>১০০% প্রাথমিক সরকারি উৎস ও আয়কর আইন ২০২৩ ভিত্তিক</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-[1.2] max-w-4xl mx-auto">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.25] max-w-4xl mx-auto px-1">
                 বাংলাদেশের <span className="text-emerald-700 underline decoration-emerald-300 decoration-wavy decoration-2">ই-টিআইএন, আয়কর রিটার্ন</span> ও ভ্যাট সহায়ক
               </h1>
 
@@ -309,11 +310,11 @@ export default function App() {
         )}
       </main>
 
-      {/* Floating AI Assistant Trigger Button (Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-30">
+      {/* Floating AI Assistant Trigger Button (Desktop Only) */}
+      <div className="fixed bottom-6 right-6 z-30 hidden md:block">
         <button
           onClick={() => setIsAiModalOpen(true)}
-          className="group flex items-center gap-2.5 bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-800 hover:to-teal-800 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95 border-2 border-white/20"
+          className="group flex items-center gap-2.5 bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-800 hover:to-teal-800 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95 border-2 border-white/20 cursor-pointer"
           aria-label="Open AI Assistant Chat"
         >
           <div className="relative">
@@ -323,6 +324,13 @@ export default function App() {
           <span className="font-bold text-sm tracking-wide">ট্যাক্স এআই</span>
         </button>
       </div>
+
+      {/* Mobile Sticky Bottom Navigation Bar */}
+      <MobileBottomNav 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        onOpenAiModal={() => setIsAiModalOpen(true)} 
+      />
 
       {/* Grounded AI Assistant Modal */}
       <AiAssistantModal 

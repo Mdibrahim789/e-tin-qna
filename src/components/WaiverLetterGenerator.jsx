@@ -31,6 +31,7 @@ export default function WaiverLetterGenerator({ onGoToQna }) {
   });
 
   const [copied, setCopied] = useState(false);
+  const [mobileTab, setMobileTab] = useState('input'); // 'input' or 'preview'
 
   const statusDescriptions = {
     student: 'একজন ছাত্র/ছাত্রী এবং আমার কোনো ধরনের আয়ের উৎস বা করযোগ্য আয় নেই',
@@ -152,18 +153,57 @@ ${formData.currentYearFiled ? `২. চলতি (${formData.currentYearName}) �
         </div>
       </div>
 
+      {/* Mobile Tab Switcher */}
+      <div className="lg:hidden flex items-center bg-slate-200/90 p-1 rounded-2xl">
+        <button
+          type="button"
+          onClick={() => setMobileTab('input')}
+          className={`flex-1 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+            mobileTab === 'input' 
+              ? 'bg-white text-emerald-800 shadow-xs' 
+              : 'text-slate-600 hover:text-slate-900'
+          }`}
+        >
+          <FileText className="w-4 h-4" />
+          <span>১. তথ্য পূরণ করুন</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setMobileTab('preview')}
+          className={`flex-1 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+            mobileTab === 'preview' 
+              ? 'bg-white text-emerald-800 shadow-xs' 
+              : 'text-slate-600 hover:text-slate-900'
+          }`}
+        >
+          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+          <span>২. তৈরি দরখাস্ত দেখুন</span>
+        </button>
+      </div>
+
       {/* Main Grid: Inputs on Left, Real-Time Letter on Right */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Form Inputs (5 cols on lg) */}
-        <div className="lg:col-span-5 bg-white rounded-3xl p-6 border border-slate-200 shadow-xs space-y-5 print:hidden">
-          <div className="border-b border-slate-100 pb-3">
-            <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-emerald-700" />
-              <span>আপনার তথ্য পূরণ করুন</span>
-            </h2>
-            <p className="text-xs text-slate-500 mt-0.5">
-              তথ্যগুলো দিলে ডানপাশে স্বয়ংক্রিয়ভাবে অফিশিয়াল দরখাস্ত তৈরি হবে।
-            </p>
+        <div className={`lg:col-span-5 bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-xs space-y-5 print:hidden ${
+          mobileTab === 'input' ? 'block' : 'hidden lg:block'
+        }`}>
+          <div className="border-b border-slate-100 pb-3 flex items-center justify-between">
+            <div>
+              <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-emerald-700" />
+                <span>আপনার তথ্য পূরণ করুন</span>
+              </h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                তথ্যগুলো দিলে সাথে সাথে অফিশিয়াল দরখাস্ত তৈরি হবে।
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setMobileTab('preview')}
+              className="lg:hidden text-xs font-bold text-emerald-700 underline"
+            >
+              দরখাস্ত দেখুন →
+            </button>
           </div>
 
           <div className="space-y-4 text-xs sm:text-sm">
@@ -309,12 +349,39 @@ ${formData.currentYearFiled ? `২. চলতি (${formData.currentYearName}) �
                 (পরামর্শ: অনলাইনে চলতি রিটার্ন জমা দিয়ে Acknowledgement কপি যুক্ত করলে কর কর্মকর্তা দ্রুত জরিমানা মওকুফ করেন।)
               </p>
             </div>
+
+            {/* Mobile View Letter Button */}
+            <button
+              type="button"
+              onClick={() => {
+                setMobileTab('preview');
+                window.scrollTo({ top: 200, behavior: 'smooth' });
+              }}
+              className="lg:hidden w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-2xl flex items-center justify-center gap-2 shadow-sm cursor-pointer text-sm"
+            >
+              <span>তৈরি দরখাস্ত প্রিভিউ ও কপি করুন</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
         {/* Live Formal Bengali Application (7 cols on lg) */}
-        <div className="lg:col-span-7 space-y-4">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-300 shadow-md relative print:border-none print:shadow-none print:p-0">
+        <div className={`lg:col-span-7 space-y-4 ${
+          mobileTab === 'preview' ? 'block' : 'hidden lg:block'
+        }`}>
+          <div className="bg-white rounded-3xl p-5 sm:p-8 border-2 border-slate-300 shadow-md relative print:border-none print:shadow-none print:p-0">
+            {/* Mobile Back Button */}
+            <div className="lg:hidden pb-3 mb-3 border-b border-slate-200 flex items-center justify-between print:hidden">
+              <button
+                type="button"
+                onClick={() => setMobileTab('input')}
+                className="text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 px-3 py-1.5 rounded-xl flex items-center gap-1 cursor-pointer"
+              >
+                <span>← তথ্য পরিবর্তন করুন</span>
+              </button>
+              <span className="text-xs font-semibold text-slate-500">প্রস্তুত দরখাস্ত</span>
+            </div>
+
             {/* Action Bar */}
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-4 mb-6 print:hidden">
               <div className="flex items-center gap-2">

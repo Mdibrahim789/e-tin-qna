@@ -25,7 +25,7 @@ const iconMap = {
 
 export default function CategoryChips({ categories, selectedCategory, onSelectCategory, counts = {} }) {
   return (
-    <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none no-scrollbar py-2">
+    <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar py-2 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth">
       {categories.map((cat) => {
         const IconComponent = iconMap[cat.icon] || LayoutGrid;
         const isSelected = selectedCategory === cat.id;

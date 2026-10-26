@@ -37,10 +37,10 @@ export default function SearchBar({ searchQuery, setSearchQuery, onSelectSuggest
       </div>
 
       {/* Trending Question Chips */}
-      <div className="mt-3.5 flex items-center gap-2 flex-wrap">
+      <div className="mt-3.5 flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-4 px-4 sm:mx-0 sm:px-0 flex-nowrap scroll-smooth">
         <div className="flex items-center gap-1 text-xs font-semibold text-slate-500 shrink-0">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <span>জনপ্রিয় অনুসন্ধান:</span>
+          <span>জনপ্রিয়:</span>
         </div>
         {trendingQueries.map((item, index) => (
           <button
@@ -49,7 +49,7 @@ export default function SearchBar({ searchQuery, setSearchQuery, onSelectSuggest
               setSearchQuery(item);
               if (onSelectSuggestion) onSelectSuggestion(item);
             }}
-            className="text-xs bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200 hover:border-emerald-300 px-2.5 py-1 rounded-full transition-colors active:scale-95"
+            className="text-xs bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200 hover:border-emerald-300 px-3 py-1.5 rounded-full transition-colors active:scale-95 shrink-0"
           >
             {item}
           </button>
