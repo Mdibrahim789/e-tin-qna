@@ -6,18 +6,13 @@ import {
   Sparkles, 
   ExternalLink, 
   ShieldAlert, 
-  CheckCircle2, 
   BookMarked,
   RotateCcw,
   User,
-  Key,
-  Check,
-  Zap,
-  Info,
   ArrowUpRight
 } from 'lucide-react';
 import { askGroundedAssistant } from '../utils/groundedAi.js';
-import { askGeminiAssistant, getStoredGeminiKey, saveGeminiKey } from '../utils/geminiAi.js';
+import { askGeminiAssistant } from '../utils/geminiAi.js';
 
 export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSelectQna }) {
   const [messages, setMessages] = useState([
@@ -30,17 +25,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
   ]);
   const [inputQuery, setInputQuery] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [showKeyModal, setShowKeyModal] = useState(false);
-  const [apiKeyInput, setApiKeyInput] = useState('');
-  const [hasGeminiKey, setHasGeminiKey] = useState(false);
-  const [keySavedToast, setKeySavedToast] = useState(false);
   const messagesEndRef = useRef(null);
-
-  useEffect(() => {
-    const key = getStoredGeminiKey();
-    setHasGeminiKey(!!key);
-    if (key) setApiKeyInput(key);
-  }, [isOpen]);
 
   const testSampleQuestions = [
     "e-TIN কি?",
@@ -65,15 +50,6 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
     }
   }, [messages, isOpen]);
 
-  const handleSaveApiKey = (e) => {
-    e.preventDefault();
-    saveGeminiKey(apiKeyInput);
-    setHasGeminiKey(!!apiKeyInput.trim());
-    setShowKeyModal(false);
-    setKeySavedToast(true);
-    setTimeout(() => setKeySavedToast(false), 3000);
-  };
-
   const handleSendMessage = async (queryText) => {
     const q = (queryText || inputQuery).trim();
     if (!q) return;
@@ -90,34 +66,31 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
     setIsTyping(true);
 
     try {
-      if (hasGeminiKey) {
-        try {
-          const geminiResult = await askGeminiAssistant(q, allQuestions);
-          const aiMsg = {
-            id: Date.now() + '-ai',
-            sender: 'ai',
-            result: geminiResult,
-            text: geminiResult.text,
-            isGemini: true,
-            modelUsed: geminiResult.modelUsed
-          };
-          setMessages((prev) => [...prev, aiMsg]);
-          setIsTyping(false);
-          return;
-        } catch (geminiErr) {
-          console.warn("Gemini API call failed, falling back to local grounded engine:", geminiErr);
-        }
+      // First attempt fast online AI with preconfigured key
+      try {
+        const aiResult = await askGeminiAssistant(q, allQuestions);
+        const aiMsg = {
+          id: Date.now() + '-ai',
+          sender: 'ai',
+          result: aiResult,
+          text: aiResult.text,
+          modelUsed: aiResult.modelUsed
+        };
+        setMessages((prev) => [...prev, aiMsg]);
+        setIsTyping(false);
+        return;
+      } catch (err) {
+        console.warn("Online AI call failed, falling back to local grounded engine:", err);
       }
 
-      // Local grounded engine fallback
+      // Fallback to local grounded engine
       setTimeout(() => {
         const result = askGroundedAssistant(q, allQuestions);
         const aiMsg = {
           id: Date.now() + '-ai',
           sender: 'ai',
           result: result,
-          text: result.status === 'matched' ? result.shortAnswer : result.text,
-          isGemini: false
+          text: result.status === 'matched' ? result.shortAnswer : result.text
         };
         setMessages((prev) => [...prev, aiMsg]);
         setIsTyping(false);
@@ -152,7 +125,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
     let mainText = rawText;
     let suggestions = [];
 
-    // Strip out unwanted greetings like "নমস্কার!" or robotic introductions if any
+    // Strip out unwanted greetings like "নমস্কার!" or robotic introductions
     mainText = mainText.replace(/^(নমস্কার!?|নমস্কার\s*আদাব!?|আমি আপনার[^।\n]+[।\n]|হ্যালো!?)\s*/i, '');
 
     if (mainText.includes('<<<SUGGESTIONS>>>')) {
@@ -182,35 +155,18 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-bold text-base leading-tight">ট্যাক্স এআই সহকারী</h3>
-                {hasGeminiKey ? (
-                  <span className="text-[10px] font-bold bg-amber-400 text-slate-950 px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <Zap className="w-3 h-3 fill-slate-950" />
-                    Gemini AI সক্রিয়
-                  </span>
-                ) : (
-                  <span className="text-[10px] font-semibold bg-emerald-500/30 text-emerald-100 border border-emerald-400/30 px-1.5 py-0.2 rounded-full">
-                    জিরো-হ্যালুসিনেশন
-                  </span>
-                )}
+                <span className="text-[10px] font-bold bg-emerald-500/30 text-emerald-100 border border-emerald-400/30 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span>
+                  অনলাইন এআই সক্রিয়
+                </span>
               </div>
               <p className="text-[11px] text-emerald-200">
-                {hasGeminiKey 
-                  ? "সংক্ষিপ্ত ও সরাসরি উত্তর এবং সম্ভাব্য প্রশ্ন জেনারেটর" 
-                  : "শুধুমাত্র সরকারি ভেরিফাইড আইন ও সার্কুলার থেকে উত্তর দেয়"}
+                টু-দ্য-পয়েন্ট ও প্রাসঙ্গিক আইনি পরামর্শ এবং সম্ভাব্য প্রশ্ন
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-1">
-            <button
-              onClick={() => setShowKeyModal(true)}
-              className={`p-1.5 rounded-lg transition-colors flex items-center gap-1 text-xs ${
-                hasGeminiKey ? 'bg-emerald-900 text-amber-300 hover:bg-emerald-950' : 'text-emerald-200 hover:bg-white/10'
-              }`}
-              title="Gemini API Key সেট করুন"
-            >
-              <Key className="w-4 h-4" />
-            </button>
             <button
               onClick={clearChat}
               className="p-1.5 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
@@ -228,33 +184,12 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
           </div>
         </div>
 
-        {/* Gemini Key Status Notification Toast */}
-        {keySavedToast && (
-          <div className="bg-emerald-600 text-white px-4 py-2 text-xs flex items-center justify-between animate-in slide-in-from-top-1">
-            <span className="flex items-center gap-1.5 font-medium">
-              <Check className="w-4 h-4" />
-              Gemini API Key সফলভাবে আপডেট হয়েছে!
-            </span>
-            <button onClick={() => setKeySavedToast(false)}>
-              <X className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        )}
-
         {/* Guardrail Disclaimer strip */}
         <div className="bg-emerald-50/90 border-b border-emerald-200 px-3.5 py-1.5 text-[11px] text-emerald-950 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-1.5">
             <ShieldAlert className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
             <span>সরাসরি টু-দ্য-পয়েন্ট উত্তর ও পরবর্তী সম্ভাব্য প্রশ্নের লিংক নিচে দেখুন।</span>
           </div>
-          {!hasGeminiKey && (
-            <button 
-              onClick={() => setShowKeyModal(true)}
-              className="text-[10px] text-emerald-800 font-bold underline hover:text-emerald-950 ml-2 shrink-0"
-            >
-              + Gemini Key যোগ করুন
-            </button>
-          )}
         </div>
 
         {/* Messages Body */}
@@ -268,10 +203,8 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
                 className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'ai' && (
-                  <div className={`w-7 h-7 rounded-lg text-white flex items-center justify-center shrink-0 mt-0.5 ${
-                    msg.isGemini ? 'bg-amber-600' : 'bg-emerald-700'
-                  }`}>
-                    {msg.isGemini ? <Zap className="w-4 h-4 fill-white" /> : <Bot className="w-4 h-4" />}
+                  <div className="w-7 h-7 rounded-lg text-white flex items-center justify-center shrink-0 mt-0.5 bg-emerald-700">
+                    <Bot className="w-4 h-4" />
                   </div>
                 )}
 
@@ -282,11 +215,11 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
                       : 'bg-white border border-slate-200 text-slate-800 shadow-2xs rounded-tl-xs space-y-2.5'
                   }`}
                 >
-                  {/* Gemini Badge */}
-                  {msg.isGemini && (
-                    <div className="inline-flex items-center gap-1 text-[10px] font-bold bg-amber-50 text-amber-900 border border-amber-300 px-2 py-0.5 rounded-full mb-1">
-                      <Sparkles className="w-3 h-3 text-amber-600" />
-                      <span>Gemini AI রেসপন্স</span>
+                  {/* Subtle AI Badge */}
+                  {msg.sender === 'ai' && !msg.isWelcome && (
+                    <div className="inline-flex items-center gap-1 text-[10px] font-bold bg-emerald-50 text-emerald-900 border border-emerald-200 px-2 py-0.5 rounded-full mb-1">
+                      <Sparkles className="w-3 h-3 text-emerald-600" />
+                      <span>ট্যাক্স এআই উত্তর</span>
                     </div>
                   )}
 
@@ -298,56 +231,42 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
                   {/* Dynamic Clickable Follow-up Suggestions generated for this answer */}
                   {suggestions.length > 0 && (
                     <div className="pt-2.5 border-t border-slate-100 space-y-1.5">
-                      <span className="text-[11px] font-bold text-slate-500 block">
-                        পরবর্তী সম্ভাব্য প্রশ্নসমূহ:
-                      </span>
+                      <p className="text-[11px] font-bold text-slate-600 flex items-center gap-1">
+                        <span>সম্পর্কিত সম্ভাব্য প্রশ্নসমূহ:</span>
+                      </p>
                       <div className="flex flex-col gap-1.5">
-                        {suggestions.map((sug, sIdx) => (
+                        {suggestions.map((sugg, sIdx) => (
                           <button
                             key={sIdx}
-                            onClick={() => handleSendMessage(sug)}
-                            className="text-xs bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-2.5 py-1.5 rounded-xl transition-all text-left flex items-center justify-between group active:scale-98"
+                            onClick={() => handleSendMessage(sugg)}
+                            className="text-left text-xs bg-slate-50 hover:bg-emerald-50 hover:text-emerald-800 text-slate-700 border border-slate-200 hover:border-emerald-300 p-2 rounded-xl transition-all flex items-center justify-between group"
                           >
-                            <span>{sug}</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 text-emerald-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0 ml-1.5" />
+                            <span className="line-clamp-1">{sugg}</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-600 shrink-0 ml-1.5" />
                           </button>
                         ))}
                       </div>
                     </div>
                   )}
 
-                  {/* Grounded source link if matched */}
-                  {msg.result && msg.result.status === 'matched' && (
-                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-2 text-[11px] text-slate-500">
-                      <span className="font-semibold text-emerald-800">
-                        উৎস: {msg.result.sourceName} ({msg.result.legalSection})
-                      </span>
-                      {msg.result.matchedItem && (
-                        <button
-                          onClick={() => {
-                            if (onSelectQna) onSelectQna(msg.result.matchedItem);
-                            onClose();
-                          }}
-                          className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
-                        >
-                          <span>বিস্তারিত কার্ড দেখুন</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </button>
+                  {/* Matched Source Attribution if available */}
+                  {msg.result?.matchedItem && (
+                    <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-1 text-[11px] text-slate-500">
+                      <div className="flex items-center gap-1">
+                        <BookMarked className="w-3 h-3 text-emerald-600" />
+                        <span>সূত্র: {msg.result.matchedItem.sourceName || 'আয়কর আইন ২০২৩'}</span>
+                      </div>
+                      {msg.result.matchedItem.legalSection && (
+                        <span className="font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded text-[10px]">
+                          {msg.result.matchedItem.legalSection}
+                        </span>
                       )}
-                    </div>
-                  )}
-
-                  {/* If unmatched fallback */}
-                  {msg.result && msg.result.status === 'unmatched' && (
-                    <div className="p-2 bg-amber-50 rounded-lg border border-amber-200 text-amber-900 text-xs flex items-start gap-1.5">
-                      <ShieldAlert className="w-3.5 h-3.5 text-amber-700 shrink-0 mt-0.5" />
-                      <span>এনবিআর হেল্পলাইন: ১৬৫৫৫ (16555) | ওয়েবসাইট: nbr.gov.bd</span>
                     </div>
                   )}
                 </div>
 
                 {msg.sender === 'user' && (
-                  <div className="w-7 h-7 rounded-lg bg-slate-800 text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-slate-300 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
                     <User className="w-4 h-4" />
                   </div>
                 )}
@@ -355,8 +274,9 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
             );
           })}
 
+          {/* Typing Indicator */}
           {isTyping && (
-            <div className="flex gap-2.5 items-center text-xs text-slate-500 italic">
+            <div className="flex gap-2.5 items-center">
               <div className="w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center shrink-0">
                 <Bot className="w-4 h-4" />
               </div>
@@ -365,7 +285,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-bounce [animation-delay:0.2s]"></span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-bounce [animation-delay:0.4s]"></span>
                 <span className="text-[11px] text-slate-600">
-                  {hasGeminiKey ? "Gemini AI সরাসরি উত্তর প্রস্তুত করছে..." : "সরকারি আইন ও ডাটাবেস যাচাই করা হচ্ছে..."}
+                  ট্যাক্স এআই উত্তর প্রস্তুত করছে...
                 </span>
               </div>
             </div>
@@ -416,101 +336,13 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions, onSele
           <button
             type="submit"
             disabled={!inputQuery.trim()}
-            className="bg-emerald-700 hover:bg-emerald-800 disabled:bg-slate-300 text-white p-2.5 rounded-xl transition-all active:scale-95 shrink-0"
+            className="bg-emerald-700 hover:bg-emerald-800 disabled:bg-slate-300 text-white p-2.5 rounded-xl transition-all active:scale-95 shrink-0 cursor-pointer"
             aria-label="Send Message"
           >
             <Send className="w-4 h-4" />
           </button>
         </form>
       </div>
-
-      {/* Gemini API Key Configuration Modal */}
-      {showKeyModal && (
-        <div className="fixed inset-0 z-60 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-5 animate-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center">
-                  <Zap className="w-5 h-5 fill-amber-700 text-amber-700" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-base">Gemini API সেটিংস</h4>
-              </div>
-              <button 
-                onClick={() => setShowKeyModal(false)}
-                className="text-slate-400 hover:text-slate-600 p-1"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Google Gemini API সংযুক্ত থাকলে এআই সহকারী টু-দ্য-পয়েন্ট ও প্রাসঙ্গিক উত্তর প্রদান করবে।
-            </p>
-
-            <form onSubmit={handleSaveApiKey} className="space-y-4">
-              <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-800">
-                  Google Gemini API Key:
-                </label>
-                <input
-                  type="password"
-                  value={apiKeyInput}
-                  onChange={(e) => setApiKeyInput(e.target.value)}
-                  placeholder="AIzaSy... বা AQ..."
-                  className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:outline-none focus:border-emerald-600"
-                />
-                <p className="text-[11px] text-slate-500 flex items-center gap-1">
-                  <Info className="w-3.5 h-3.5 text-slate-400" />
-                  কিটি শুধুমাত্র আপনার ব্রাউজারের লোকাল স্টোরেজে সুরক্ষিত থাকবে।
-                </p>
-              </div>
-
-              <div className="flex items-center justify-end gap-2 pt-2">
-                {hasGeminiKey && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      saveGeminiKey('');
-                      setApiKeyInput('');
-                      setHasGeminiKey(false);
-                      setShowKeyModal(false);
-                    }}
-                    className="text-xs text-rose-600 hover:text-rose-800 font-semibold px-3 py-2"
-                  >
-                    কি মুছে ফেলুন
-                  </button>
-                )}
-                <button
-                  type="button"
-                  onClick={() => setShowKeyModal(false)}
-                  className="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl"
-                >
-                  বাতিল
-                </button>
-                <button
-                  type="submit"
-                  className="px-5 py-2 text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl shadow-xs"
-                >
-                  সংরক্ষণ করুন
-                </button>
-              </div>
-            </form>
-
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-[11px] text-slate-500">
-              <span>এপিআই কি নেই? </span>
-              <a 
-                href="https://aistudio.google.com/app/apikey" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-emerald-700 font-bold underline inline-flex items-center gap-1 ml-1"
-              >
-                <span>Google AI Studio থেকে বিনামূল্যে নিন</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
