@@ -36,27 +36,26 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
       <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-6">
         <div className="flex items-center justify-between h-13 sm:h-15">
           {/* Logo */}
-          <div 
+          <button
+            type="button"
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-1.5 sm:gap-2.5 cursor-pointer group min-w-0"
+            className="flex items-center gap-1.5 sm:gap-2.5 group min-w-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+            aria-label="ট্যাক্স সহায়ক হোম"
           >
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-tr from-emerald-700 to-emerald-500 flex items-center justify-center text-white shadow-sm shadow-emerald-500/20 group-hover:scale-105 transition-transform shrink-0">
               <Scale className="w-4 h-4" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center">
                 <span className="text-base sm:text-lg font-bold tracking-tight text-slate-900 group-hover:text-emerald-700 transition-colors whitespace-nowrap">
                   ট্যাক্স সহায়ক
-                </span>
-                <span className="text-[8px] sm:text-[10px] font-semibold bg-emerald-100 text-emerald-800 px-1 sm:px-1.5 py-0.5 rounded-sm">
-                  বিডি
                 </span>
               </div>
               <p className="text-[10px] text-slate-500 -mt-0.5 hidden xs:block xl:hidden">
                 ই-টিআইএন, আয়কর রিটার্ন ও ভ্যাট গাইড
               </p>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center gap-0.5" aria-label="প্রধান নেভিগেশন">
@@ -65,8 +64,10 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
               const isActive = activeTab === item.id;
               return (
                 <button
+                  type="button"
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
+                  aria-current={isActive ? 'page' : undefined}
                   className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
                     isActive 
                       ? 'bg-emerald-50 text-emerald-800 font-semibold' 
@@ -83,6 +84,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
           {/* AI Assistant Button & Mobile Toggle */}
           <div className="flex items-center gap-1 sm:gap-2">
             <button
+              type="button"
               onClick={onOpenAiModal}
               className="flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold shadow-sm hover:shadow-md transition-all active:scale-95 whitespace-nowrap"
             >
@@ -92,6 +94,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
             </button>
 
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 xl:hidden rounded-lg hover:bg-slate-100"
               aria-label="Toggle Navigation Menu"
@@ -112,8 +115,10 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
             const isActive = activeTab === item.id;
             return (
               <button
+                type="button"
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
+                aria-current={isActive ? 'page' : undefined}
                 className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-base font-medium transition-colors ${
                   isActive 
                     ? 'bg-emerald-50 text-emerald-800 font-semibold' 

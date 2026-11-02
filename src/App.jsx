@@ -140,7 +140,7 @@ export default function App() {
             <section className="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-teal-500/10 border-2 border-amber-300/80 rounded-3xl p-5 sm:p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="space-y-1.5 max-w-3xl">
                 <div className="flex items-center gap-2 text-amber-900 font-bold text-xs uppercase tracking-wider">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
                   <span>জরুরি আইনি সমাধান • আয়কর আইন ২০২৩ ধারা ২৬৬</span>
                 </div>
                 <h3 className="text-base sm:text-lg font-black text-slate-900">
@@ -329,7 +329,7 @@ export default function App() {
         >
           <div className="relative">
             <Bot className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-300 rounded-full ring-2 ring-emerald-800"></span>
           </div>
           <span className="font-bold text-sm tracking-wide">ট্যাক্স এআই</span>
         </button>
@@ -355,7 +355,10 @@ export default function App() {
       )}
 
       {/* Comprehensive Footer with Full Legal Disclaimer */}
-      <Footer onNavigate={(tabId) => setActiveTab(tabId)} />
+      <Footer onNavigate={(tabId) => {
+        setActiveTab(tabId);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }} />
     </div>
   );
 }

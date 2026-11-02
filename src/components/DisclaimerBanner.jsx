@@ -8,7 +8,9 @@ export default function DisclaimerBanner() {
         <div className="flex items-start sm:items-center gap-2">
           <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-700 shrink-0 mt-0.5 sm:mt-0" />
           <p className="leading-tight sm:leading-snug">
-            <span className="font-semibold text-amber-900">সংবিধিবদ্ধ সতর্কতা:</span> এই সাইটটি সাধারণ নাগরিক সচেতনতা ও তথ্যের জন্য তৈরি। এটি কোনো অফিশিয়াল ট্যাক্স অ্যাডভাইজরের বিকল্প পরামর্শ নয়। আপনার ফাইলের জটিলতা বা নির্দিষ্ট কোনো বিরোধের ক্ষেত্রে এনবিআর হেল্পলাইন (১৬৫৫৫) বা একজন রেজিস্টার্ড ট্যাক্স আইনজীবীর পরামর্শ নিন।
+            <span className="font-semibold text-amber-900">সংবিধিবদ্ধ সতর্কতা: </span>
+            <span className="sm:hidden">সাধারণ তথ্য, পেশাদার কর পরামর্শ নয়। জটিল বিষয়ে এনবিআর ১৬৫৫৫ বা কর আইনজীবীর পরামর্শ নিন।</span>
+            <span className="hidden sm:inline">এই সাইটটি সাধারণ নাগরিক সচেতনতা ও তথ্যের জন্য তৈরি। এটি কোনো অফিশিয়াল ট্যাক্স অ্যাডভাইজরের বিকল্প পরামর্শ নয়। আপনার ফাইলের জটিলতা বা নির্দিষ্ট কোনো বিরোধের ক্ষেত্রে এনবিআর হেল্পলাইন (১৬৫৫৫) বা একজন রেজিস্টার্ড ট্যাক্স আইনজীবীর পরামর্শ নিন।</span>
           </p>
         </div>
         <div className="hidden lg:flex items-center gap-1.5 text-emerald-800 font-medium shrink-0 bg-emerald-100/70 px-2.5 py-1 rounded-full border border-emerald-300">

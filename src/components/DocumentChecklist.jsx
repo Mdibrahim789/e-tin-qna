@@ -111,7 +111,7 @@ export default function DocumentChecklist() {
   const copyChecklist = () => {
     const listText = `ট্যাক্স রিটার্ন ডকুমেন্ট চেকলিস্ট (${currentPersona.name}):\n\n` +
       docs.map((d, i) => `${i + 1}. [${checkedItems[d.id] ? '✓' : ' '}] ${d.text}`).join('\n') +
-      `\n\nউৎস: আয়কর আইন ২০২৩ ও এনবিআর নির্দেশিকা (ট্যাক্স সহায়ক বিডি)`;
+      `\n\nউৎস: আয়কর আইন ২০২৩ ও এনবিআর নির্দেশিকা (ট্যাক্স সহায়ক বাংলাদেশ)`;
     
     navigator.clipboard.writeText(listText);
     setCopied(true);
@@ -139,7 +139,7 @@ export default function DocumentChecklist() {
       </div>
 
       {/* Persona Selection Chips */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none justify-start sm:justify-center">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar justify-start sm:justify-center">
         {Object.values(PERSONA_DOCS).map((item) => {
           const IconComponent = item.icon;
           const isSelected = activePersona === item.id;
