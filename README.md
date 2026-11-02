@@ -2,9 +2,16 @@
 
 <img src="public/og-image.png" alt="ট্যাক্স সহায়ক বাংলাদেশ" width="100%" />
 
+<br />
+
+<img src="public/favicon.svg" alt="ট্যাক্স সহায়ক লোগো" width="96" height="96" />
+
 # ট্যাক্স সহায়ক বাংলাদেশ
 
 ### e-TIN, আয়কর রিটার্ন ও ভ্যাট সংক্রান্ত সহজ বাংলা তথ্য সহায়ক
+
+[![Live Website](https://img.shields.io/badge/LIVE_WEBSITE-ভিজিট_করুন-047857?style=for-the-badge&logo=vercel&logoColor=white)](https://etin-umber.vercel.app/)
+[![Repository](https://img.shields.io/badge/GITHUB-SOURCE_CODE-0F172A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mdibrahim789/e-tin-qna)
 
 [![React](https://img.shields.io/badge/React-19-149ECA?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
@@ -13,15 +20,13 @@
 [![Vercel](https://img.shields.io/badge/Vercel-Live-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://etin-umber.vercel.app/)
 [![Gemini](https://img.shields.io/badge/Google-Gemini_AI-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
-[![Questions](https://img.shields.io/badge/Verified_Q%26A-78-047857?style=flat-square)](src/data/qna.json)
-[![Categories](https://img.shields.io/badge/Categories-9-0F766E?style=flat-square)](src/data/qna.json)
-[![Language](https://img.shields.io/badge/Language-বাংলা-F42A41?style=flat-square)](#)
-[![Responsive](https://img.shields.io/badge/UI-Responsive-0284C7?style=flat-square)](#)
-[![API Key](https://img.shields.io/badge/API_Key-Server_Side-16A34A?style=flat-square)](functions/api/ai.js)
+[![Questions](https://img.shields.io/badge/Verified_Q%26A-78-047857?style=flat-square&labelColor=064E3B)](src/data/qna.json)
+[![Categories](https://img.shields.io/badge/Categories-9-0D9488?style=flat-square&labelColor=134E4A)](src/data/qna.json)
+[![Language](https://img.shields.io/badge/Language-বাংলা-F42A41?style=flat-square&labelColor=006A4E)](#)
+[![Responsive](https://img.shields.io/badge/UI-Responsive-0284C7?style=flat-square&labelColor=0C4A6E)](#)
+[![API Key](https://img.shields.io/badge/API_Key-Server_Side-16A34A?style=flat-square&labelColor=14532D)](functions/api/ai.js)
 
 **বাংলা ও বাংলিশে খুঁজুন। যাচাইকৃত স্থানীয় তথ্য দেখুন। প্রয়োজন হলে নিরাপদ server-side AI সহায়তা নিন।**
-
-**[Live website](https://etin-umber.vercel.app/)**
 
 [বৈশিষ্ট্য](#-মূল-বৈশিষ্ট্য) · [প্রযুক্তি](#-প্রযুক্তি) · [লোকাল সেটআপ](#-লোকাল-সেটআপ) · [ডেপ্লয়মেন্ট](#ডেপ্লয়মেন্ট) · [নিরাপত্তা](#-নিরাপত্তা-ও-প্রাইভেসি)
 
