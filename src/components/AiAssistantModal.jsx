@@ -84,7 +84,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
     setIsTyping(true);
 
     try {
-      // First attempt fast online AI with preconfigured key
+      // Try the server-side Cloudflare Pages AI endpoint first.
       try {
         const aiResult = await askGeminiAssistant(q, allQuestions);
         const aiMsg = {
@@ -185,7 +185,7 @@ export default function AiAssistantModal({ isOpen, onClose, allQuestions }) {
                 <h3 id="ai-assistant-title" className="font-bold text-sm sm:text-base leading-tight whitespace-nowrap">ট্যাক্স এআই সহকারী</h3>
                 <span className="text-[8px] sm:text-[10px] font-bold bg-emerald-500/30 text-emerald-100 border border-emerald-400/30 px-1.5 sm:px-2 py-0.5 rounded-full flex items-center gap-1 whitespace-nowrap">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span>
-                  অনলাইন এআই সক্রিয়
+                  সুরক্ষিত এআই
                 </span>
               </div>
               <p className="hidden sm:block text-[11px] text-emerald-200">
