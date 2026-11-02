@@ -1,80 +1,215 @@
-# ট্যাক্স সহায়ক (e-TIN, Income Tax Return & VAT QnA Platform)
+<div align="center">
 
-> **লক্ষ্য:** সাধারণ করদাতাদের জন্য আয়কর, ই-টিআইএন (e-TIN), জিরো রিটার্ন এবং ভ্যাট সংক্রান্ত ১০০% নির্ভুল, সরকারি আইনের ধারা ভিত্তিক সহজ বাংলা প্রশ্নোত্তর ও গ্রাউন্ডেড এআই সহকারী প্ল্যাটফর্ম।
+<img src="public/og-image.png" alt="ট্যাক্স সহায়ক বাংলাদেশ" width="100%" />
 
-## ২০২৬-১০-২৬ আপডেট (৭৪টি প্রশ্নোত্তর)
-- নতুন: ২০২৬-২৭ করবর্ষে অনলাইন eReturn বাধ্যতামূলক ও ৫টি ব্যতিক্রম (up-2026-01), আগেভাগে ৫% ছাড় ও দেরিতে অতিরিক্ত করের কাঠামো (up-2026-02), ১২টি সেবায় শুধু টিআইএন সার্টিফিকেট (up-2026-03), eReturn পাসওয়ার্ড/OTP সমস্যা (ret-16), মৃত করদাতার ফাইল (etin-11), ভ্যাট রিটার্ন দেরি (vat-09)।
-- পুরনো up-q01-কে ২০২৬-২৭ নিয়মের জন্য superseded হিসেবে চিহ্নিত করা হয়েছে, যাতে পুরনো ও নতুন নিয়ম একসাথে বিভ্রান্তি না তৈরি করে।
-- নতুন: প্রতিটি QnA কার্ডে প্রশ্নের লিংক কপি বোতাম, OG/Twitter মেটা, robots.txt, sitemap.xml, Cloudflare Pages SPA redirect ও DEPLOY.md।
+# ট্যাক্স সহায়ক বাংলাদেশ
 
-> **২০২৬-১০-২৬ ঠিক করা হয়েছে:** AY 2026-27 ও 2027-28 এর জন্য করমুক্ত সীমা (সাধারণ ৩,৭৫,০০০; নারী/৬৫+ ৪,২৫,০০০; প্রতিবন্ধী/তৃতীয় লিঙ্গ ৫,০০,০০০; মুক্তিযোদ্ধা/জুলাই যোদ্ধা ৫,২৫,০০০ টাকা), স্ল্যাব (৫% স্ল্যাব বাতিল; ১০%/১৫%/২০%/২৫%/৩০%) ও ন্যূনতম কর (সবার জন্য ৫,০০০ টাকা, নতুন করদাতা ১,০০০ টাকা) আপডেট করা হয়েছে: উৎস: বাজেট ২০২৬-২৭, BSS ১১ জুন ২০২৬।
-> **বিভ্রান্তি এড়াতে:** কিছু সাইটে ৪,০০,০০০ টাকার সীমা দেখা যায়, সেটি পরবর্তী করবর্ষের (২০২৮-২৯ থেকে ধাপে ধাপে বৃদ্ধি) জন্য, ২০২৬-২৭ এর জন্য নয়। এই সাইটের ret-03/ret-04/ret-05 প্রশ্নে AY 2026-27 এর সীমাই দেওয়া আছে।
-> **এখনো পুনঃযাচাই বাকি:** বিনিয়োগ রেয়াতের ১৫%/৩%/১০ লাখ টাকার সূত্রটি ২০২৪ সালের তথ্য অনুযায়ী: ret-07 এ সতর্কতা যোগ করা আছে, দাখিলের আগে এনবিআরের বর্তমান নির্দেশনা মিলিয়ে নিতে হবে।
+### e-TIN, আয়কর রিটার্ন ও ভ্যাট সংক্রান্ত সহজ বাংলা তথ্য সহায়ক
 
----
+[![React](https://img.shields.io/badge/React-19-149ECA?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
+[![Gemini](https://img.shields.io/badge/Google-Gemini_AI-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
-## 🌟 মূল বৈশিষ্ট্যসমূহ (Key Features)
+[![Questions](https://img.shields.io/badge/Verified_Q%26A-78-047857?style=flat-square)](src/data/qna.json)
+[![Categories](https://img.shields.io/badge/Categories-9-0F766E?style=flat-square)](src/data/qna.json)
+[![Language](https://img.shields.io/badge/Language-বাংলা-F42A41?style=flat-square)](#)
+[![Responsive](https://img.shields.io/badge/UI-Responsive-0284C7?style=flat-square)](#)
+[![API Key](https://img.shields.io/badge/API_Key-Server_Side-16A34A?style=flat-square)](functions/api/ai.js)
 
-1. **বাংলা ও বাংলিশ সার্চ ইঞ্জিন (Bilingual Search):**
-   - বাংলা ইউনিকোড এবং বাংলিশ ফোনেটিক কিওয়ার্ড (যেমন: `zero return`, `e-TIN kivabe khulbo`, `fine koto`, `psr ki`) সাপোর্ট করে।
-2. **৬২+ ভেরিফাইড প্রশ্নোত্তর (Verified QnA Base):**
-   - প্রতিটি উত্তরে রয়েছে:
-     - ২-৩ লাইনের তাৎক্ষণিক সারসংক্ষেপ (Short Answer First)
-     - ধাপে ধাপে বিস্তারিত প্রক্রিয়া (Step-by-Step Guide)
-     - প্রয়োজনীয় কাগজপত্র ও চেকলিস্ট (Document Checklist)
-     - সংশ্লিষ্ট সংবিধিবদ্ধ আইন ও ধারা (Act Section & Official URL)
-     - সর্বশেষ সরকারি যাচাইয়ের তারিখ (Last Verified Date)
-3. **জিরো-হ্যালুসিনেশন বাংলা এআই সহকারী (Grounded AI Assistant):**
-   - Cloudflare Pages Function থেকে Google Gemini API কল করে; API key কখনো browser bundle-এ যায় না।
-   - সর্বোচ্চ ২টি প্রাসঙ্গিক, যাচাইকৃত স্থানীয় উত্তর Gemini-কে grounding context হিসেবে পাঠানো হয়।
-   - সার্ভার এআই অনুপলভ্য হলে স্থানীয় grounded search স্বয়ংক্রিয় fallback হিসেবে কাজ করে।
-4. **"আমার কি রিটার্ন দিতে হবে?" যোগ্যতা যাচাইকারী (Eligibility Checker):**
-   - ৩টি সহজ ধাপে করদাতার বার্ষিক আয় ও পিএসআর (PSR) শর্তাবলি মূল্যায়ন করে আইনি মতামত প্রদান।
-   - সম্পূর্ণ ক্লায়েন্ট-সাইড; কোনো NID, TIN, ফোন বা ব্যক্তিগত তথ্য সংগ্রহ করা হয় না।
-5. **কর দিবস লাইভ কাউন্টডাউন (Tax Day Countdown):**
-   - ধারা ১৭১ অনুযায়ী প্রতি বছরের ৩০ নভেম্বর কর দিবসের রিয়েল-টাইম কাউন্টার।
-6. **পেশাভিত্তিক কাস্টম ডকুমেন্ট চেকলিস্ট (Checklist Generator):**
-   - চাকরিজীবী, ফ্রিল্যান্সার, ব্যবসায়ী, শিক্ষার্থী, গৃহিণী ও প্রবাসীদের জন্য প্রয়োজনীয় কাগজপত্রের তালিকা ও প্রিন্ট/কপি সুবিধা।
-7. **ভুল ধারণা বনাম আসল সত্যি (Myth vs Reality):**
-   - "টিআইএন খুললেই ট্যাক্স দিতে হয়", "ব্যাংক লেনদেনে নোটিশ আসে" ইত্যাদি প্রচলিত বিভ্রান্তির আইনি খণ্ডন।
+**বাংলা ও বাংলিশে খুঁজুন। যাচাইকৃত স্থানীয় তথ্য দেখুন। প্রয়োজন হলে নিরাপদ server-side AI সহায়তা নিন।**
 
----
+[বৈশিষ্ট্য](#-মূল-বৈশিষ্ট্য) · [প্রযুক্তি](#-প্রযুক্তি) · [লোকাল সেটআপ](#-লোকাল-সেটআপ) · [ডেপ্লয়মেন্ট](#-cloudflare-pages-ডেপ্লয়মেন্ট) · [নিরাপত্তা](#-নিরাপত্তা-ও-প্রাইভেসি)
 
-## ⚖️ প্রাথমিক সরকারি আইনি ভিত্তি (Primary Legal Sources)
+</div>
 
-এই প্ল্যাটফর্মের প্রতিটি রেট, স্ল্যাব, সময়সীমা ও জরিমানা সরাসরি নিচের প্রাথমিক সরকারি আইন থেকে যাচাইকৃত:
-1. **আয়কর আইন, ২০২৩ (Income Tax Act, 2023)**: ধারা ১৬৬, ১৬৭, ১৭১, ১৭৩, ১৭৪, ২৬১, ২৬৪, ৩১১
-2. **অর্থ আইন (Finance Act)**: স্বাভাবিক ব্যক্তি করদাতার করমুক্ত আয়ের সাধারণ ও বিশেষ সীমা এবং ট্যাক্স স্ল্যাব
-3. **মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২**: বিআইএন (BIN), মূসক-৯.১ এবং মূসক-৬.৩ চালান
-4. **জাতীয় রাজস্ব বোর্ড (NBR)**: `nbr.gov.bd` ও `etaxnbr.gov.bd`
-5. **গণপ্রজাতন্ত্রী বাংলাদেশের সংবিধান (অনুচ্ছেদ ৮৩)**: কর আরোপের আইনি বৈধতা
+> [!IMPORTANT]
+> এটি একটি স্বাধীন শিক্ষামূলক তথ্যসেবা। এটি জাতীয় রাজস্ব বোর্ডের অফিসিয়াল ওয়েবসাইট নয় এবং পেশাদার কর বা আইনি পরামর্শের বিকল্প নয়। জটিল ফাইল, অডিট বা বিরোধের ক্ষেত্রে এনবিআর হেল্পলাইন ১৬৫৫৫ অথবা নিবন্ধিত কর আইনজীবীর পরামর্শ নিন।
 
----
+## পরিচিতি
 
-## ⚠️ সংবিধিবদ্ধ দায়মুক্তি ঘোষণা (Statutory Disclaimer)
+ট্যাক্স সহায়ক বাংলাদেশ সাধারণ নাগরিকদের জন্য e-TIN, আয়কর রিটার্ন, eReturn, জিরো রিটার্ন, করমুক্ত সীমা, ট্যাক্স স্ল্যাব, ভ্যাট ও BIN সম্পর্কিত তথ্য সহজ বাংলায় উপস্থাপন করে। প্রতিটি প্রশ্নোত্তরের সঙ্গে সংক্ষিপ্ত উত্তর, ধাপে ধাপে নির্দেশনা, প্রয়োজনীয় কাগজপত্র, আইনের ধারা এবং সরকারি উৎস দেওয়ার চেষ্টা করা হয়েছে।
 
-> "এই প্ল্যাটফর্মটি সাধারণ নাগরিক সচেতনতা ও তথ্যের উদ্দেশ্যে তৈরি। এটি কোনো অফিশিয়াল কর আইনজীবী বা পেশাদার ট্যাক্স অ্যাডভাইজরের বিকল্প পরামর্শ নয়। আপনার ফাইলের জটিলতা, অডিট নোটিশ বা লাইভ ফাইলিংয়ের ক্ষেত্রে জাতীয় রাজস্ব বোর্ডের হেল্পলাইন (১৬৫৫৫) অথবা বাংলাদেশ ট্যাক্স ল'ইয়ার্স অ্যাসোসিয়েশনের নিবন্ধিত আইনজীবীর পরামর্শ নিন।"
+প্রকল্পটিতে বর্তমানে **৭৮টি প্রশ্নোত্তর** এবং **৯টি বিষয়ভিত্তিক ক্যাটাগরি** রয়েছে। বাংলা ইউনিকোডের পাশাপাশি সাধারণ বাংলিশ কিওয়ার্ডও সার্চ করা যায়।
 
----
+## মূল বৈশিষ্ট্য
 
-## 🚀 লোকাল রান করার নিয়ম (Local Development)
+| সুবিধা | বিবরণ |
+| --- | --- |
+| বাংলা ও বাংলিশ সার্চ | `zero return`, `e-TIN kivabe khulbo`, `fine koto` এবং বাংলা প্রশ্ন সমর্থন করে |
+| যাচাইকৃত Q&A | সংক্ষিপ্ত উত্তর, ধাপ, চেকলিস্ট, আইনের ধারা ও সরকারি উৎস |
+| নিরাপদ Gemini AI | Cloudflare Pages Function থেকে Gemini API call; key browser bundle-এ প্রকাশ হয় না |
+| Local fallback | Gemini অনুপলভ্য হলে স্থানীয় grounded search উত্তর দেয় |
+| রিটার্ন যোগ্যতা চেকার | আয় ও প্রযোজ্য শর্ত অনুযায়ী প্রাথমিক নির্দেশনা |
+| ডকুমেন্ট চেকলিস্ট | চাকরি, ব্যবসা, ফ্রিল্যান্সিং, প্রবাস ও অন্যান্য পেশার জন্য কাস্টম তালিকা |
+| মওকুফ আবেদন | ধারা ২৬৬ ভিত্তিক আবেদনপত্রের editable preview, copy ও print সুবিধা |
+| আপডেট ও সূত্র | গুরুত্বপূর্ণ NBR আপডেট, আইনের ধারা ও source mapping |
+| Mobile-first UI | ছোট পর্দার জন্য compact navigation, sticky actions ও responsive layout |
+| SEO ready | Open Graph image, favicon, manifest, JSON-LD, sitemap এবং robots metadata |
 
-```bash
-# ডিপেনডেন্সি ইন্সটল করুন
-npm install
+## AI request flow
 
-# লোকাল ডেভেলপমেন্ট সার্ভার চালু করুন
-npm run dev
-
-# প্রোডাকশন বিল্ড তৈরি করুন
-npm run build
+```text
+User question
+     │
+     ▼
+Local Q&A search and grounding
+     │
+     ▼
+POST /api/ai
+     │
+     ▼
+Cloudflare Pages Function
+     │
+     ▼
+Google Gemini API
+     │
+     ├── Success: grounded AI answer
+     └── Failure: local verified answer
 ```
 
-AI endpoint-সহ লোকাল পরীক্ষা করতে `.dev.vars` ফাইলে `GEMINI_API_KEY` যোগ করে Cloudflare Pages local development command ব্যবহার করুন। পূর্ণ নির্দেশনা [DEPLOY.md](./DEPLOY.md)-এ আছে।
+Browser কখনো `GEMINI_API_KEY` পায় না। Secret শুধু Cloudflare Function runtime-এর `context.env` থেকে পড়া হয়।
+
+## প্রযুক্তি
+
+| অংশ | প্রযুক্তি |
+| --- | --- |
+| Frontend | React 19, Vite 8 |
+| Styling | Tailwind CSS 4 |
+| Icons | Lucide React |
+| AI | Google Gemini API |
+| Server endpoint | Cloudflare Pages Functions |
+| Hosting | Cloudflare Pages |
+| Content | Local JSON datasets |
+| Quality checks | Oxlint, Vite production build |
+
+## প্রজেক্ট গঠন
+
+```text
+e-tin-qna/
+├── functions/
+│   └── api/ai.js              # Server-side Gemini endpoint
+├── public/
+│   ├── favicon.svg
+│   ├── og-image.png
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── site.webmanifest
+├── src/
+│   ├── components/            # UI এবং interactive tools
+│   ├── data/                  # Q&A, sources, myths এবং updates
+│   ├── pages/                 # Updates, sources এবং verification
+│   └── utils/                 # Search এবং AI clients
+├── DEPLOY.md
+└── package.json
+```
+
+## লোকাল সেটআপ
+
+### প্রয়োজনীয় সফটওয়্যার
+
+- Node.js 20 বা নতুন
+- npm
+
+### Frontend চালু করুন
+
+```bash
+git clone https://github.com/Mdibrahim789/e-tin-qna.git
+cd e-tin-qna
+npm install
+npm run dev
+```
+
+Vite development server সাধারণত `http://localhost:5173` ঠিকানায় চালু হবে। এই mode-এ Pages Function চলে না, তাই AI chat local fallback ব্যবহার করতে পারে।
+
+### সম্পূর্ণ Pages Function পরীক্ষা
+
+প্রথমে project root-এ `.dev.vars` ফাইল তৈরি করুন:
+
+```dotenv
+GEMINI_API_KEY=your_real_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash-lite
+```
+
+তারপর:
+
+```bash
+npm run build
+npx wrangler pages dev dist
+```
+
+`.dev.vars` Git-এ commit করবেন না। এটি ইতোমধ্যে `.gitignore`-এ আছে।
+
+## দরকারি কমান্ড
+
+| Command | কাজ |
+| --- | --- |
+| `npm run dev` | Vite development server |
+| `npm run build` | Production bundle তৈরি |
+| `npm run preview` | Production build preview |
+| `npm run lint` | Oxlint quality check |
+| `npx wrangler pages dev dist` | Frontend এবং Pages Function একসঙ্গে চালানো |
+
+## Cloudflare Pages ডেপ্লয়মেন্ট
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Framework preset | `Vite` |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Root directory | Repository root |
+
+Cloudflare Dashboard-এর `Settings` → `Variables and Secrets` থেকে encrypted secret হিসেবে `GEMINI_API_KEY` যোগ করুন। Secret যোগ করার পরে নতুন deployment চালান। বিস্তারিত ধাপ [DEPLOY.md](DEPLOY.md)-এ রয়েছে।
+
+## নিরাপত্তা ও প্রাইভেসি
+
+- Gemini API key শুধু server-side encrypted secret হিসেবে ব্যবহৃত হয়।
+- API response cache করা হয় না।
+- AI request সর্বোচ্চ ৫০০ অক্ষরের প্রশ্ন এবং ২টি প্রাসঙ্গিক Q&A context গ্রহণ করে।
+- সাইট ব্যবহার করতে login, NID, TIN, OTP বা banking credential প্রয়োজন হয় না।
+- AI chat-এর লেখা Google Gemini API-তে পাঠানো হয়। সেখানে সংবেদনশীল তথ্য লিখবেন না।
+- পুরোনো বা প্রকাশিত API key থাকলে Google AI Studio থেকে revoke করে নতুন key তৈরি করুন।
+
+## তথ্যসূত্র ও যাচাই
+
+প্রকল্পের তথ্য প্রধানত নিচের উৎসগুলোর সঙ্গে মিলিয়ে প্রস্তুত করা হয়েছে:
+
+- [জাতীয় রাজস্ব বোর্ড](https://nbr.gov.bd/)
+- [NBR e-Return Portal](https://etaxnbr.gov.bd/)
+- [ভ্যাট অনলাইন](https://vat.gov.bd/)
+- [বাংলাদেশের আইন](http://bdlaws.minlaw.gov.bd/)
+- আয়কর আইন, ২০২৩
+- মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২
+
+> [!CAUTION]
+> করহার, করমুক্ত সীমা, সময়সীমা, পরিপত্র এবং portal procedure পরিবর্তিত হতে পারে। রিটার্ন দাখিল বা আর্থিক সিদ্ধান্তের আগে সর্বশেষ NBR নির্দেশনা যাচাই করুন।
+
+## অবদান
+
+ভুল তথ্য, পুরোনো source বা UI সমস্যা পেলে GitHub Issue খুলুন। পরিবর্তন প্রস্তাব করলে সংশ্লিষ্ট সরকারি source link এবং যাচাইয়ের তারিখ যুক্ত করুন।
+
+1. Repository fork করুন
+2. Feature branch তৈরি করুন
+3. পরিবর্তন করুন এবং `npm run lint` ও `npm run build` চালান
+4. পরিষ্কার commit message লিখুন
+5. Pull request খুলুন
+
+## রক্ষণাবেক্ষণ চেকলিস্ট
+
+- [ ] নতুন Finance Act বা NBR circular প্রকাশ হলে thresholds যাচাই
+- [ ] Question-level `lastVerifiedDate` আপডেট
+- [ ] ভাঙা সরকারি link পরীক্ষা
+- [ ] Production AI endpoint এবং fallback পরীক্ষা
+- [ ] Sitemap, canonical URL এবং OG metadata যাচাই
 
 ---
 
-## 🛡️ ডেটা নিরাপত্তা ও প্রাইভেসি
-- সাইট ব্যবহারের জন্য কোনো লগইন আবশ্যক নয়।
-- আমরা ব্যবহারকারীর কোনো জাতীয় পরিচয়পত্র (NID), টিআইএন (TIN), ওটিপি, পাসওয়ার্ড বা ব্যাংকিং তথ্য কখনোই চাই না এবং সংগ্রহ করি না।
-- AI chat-এ লেখা প্রশ্ন এবং সর্বোচ্চ ২টি প্রাসঙ্গিক QnA context উত্তর তৈরির জন্য Cloudflare Pages Function হয়ে Google Gemini API-তে পাঠানো হয়। AI chat-এ NID, TIN, OTP, পাসওয়ার্ড, ব্যাংক তথ্য বা অন্য সংবেদনশীল তথ্য লিখবেন না।
+<div align="center">
+
+তথ্যকে সহজ, নিরাপদ ও নাগরিকবান্ধব করার একটি স্বাধীন উদ্যোগ।
+
+**[উপরে ফিরুন](#ট্যাক্স-সহায়ক-বাংলাদেশ)**
+
+</div>
