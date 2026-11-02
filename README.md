@@ -23,7 +23,7 @@
 
 **[Live website](https://etin-umber.vercel.app/)**
 
-[বৈশিষ্ট্য](#-মূল-বৈশিষ্ট্য) · [প্রযুক্তি](#-প্রযুক্তি) · [লোকাল সেটআপ](#-লোকাল-সেটআপ) · [ডেপ্লয়মেন্ট](#-cloudflare-pages-ডেপ্লয়মেন্ট) · [নিরাপত্তা](#-নিরাপত্তা-ও-প্রাইভেসি)
+[বৈশিষ্ট্য](#-মূল-বৈশিষ্ট্য) · [প্রযুক্তি](#-প্রযুক্তি) · [লোকাল সেটআপ](#-লোকাল-সেটআপ) · [ডেপ্লয়মেন্ট](#ডেপ্লয়মেন্ট) · [নিরাপত্তা](#-নিরাপত্তা-ও-প্রাইভেসি)
 
 </div>
 
@@ -161,13 +161,78 @@ npx wrangler pages dev dist
 
 ## ডেপ্লয়মেন্ট
 
-### Vercel
+একই repository Vercel অথবা Cloudflare Pages-এ deploy করা যায়। দুই platform-এই `/api/ai` server-side endpoint ব্যবহার করে, তাই `GEMINI_API_KEY` browser bundle-এ প্রকাশ হয় না।
+
+### Vercel deployment guide
 
 বর্তমান production site: **[etin-umber.vercel.app](https://etin-umber.vercel.app/)**
 
-Vercel Project Settings-এর **Environment Variables** অংশে `GEMINI_API_KEY` এবং optional `GEMINI_MODEL` যোগ করে নতুন deployment চালান। সম্পূর্ণ ধাপ [VERCEL_DEPLOY.md](VERCEL_DEPLOY.md)-এ রয়েছে।
+#### ১. Repository import
 
-### Cloudflare Pages
+1. [Vercel Dashboard](https://vercel.com/dashboard) থেকে **Add New → Project** নির্বাচন করুন।
+2. GitHub account connect করে `Mdibrahim789/e-tin-qna` repository import করুন।
+3. নিচের build settings নিশ্চিত করুন।
+
+| Setting | Value |
+| --- | --- |
+| Framework Preset | `Vite` |
+| Root Directory | `./` |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+| Install Command | `npm install` |
+| Production Branch | `main` |
+
+#### ২. Gemini environment variables
+
+Project-এর **Settings → Environment Variables** খুলে নিচের variable যোগ করুন।
+
+| Name | Value | Environment |
+| --- | --- | --- |
+| `GEMINI_API_KEY` | Google AI Studio-এর নতুন API key | Production এবং প্রয়োজন হলে Preview |
+| `GEMINI_MODEL` | `gemini-2.5-flash-lite` | Production এবং Preview |
+
+`GEMINI_MODEL` optional। API key যোগ বা পরিবর্তনের পরে **Deployments → latest deployment → Redeploy** নির্বাচন করুন। Variable পরিবর্তন পুরোনো deployment-এ প্রয়োগ হয় না।
+
+> [!CAUTION]
+> `VITE_GEMINI_API_KEY` ব্যবহার করবেন না। `VITE_` prefix দেওয়া variable frontend bundle-এ প্রকাশ হতে পারে।
+
+#### ৩. Existing Vercel deployment আপডেট
+
+`etin-umber.vercel.app` project-এর জন্য:
+
+1. Production environment-এ `GEMINI_API_KEY` যোগ করুন।
+2. GitHub-এর `main` branch-এ সর্বশেষ commit আছে নিশ্চিত করুন।
+3. latest production deployment redeploy করুন।
+4. homepage খুলে AI chat থেকে tax-related প্রশ্ন করুন।
+5. `/api/ai`-এ সরাসরি GET করলে `{ "error": "METHOD_NOT_ALLOWED" }` পাওয়া স্বাভাবিক, কারণ endpoint শুধু POST গ্রহণ করে।
+
+#### ৪. Local Vercel test
+
+Project root-এ `.env.local` তৈরি করুন:
+
+```dotenv
+GEMINI_API_KEY=your_real_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash-lite
+```
+
+তারপর চালান:
+
+```bash
+npm install
+npx vercel dev
+```
+
+`.env.local` commit করবেন না।
+
+### Cloudflare Pages deployment guide
+
+#### ১. Git repository connect
+
+1. Cloudflare Dashboard থেকে **Workers & Pages** খুলুন।
+2. **Create → Pages → Connect to Git** নির্বাচন করুন।
+3. `Mdibrahim789/e-tin-qna` repository এবং `main` branch নির্বাচন করুন।
+4. নিচের build settings দিন।
+
 
 | Setting | Value |
 | --- | --- |
@@ -177,7 +242,59 @@ Vercel Project Settings-এর **Environment Variables** অংশে `GEMINI_AP
 | Output directory | `dist` |
 | Root directory | Repository root |
 
-Cloudflare Dashboard-এর `Settings` → `Variables and Secrets` থেকে encrypted secret হিসেবে `GEMINI_API_KEY` যোগ করুন। Secret যোগ করার পরে নতুন deployment চালান। সম্পূর্ণ ধাপ [DEPLOY.md](DEPLOY.md)-এ রয়েছে।
+#### ২. Gemini secret যোগ করুন
+
+Cloudflare project-এর **Settings → Variables and Secrets** খুলুন।
+
+| Name | Type | Value |
+| --- | --- | --- |
+| `GEMINI_API_KEY` | Encrypted secret | Google AI Studio-এর নতুন API key |
+| `GEMINI_MODEL` | Plain text | `gemini-2.5-flash-lite` |
+
+Production environment-এ secret যোগ করে নতুন deployment চালান। Preview deployment-এ AI পরীক্ষা করতে চাইলে Preview environment-এও আলাদাভাবে secret যোগ করুন।
+
+#### ৩. Local Cloudflare test
+
+Project root-এ `.dev.vars` তৈরি করুন:
+
+```dotenv
+GEMINI_API_KEY=your_real_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash-lite
+```
+
+তারপর চালান:
+
+```bash
+npm run build
+npx wrangler pages dev dist
+```
+
+`.dev.vars` commit করবেন না।
+
+### Deployment troubleshooting
+
+| সমস্যা | সমাধান |
+| --- | --- |
+| `503 AI_NOT_CONFIGURED` | সঠিক production environment-এ `GEMINI_API_KEY` যোগ করে redeploy করুন |
+| `502 AI_REQUEST_FAILED` | Function logs, API key এবং model access পরীক্ষা করুন |
+| `405 METHOD_NOT_ALLOWED` | `/api/ai` শুধু POST request গ্রহণ করে |
+| AI local answer দেখায় | Browser Network tab এবং hosting platform-এর Function Logs দেখুন |
+| নতুন variable কাজ করছে না | Variable save করার পরে নতুন deployment চালান |
+| Build failed | Locally `npm run lint` এবং `npm run build` চালিয়ে error ঠিক করুন |
+
+### Production checklist
+
+- [ ] `main` branch-এ সর্বশেষ code আছে
+- [ ] Build command `npm run build`
+- [ ] Output directory `dist`
+- [ ] `GEMINI_API_KEY` শুধু server-side secret
+- [ ] Production redeploy সম্পন্ন
+- [ ] Homepage, favicon এবং OG image load হয়
+- [ ] AI chat এবং local fallback পরীক্ষা করা হয়েছে
+- [ ] Canonical URL `https://etin-umber.vercel.app/`
+- [ ] Mobile এবং desktop layout পরীক্ষা করা হয়েছে
+
+আরও বিস্তারিত reference হিসেবে [Vercel guide](VERCEL_DEPLOY.md) এবং [Cloudflare guide](DEPLOY.md) repository-তে রাখা হয়েছে।
 
 ## নিরাপত্তা ও প্রাইভেসি
 
