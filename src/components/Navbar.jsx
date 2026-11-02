@@ -16,13 +16,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'হোম ও প্রশ্নোত্তর', icon: HelpCircle },
-    { id: 'waiver', label: 'জরিমানা মওকুফ দরখাস্ত', icon: FileText },
-    { id: 'eligibility', label: 'আমার কি রিটার্ন দিতে হবে?', icon: CheckSquare },
-    { id: 'checklist', label: 'ডকুমেন্ট চেকলিস্ট', icon: FileCheck2 },
-    { id: 'updates', label: 'এনবিআর আপডেট', icon: Bell },
-    { id: 'sources', label: 'আইনের ধারা ও সূত্র', icon: BookOpen },
-    { id: 'verification', label: 'ভেরিফিকেশন তালিকা', icon: Scale },
+    { id: 'home', label: 'হোম', mobileLabel: 'হোম ও প্রশ্নোত্তর', icon: HelpCircle },
+    { id: 'waiver', label: 'মওকুফ আবেদন', mobileLabel: 'জরিমানা মওকুফ দরখাস্ত', icon: FileText },
+    { id: 'eligibility', label: 'রিটার্ন চেকার', mobileLabel: 'আমার কি রিটার্ন দিতে হবে?', icon: CheckSquare },
+    { id: 'checklist', label: 'ডকুমেন্ট', mobileLabel: 'ডকুমেন্ট চেকলিস্ট', icon: FileCheck2 },
+    { id: 'updates', label: 'আপডেট', mobileLabel: 'এনবিআর আপডেট', icon: Bell },
+    { id: 'sources', label: 'আইন ও সূত্র', mobileLabel: 'আইনের ধারা ও সূত্র', icon: BookOpen },
+    { id: 'verification', label: 'যাচাই', mobileLabel: 'ভেরিফিকেশন তালিকা', icon: Scale },
   ];
 
   const handleNavClick = (id) => {
@@ -33,33 +33,33 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-13 sm:h-18">
+      <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-6">
+        <div className="flex items-center justify-between h-13 sm:h-15">
           {/* Logo */}
           <div 
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-1.5 sm:gap-2.5 cursor-pointer group min-w-0"
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-tr from-emerald-700 to-emerald-500 flex items-center justify-center text-white shadow-sm shadow-emerald-500/20 group-hover:scale-105 transition-transform shrink-0">
-              <Scale className="w-4 h-4 sm:w-5 sm:h-5" />
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-tr from-emerald-700 to-emerald-500 flex items-center justify-center text-white shadow-sm shadow-emerald-500/20 group-hover:scale-105 transition-transform shrink-0">
+              <Scale className="w-4 h-4" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-base sm:text-xl font-bold tracking-tight text-slate-900 group-hover:text-emerald-700 transition-colors whitespace-nowrap">
+                <span className="text-base sm:text-lg font-bold tracking-tight text-slate-900 group-hover:text-emerald-700 transition-colors whitespace-nowrap">
                   ট্যাক্স সহায়ক
                 </span>
                 <span className="text-[8px] sm:text-[10px] font-semibold bg-emerald-100 text-emerald-800 px-1 sm:px-1.5 py-0.5 rounded-sm">
                   বিডি
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500 -mt-0.5 hidden xs:block">
+              <p className="text-[10px] text-slate-500 -mt-0.5 hidden xs:block xl:hidden">
                 ই-টিআইএন, আয়কর রিটার্ন ও ভ্যাট গাইড
               </p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-0.5" aria-label="প্রধান নেভিগেশন">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
@@ -67,13 +67,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-[13px] font-medium transition-colors ${
+                  className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
                     isActive 
                       ? 'bg-emerald-50 text-emerald-800 font-semibold' 
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-emerald-700' : 'text-slate-400'}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-emerald-700' : 'text-slate-400'}`} />
                   <span>{item.label}</span>
                 </button>
               );
@@ -84,10 +84,10 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
           <div className="flex items-center gap-1 sm:gap-2">
             <button
               onClick={onOpenAiModal}
-              className="flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-95"
+              className="flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold shadow-sm hover:shadow-md transition-all active:scale-95 whitespace-nowrap"
             >
               <Bot className="w-4 h-4 animate-pulse" />
-              <span className="hidden sm:inline">ট্যাক্স এআই সহকারী</span>
+              <span className="hidden sm:inline">এআই সহকারী</span>
               <span className="sm:hidden">এআই চ্যাট</span>
             </button>
 
@@ -121,7 +121,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
                 }`}
               >
                 <Icon className={`w-5 h-5 ${isActive ? 'text-emerald-700' : 'text-slate-400'}`} />
-                <span>{item.label}</span>
+                <span>{item.mobileLabel}</span>
               </button>
             );
           })}

@@ -1,0 +1,19 @@
+{
+  "name": "ট্যাক্স সহায়ক বাংলাদেশ",
+  "short_name": "ট্যাক্স সহায়ক",
+  "description": "বাংলাদেশের ই-টিআইএন, আয়কর রিটার্ন ও ভ্যাট সংক্রান্ত বাংলা তথ্য সহায়ক।",
+  "lang": "bn-BD",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#047857",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
