@@ -19,6 +19,8 @@
 
 </div>
 
+> Vercel-এ deploy করতে চাইলে [VERCEL_DEPLOY.md](VERCEL_DEPLOY.md) অনুসরণ করুন। বর্তমান live site: [etin-umber.vercel.app](https://etin-umber.vercel.app/)
+
 > [!IMPORTANT]
 > `GEMINI_API_KEY` কখনো GitHub, `.env.example`, screenshot বা frontend environment variable-এ রাখবেন না। এটি Cloudflare-এর encrypted secret হিসেবে সংরক্ষণ করুন।
 

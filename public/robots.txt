@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Host: https://e-tin-qna.pages.dev
-Sitemap: https://e-tin-qna.pages.dev/sitemap.xml
+Host: https://etin-umber.vercel.app
+Sitemap: https://etin-umber.vercel.app/sitemap.xml

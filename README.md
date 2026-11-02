@@ -10,6 +10,7 @@
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Live-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://etin-umber.vercel.app/)
 [![Gemini](https://img.shields.io/badge/Google-Gemini_AI-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
 [![Questions](https://img.shields.io/badge/Verified_Q%26A-78-047857?style=flat-square)](src/data/qna.json)
@@ -19,6 +20,8 @@
 [![API Key](https://img.shields.io/badge/API_Key-Server_Side-16A34A?style=flat-square)](functions/api/ai.js)
 
 **বাংলা ও বাংলিশে খুঁজুন। যাচাইকৃত স্থানীয় তথ্য দেখুন। প্রয়োজন হলে নিরাপদ server-side AI সহায়তা নিন।**
+
+**[Live website](https://etin-umber.vercel.app/)**
 
 [বৈশিষ্ট্য](#-মূল-বৈশিষ্ট্য) · [প্রযুক্তি](#-প্রযুক্তি) · [লোকাল সেটআপ](#-লোকাল-সেটআপ) · [ডেপ্লয়মেন্ট](#-cloudflare-pages-ডেপ্লয়মেন্ট) · [নিরাপত্তা](#-নিরাপত্তা-ও-প্রাইভেসি)
 
@@ -39,7 +42,7 @@
 | --- | --- |
 | বাংলা ও বাংলিশ সার্চ | `zero return`, `e-TIN kivabe khulbo`, `fine koto` এবং বাংলা প্রশ্ন সমর্থন করে |
 | যাচাইকৃত Q&A | সংক্ষিপ্ত উত্তর, ধাপ, চেকলিস্ট, আইনের ধারা ও সরকারি উৎস |
-| নিরাপদ Gemini AI | Cloudflare Pages Function থেকে Gemini API call; key browser bundle-এ প্রকাশ হয় না |
+| নিরাপদ Gemini AI | Vercel বা Cloudflare server function থেকে Gemini API call; key browser bundle-এ প্রকাশ হয় না |
 | Local fallback | Gemini অনুপলভ্য হলে স্থানীয় grounded search উত্তর দেয় |
 | রিটার্ন যোগ্যতা চেকার | আয় ও প্রযোজ্য শর্ত অনুযায়ী প্রাথমিক নির্দেশনা |
 | ডকুমেন্ট চেকলিস্ট | চাকরি, ব্যবসা, ফ্রিল্যান্সিং, প্রবাস ও অন্যান্য পেশার জন্য কাস্টম তালিকা |
@@ -60,7 +63,7 @@ Local Q&A search and grounding
 POST /api/ai
      │
      ▼
-Cloudflare Pages Function
+Vercel Function বা Cloudflare Pages Function
      │
      ▼
 Google Gemini API
@@ -69,7 +72,7 @@ Google Gemini API
      └── Failure: local verified answer
 ```
 
-Browser কখনো `GEMINI_API_KEY` পায় না। Secret শুধু Cloudflare Function runtime-এর `context.env` থেকে পড়া হয়।
+Browser কখনো `GEMINI_API_KEY` পায় না। Secret শুধু নির্বাচিত hosting platform-এর server runtime থেকে পড়া হয়।
 
 ## প্রযুক্তি
 
@@ -79,8 +82,8 @@ Browser কখনো `GEMINI_API_KEY` পায় না। Secret শুধু
 | Styling | Tailwind CSS 4 |
 | Icons | Lucide React |
 | AI | Google Gemini API |
-| Server endpoint | Cloudflare Pages Functions |
-| Hosting | Cloudflare Pages |
+| Server endpoint | Vercel Functions এবং Cloudflare Pages Functions |
+| Hosting | Vercel বা Cloudflare Pages |
 | Content | Local JSON datasets |
 | Quality checks | Oxlint, Vite production build |
 
@@ -88,8 +91,12 @@ Browser কখনো `GEMINI_API_KEY` পায় না। Secret শুধু
 
 ```text
 e-tin-qna/
+├── api/
+│   └── ai.js                  # Vercel Gemini endpoint
 ├── functions/
-│   └── api/ai.js              # Server-side Gemini endpoint
+│   └── api/ai.js              # Cloudflare Gemini endpoint
+├── server/
+│   └── gemini.js              # Shared validation এবং Gemini logic
 ├── public/
 │   ├── favicon.svg
 │   ├── og-image.png
@@ -102,6 +109,7 @@ e-tin-qna/
 │   ├── pages/                 # Updates, sources এবং verification
 │   └── utils/                 # Search এবং AI clients
 ├── DEPLOY.md
+├── VERCEL_DEPLOY.md
 └── package.json
 ```
 
@@ -151,7 +159,15 @@ npx wrangler pages dev dist
 | `npm run lint` | Oxlint quality check |
 | `npx wrangler pages dev dist` | Frontend এবং Pages Function একসঙ্গে চালানো |
 
-## Cloudflare Pages ডেপ্লয়মেন্ট
+## ডেপ্লয়মেন্ট
+
+### Vercel
+
+বর্তমান production site: **[etin-umber.vercel.app](https://etin-umber.vercel.app/)**
+
+Vercel Project Settings-এর **Environment Variables** অংশে `GEMINI_API_KEY` এবং optional `GEMINI_MODEL` যোগ করে নতুন deployment চালান। সম্পূর্ণ ধাপ [VERCEL_DEPLOY.md](VERCEL_DEPLOY.md)-এ রয়েছে।
+
+### Cloudflare Pages
 
 | Setting | Value |
 | --- | --- |
@@ -161,7 +177,7 @@ npx wrangler pages dev dist
 | Output directory | `dist` |
 | Root directory | Repository root |
 
-Cloudflare Dashboard-এর `Settings` → `Variables and Secrets` থেকে encrypted secret হিসেবে `GEMINI_API_KEY` যোগ করুন। Secret যোগ করার পরে নতুন deployment চালান। বিস্তারিত ধাপ [DEPLOY.md](DEPLOY.md)-এ রয়েছে।
+Cloudflare Dashboard-এর `Settings` → `Variables and Secrets` থেকে encrypted secret হিসেবে `GEMINI_API_KEY` যোগ করুন। Secret যোগ করার পরে নতুন deployment চালান। সম্পূর্ণ ধাপ [DEPLOY.md](DEPLOY.md)-এ রয়েছে।
 
 ## নিরাপত্তা ও প্রাইভেসি
 
